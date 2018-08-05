@@ -12,8 +12,8 @@
                     <!-- col -->
                     <div class="col-lg-12">
                         <div class="card-box">
-                            <a href="newpurchase" class="pull-right btn btn-primary btn-sm waves-effect waves-light"><i class="fa fa-plus"></i> Add New</a>
-                            <h4 class="text-dark header-title m-t-0">Purchase Product</h4>
+                            <a href="#add" data-toggle="modal" class="pull-right btn btn-primary btn-sm waves-effect waves-light"><i class="fa fa-plus"></i> Add New</a>
+                            <h4 class="text-dark header-title m-t-0">Client</h4>
                             <p class="text-muted m-b-30 font-13">
                             <hr />
                             </p>
@@ -21,11 +21,11 @@
                                 <thead>
                                 <tr>
                                     <th>Date</th>
-                                    <th>Invoice No</th>
-                                    <th>Supplier</th>														<th>Contact</th>														<th>Email</th>
-                                    <th>Address</th>														<th>State</th>
-                                    <th>City</th>														<th>Pincode</th>														<th>Gst No</th>														<th>Before GST</th>
-                                    <th>GST Amt.</th>														<th>Total</th>														<th></th>
+                                    <th>Name</th>
+                                    <th>Email</th>														<th>Contact</th>														<th>Address</th>
+                                    <th>City</th>														<th>State</th>
+                                    <th>Pincode</th>														<th>GST No</th>														<th>Status</th>
+                                    <th></th>
                                 </tr>
                                 </thead>
                             </table>
@@ -39,6 +39,57 @@
         <!-- Footer -->
 
         <!-- End Footer -->            </div>
+    <div id="add" class="modal" style="display: none;">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <form role="form" id="addform" class="form-horizontal" enctype="multipart/form-data" method="post" onsubmit="return forminput('addform')" action="functions/client.php?do=add">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Add new Client</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group clearfix">
+                            <label class="col-md-3 control-label">Name</label>
+                            <div class="col-md-9">
+                                <input type="text" name="name" required="" class="form-control">
+                            </div>
+                        </div>	<div class="form-group clearfix">		<label class="col-md-3 control-label">Email</label>		<div class="col-md-9">			<input type="email" name="email" class="form-control">		</div>	</div>
+                        <div class="form-group clearfix">
+                            <label class="col-md-3 control-label">Contact</label>
+                            <div class="col-md-4">
+                                <input type="number" min="0" name="contact" required="" class="form-control">
+                            </div>
+                        </div>	<div class="form-group clearfix">		<label class="col-md-3 control-label">Address</label>		<div class="col-md-9">			<textarea min="0" name="address" rows="4" class="form-control"></textarea>		</div>	</div>	<div class="form-group clearfix">		<label class="col-md-3 control-label">City</label>		<div class="col-md-9">			<input type="text" name="city" class="form-control">		</div>	</div>	<div class="form-group clearfix">		<label class="col-md-3 control-label">State</label>		<div class="col-md-9">			<input type="text" name="state" class="form-control">		</div>	</div>	<div class="form-group clearfix">		<label class="col-md-3 control-label">Pincode</label>		<div class="col-md-4">			<input type="number" name="pincode" min="0" class="form-control">		</div>	</div>	<div class="form-group clearfix">		<label class="col-md-3 control-label">GST No</label>		<div class="col-md-9">			<input type="text" name="gst_no" class="form-control">		</div>	</div>
+                        <div class="form-group clearfix">
+                            <label  class="col-md-3 control-label">Date</label>
+                            <div class="col-md-4">
+                                <input class="form-control inline-date" value="05-08-2018" placeholder="mm/dd/yyyy" required type="text" name="date">
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <label class="col-md-3 control-label">Status</label>
+                            <div class="col-md-3">
+                                <select name="status" required="" class="form-control">
+                                    <option value="1">Enable</option>
+                                    <option value="0">Disable</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger button-continue-shopping" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary button-checkout">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="edit" class="modal" style="display: none;">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content" id="editdiv">
+            </div>
+        </div>
+    </div>
     <!-- ============================================================== -->
     <!-- End Right content here -->
     <!-- ============================================================== -->
@@ -236,7 +287,8 @@
         }
     }(0));
 </script>
-<script type="text/javascript" language="javascript" >
+</body>
+</html><script type="text/javascript" language="javascript" >
     $(document).ready(function() {
         show();
     });
@@ -247,7 +299,7 @@
             "processing": true,
             "serverSide": true,
             "ajax":{
-                url :"functions/purchase.php?do=show", // json datasource
+                url :"functions/client.php?do=show", // json datasource
                 type: "post",  // method  , by default get
                 error: function(){  // error handling
                     $(".data-grid-error").html("");
@@ -262,12 +314,19 @@
     {
         $("#editdiv").html("<center>loading...</center>");
         $.ajax({
-            url:'functions/purchase.php?do=editform',
+            url:'functions/client.php?do=editform',
             type:'post',
             data:'id='+id,
             success:function(msg)
             {
                 $("#editdiv").html(msg);
+                jQuery('.inline-date').datepicker({
+                    defaultDate: new Date(),
+                    format: "dd-mm-yyyy",
+                    autoclose: true,
+                    todayHighlight: true,
+                    "setDate": 'now',
+                });
             }
         });
     }
@@ -278,7 +337,7 @@
         if(x==true)
         {
             $.ajax({
-                url:'functions/purchase.php?do=delete',
+                url:'functions/client.php?do=delete',
                 type:'post',
                 data:'id='+id,
                 success:function(msg)

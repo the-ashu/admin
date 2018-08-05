@@ -112,18 +112,18 @@
                         <a href="#">Supplier</a>
                         <ul class="submenu">
                             <li><a href="supplier">Supplier</a></li>
-                            <li><a href="purchase-product.php">Purchase Product</a></li>
+                            <li><a href="purchaseproduct">Purchase Product</a></li>
                         </ul>
                     </li>
                     <li class="has-submenu">
                         <a href="#">Client</a>
                         <ul class="submenu">
-                            <li><a href="client.php">Client</a></li>
-                            <li><a href="client-product-rate.php">Product Rate</a></li>
+                            <li><a href="client">Client</a></li>
+                            <li><a href="clientproductrate">Product Rate</a></li>
                             <li><a href="client-order.php">Order</a></li>
                         </ul>
                     </li>
-                    <li><a href="bill.php">Bill Issue</a></li>
+                    <li><a href="bill">Bill Issue</a></li>
                     <!--<li><a href="view_sales.php">View Sales</a></li>-->
                     <li class="has-submenu">
                         <a href="#">Reports</a>

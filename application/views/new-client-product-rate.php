@@ -1,49 +1,89 @@
-<!-- Top Bar End -->
-<!-- Begin page -->
 <div class="wrapper">
-    <!-- ============================================================== -->
-    <!-- Start right Content here -->
-    <!-- ============================================================== -->
-    <div class="content-page">
-        <!-- Start content -->
-        <div class="content">
-            <div class="container">
-                <div class="row">
-                    <!-- col -->
-                    <div class="col-lg-12">
-                        <div class="card-box">
-                            <a href="newpurchase" class="pull-right btn btn-primary btn-sm waves-effect waves-light"><i class="fa fa-plus"></i> Add New</a>
-                            <h4 class="text-dark header-title m-t-0">Purchase Product</h4>
-                            <p class="text-muted m-b-30 font-13">
-                            <hr />
-                            </p>
-                            <table id="data-grid" class="table table-striped table-bordered  responsive">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <form action="functions/client-product-rate.php?do=add" class="form-horizontal" method="post">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 style="color: #fff;"><span class="fa fa-file-o"></span> Create new Client Product Rate</h3>
+                        </div>
+                        <div class="panel-body form-group-separated">
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label class="col-md-4 control-label">Client Name</label>
+                                    <div class="col-md-5">
+                                        <select name="client_id" id="client" class="form-control" required>
+                                            <option value="">Select</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label  class="col-md-4 control-label">Date</label>
+                                    <div class="col-md-4">
+                                        <input class="form-control inline-date" value="05-08-2018" placeholder="mm/dd/yyyy" required type="text" name="date">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <table id="product_table" class="table table-striped table-bordered table-hover">
                                 <thead>
                                 <tr>
-                                    <th>Date</th>
-                                    <th>Invoice No</th>
-                                    <th>Supplier</th>														<th>Contact</th>														<th>Email</th>
-                                    <th>Address</th>														<th>State</th>
-                                    <th>City</th>														<th>Pincode</th>														<th>Gst No</th>														<th>Before GST</th>
-                                    <th>GST Amt.</th>														<th>Total</th>														<th></th>
+                                    <td class="text-left required col-md-4">Product Name</td>
+                                    <td class="text-left required col-md-1">Unit</td>
+                                    <td class="text-left required">Rate</td>
+                                    <td class="text-left required">CGST(%)</td>
+                                    <td class="text-left required">SGST(%)</td>
+                                    <td class="text-left required">IGST(%)</td>
+                                    <td></td>
                                 </tr>
                                 </thead>
+                                <tbody>
+                                <tr id="product_table-row0">
+                                    <td><select id="product_id0" name="product_id[]" class="form-control" required onchange="product_client_detail(0,this.value)"><option value="">Select</option> </select></td>
+                                    <td>
+                                        <select name="weight[]" class="form-control" required id="weight0">
+                                            <option value="">Select</option>
+                                            <option value="TON">TON</option>
+                                            <option value="CFT">CFT</option>
+                                            <option value="MQ">MQ</option>
+                                            <option value="BAG">BAG</option>
+                                            <option value="PCS.">PCS.</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" required class="form-control decimal" name="rate[]" id="rate0" ></td>
+                                    <td><input type="text" required class="form-control decimal" name="cgst[]" id="cgst0" ></td>
+                                    <td><input type="text" required class="form-control decimal" name="sgst[]" id="sgst0"></td>
+                                    <td><input type="text" required class="form-control decimal" name="igst[]" id="igst0" ></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="6"></td>
+                                    <td class="text-left"><a onclick="addProductRow();" data-toggle="tooltip" title="" class="btn btn-primary btn-xs" data-original-title="Add Product"><i class="fa fa-plus-circle"></i></a></td>
+                                </tr>
+                                </tfoot>
                             </table>
+                            <!--end data-role="dynamic-fields-->
+
+                            <br><br>
                         </div>
-                    </div>
-                    <!-- end col -->
-                </div>
-                <!-- end row -->
-            </div> <!-- container -->
-        </div> <!-- content -->
+                        <div class="panel-footer text-right">
+                            <input name="submit" class="btn btn-primary btn-rounded" type="submit" value="Submit">
+                            <a href="client-product-rate.php" class="btn btn-danger btn-rounded">Cancel</a>
+                        </div>
+                    </div> <!-- end card-box -->
+
+                </form>
+
+            </div>
+        </div>
         <!-- Footer -->
 
-        <!-- End Footer -->            </div>
-    <!-- ============================================================== -->
-    <!-- End Right content here -->
-    <!-- ============================================================== -->
+        <!-- End Footer -->
+    </div>
 </div>
-<!-- END wrapper -->
 
 <!-- jQuery  -->
 <script src="<?php echo base_url();?>assets/js/jquery.min.js"></script>
@@ -236,66 +276,64 @@
         }
     }(0));
 </script>
-<script type="text/javascript" language="javascript" >
-    $(document).ready(function() {
-        show();
+<script>
+    $(function() {
+        select_2("client",'functions/client.php?do=search_client');
+        select_2("product_id0",'functions/product.php?do=search_product');
+        //decimal validation
     });
-    //===========================>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    function show()
+    //func
+    //product func
+    function product_client_detail(id,val)
     {
-        var dataTable = $('#data-grid').DataTable( {
-            "processing": true,
-            "serverSide": true,
-            "ajax":{
-                url :"functions/purchase.php?do=show", // json datasource
-                type: "post",  // method  , by default get
-                error: function(){  // error handling
-                    $(".data-grid-error").html("");
-                    $("#data-grid").append('<tbody class="data-grid-error"><tr><th colspan="6" align="center">No data found in the server</th></tr></tbody>');
-                    $("#data-grid_processing").css("display","none");
-                }
-            }
-        } );
-    }
-    //
-    function edit(id)
-    {
-        $("#editdiv").html("<center>loading...</center>");
         $.ajax({
-            url:'functions/purchase.php?do=editform',
-            type:'post',
-            data:'id='+id,
-            success:function(msg)
+            url:"functions/product.php?do=product_client_detail",
+            type:"post",
+            dataType: 'json',
+            data:"id="+val+"&client_id="+$("#client").val(),
+            success:function(res)
             {
-                $("#editdiv").html(msg);
+                $("#weight"+id+" option[value='"+res.weight+"']").attr('selected','selected');;
+                $("#rate"+id).val(res.rate);
+                $("#cgst"+id).val(res.cgst);
+                $("#sgst"+id).val(res.sgst);
+                $("#igst"+id).val(res.igst);
             }
         });
     }
-    //
-    function delete_data(id)
-    {
-        x = confirm('Are you sure want to delete?');
-        if(x==true)
-        {
-            $.ajax({
-                url:'functions/purchase.php?do=delete',
-                type:'post',
-                data:'id='+id,
-                success:function(msg)
-                {
-                    if(msg==1)
-                    {
-                        gettables();
-                    }
-                    else
-                    {
-                        alert(msg);
-                    }
-                }
-            });
-        }
-        else
-        {
-        }
+    var product_row = 1;
+    function addProductRow() {
+        html  = '<tr id="product_table-row' + product_row + '">';
+        html += '    <td class="left"><select id="product_id' + product_row + '" name="product_id[]" class="form-control" required onchange="product_client_detail('+product_row+',this.value)"><option value="">Select</option> </select></td>';
+        html += '</td>';
+        html += '<td class="left">';
+        html += '<select name="weight[]" class="form-control" required id="weight'+product_row+'"><option value="">Select</option><option value="TON">TON</option><option value="CFT">CFT</option><option value="MQ">MQ</option><option value="BAG">BAG</option><option value="PCS.">PCS.</option></select>';
+        html += '</td>';
+        html += '<td class="left">';
+        html += '<input type="text" required class="form-control decimal" name="rate[]" id="rate'+product_row+'" >';
+        html += '</td>';
+        html += '<td class="left">';
+        html += '<input type="text" min="0" name="cgst[]" value="0" class="form-control decimal" id="cgst'+product_row+'">';
+        html += '</td>';
+        html += '<td class="left">';
+        html += '<input type="text" min="0" name="sgst[]" value="0" class="form-control decimal" id="sgst'+product_row+'">';
+        html += '</td>';
+        html += '<td class="left">';
+        html += '<input type="text" min="0" name="igst[]" value="0" class="form-control decimal" id="igst'+product_row+'">';
+        html += '</td>';
+        html += '    <td class="left"><button onclick="$(\'#product_table-row' + product_row + '\').remove();" class="btn btn-danger btn-xs" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-minus-circle"></i></button></td>';
+        html += '  </tr>';
+        $('#product_table tbody').append(html);
+        select_2("product_id"+product_row,'functions/product.php?do=search_product');
+        //decimal validation
+        $(".decimal").keypress(function(evt){
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode != 46 && charCode > 31
+                && (charCode < 48 || charCode > 57))
+                return false;
+
+            return true;
+        });
+        product_row++;
     }
 </script>

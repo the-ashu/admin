@@ -12,8 +12,8 @@
                     <!-- col -->
                     <div class="col-lg-12">
                         <div class="card-box">
-                            <a href="newpurchase" class="pull-right btn btn-primary btn-sm waves-effect waves-light"><i class="fa fa-plus"></i> Add New</a>
-                            <h4 class="text-dark header-title m-t-0">Purchase Product</h4>
+                            <a href="newclientproductrate" class="pull-right btn btn-primary btn-sm waves-effect waves-light"><i class="fa fa-plus"></i> Add New</a>
+                            <h4 class="text-dark header-title m-t-0">Client Product Rate</h4>
                             <p class="text-muted m-b-30 font-13">
                             <hr />
                             </p>
@@ -21,11 +21,8 @@
                                 <thead>
                                 <tr>
                                     <th>Date</th>
-                                    <th>Invoice No</th>
-                                    <th>Supplier</th>														<th>Contact</th>														<th>Email</th>
-                                    <th>Address</th>														<th>State</th>
-                                    <th>City</th>														<th>Pincode</th>														<th>Gst No</th>														<th>Before GST</th>
-                                    <th>GST Amt.</th>														<th>Total</th>														<th></th>
+                                    <th>Client Name</th>
+                                    <th>Status</th>														<th></th>
                                 </tr>
                                 </thead>
                             </table>
@@ -247,7 +244,7 @@
             "processing": true,
             "serverSide": true,
             "ajax":{
-                url :"functions/purchase.php?do=show", // json datasource
+                url :"functions/client-product-rate.php?do=show", // json datasource
                 type: "post",  // method  , by default get
                 error: function(){  // error handling
                     $(".data-grid-error").html("");
@@ -262,7 +259,7 @@
     {
         $("#editdiv").html("<center>loading...</center>");
         $.ajax({
-            url:'functions/purchase.php?do=editform',
+            url:'functions/client-product-rate.php?do=editform',
             type:'post',
             data:'id='+id,
             success:function(msg)
@@ -278,7 +275,7 @@
         if(x==true)
         {
             $.ajax({
-                url:'functions/purchase.php?do=delete',
+                url:'functions/client-product-rate.php?do=delete',
                 type:'post',
                 data:'id='+id,
                 success:function(msg)

@@ -83,4 +83,46 @@ public function supplier()
     $this->load->view('supplier');
     $this->load->view('footer');
 }
+public function purchaseproduct()
+{
+   $this->load->view('header');
+   $this->load->view('purchase-product');
+   $this->load->view('footer');
+}
+public function newpurchase()
+{
+    $this->load->view('header');
+    $this->load->view('new-purchase');
+    $this->load->view('footer');
+}
+public function client()
+{
+    $this->load->view('header');
+    $this->load->view('client');
+    $this->load->view('footer');
+}
+public function bill()
+{
+    $this->load->view('header');
+    $this->load->view('bill');
+    $this->load->view('footer');
+}
+public function newbill()
+{
+    $this->load->view('header');
+    $this->load->view('new-bill');
+    $this->load->view('footer');
+}
+public function clientproductrate()
+{
+    $this->load->view('header');
+    $this->load->view('client-product-rate');
+    $this->load->view('footer');
+}
+public function newclientproductrate()
+{
+    $this->load->view('header');
+    $this->load->view('new-client-product-rate');
+    $this->load->view('footer');
+}
 }

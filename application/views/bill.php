@@ -12,20 +12,21 @@
                     <!-- col -->
                     <div class="col-lg-12">
                         <div class="card-box">
-                            <a href="newpurchase" class="pull-right btn btn-primary btn-sm waves-effect waves-light"><i class="fa fa-plus"></i> Add New</a>
-                            <h4 class="text-dark header-title m-t-0">Purchase Product</h4>
+                            <a href="newbill" class="pull-right btn btn-primary btn-sm waves-effect waves-light"><i class="fa fa-plus"></i> Add New</a>
+                            <h4 class="text-dark header-title m-t-0">Bill Issue</h4>
                             <p class="text-muted m-b-30 font-13">
                             <hr />
                             </p>
-                            <table id="data-grid" class="table table-striped table-bordered  responsive">
+                            <table id="data-grid" class="table table-striped table-bordered nowrap  responsive">
                                 <thead>
                                 <tr>
-                                    <th>Date</th>
                                     <th>Invoice No</th>
-                                    <th>Supplier</th>														<th>Contact</th>														<th>Email</th>
+                                    <th>Date</th>
+                                    <th>Client</th>														<th>Contact</th>														<th>Email</th>
                                     <th>Address</th>														<th>State</th>
                                     <th>City</th>														<th>Pincode</th>														<th>Gst No</th>														<th>Before GST</th>
-                                    <th>GST Amt.</th>														<th>Total</th>														<th></th>
+                                    <th>GST Amt.</th>
+                                    <th>Total</th>														<th></th>
                                 </tr>
                                 </thead>
                             </table>
@@ -37,7 +38,18 @@
             </div> <!-- container -->
         </div> <!-- content -->
         <!-- Footer -->
-
+        <footer class="footer text-right hidden-print">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6">
+                        © 2017. All rights reserved.
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        Powered By <a href="http://ebiosketch.com/" class="text-white text-bold" target="_blank"> <b>Ebiosketch</b></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
         <!-- End Footer -->            </div>
     <!-- ============================================================== -->
     <!-- End Right content here -->
@@ -236,7 +248,8 @@
         }
     }(0));
 </script>
-<script type="text/javascript" language="javascript" >
+</body>
+</html><script type="text/javascript" language="javascript" >
     $(document).ready(function() {
         show();
     });
@@ -247,7 +260,7 @@
             "processing": true,
             "serverSide": true,
             "ajax":{
-                url :"functions/purchase.php?do=show", // json datasource
+                url :"functions/bill.php?do=show", // json datasource
                 type: "post",  // method  , by default get
                 error: function(){  // error handling
                     $(".data-grid-error").html("");
@@ -262,7 +275,7 @@
     {
         $("#editdiv").html("<center>loading...</center>");
         $.ajax({
-            url:'functions/purchase.php?do=editform',
+            url:'functions/bill.php?do=editform',
             type:'post',
             data:'id='+id,
             success:function(msg)
@@ -278,7 +291,7 @@
         if(x==true)
         {
             $.ajax({
-                url:'functions/purchase.php?do=delete',
+                url:'functions/bill.php?do=delete',
                 type:'post',
                 data:'id='+id,
                 success:function(msg)
