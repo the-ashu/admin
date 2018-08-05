@@ -18,8 +18,69 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function ashu()
-	{
-		$this->load->view('welcome_message');
+	public function index()
+	{$data['valid']=true;
+		$this->load->view('login',$data);
 	}
+	public function login()
+    {
+        $this->form_validation->set_rules('username', 'Username', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required');
+        if($this->form_validation->run() === FALSE){
+            $data['valid']=false;
+           $this->load->view('login',$data);
+        }
+        else {
+
+            // Get username
+            $username = $this->input->post('username');
+            // Get and encrypt the password
+            $password = md5($this->input->post('password'));
+
+            // Login user
+            $user_id = $this->User_model->login($username, $password);
+
+            if ($user_id) {
+                // Create session
+                $user_data = array(
+                    'user_id' => $user_id,
+                    'username' => $username,
+                    'logged_in' => true
+                );
+
+                $this->session->set_userdata($user_data);
+                $this->load->view('header');
+                $this->load->view('dashboard');
+                $this->load->view('footer');
+                //echo "ashu";
+                // Set message
+                $this->session->set_flashdata('user_loggedin', 'You are now logged in');
+
+               // redirect('posts');
+            } else {
+                // Set message
+                $this->session->set_flashdata('login_failed', 'Login is invalid');
+                $data['valid']=false;
+                $this->load->view('login',$data);
+            }
+        }
+    }
+    public function dashboard()
+    {
+        $this->load->view('header');
+        $this->load->view('dashboard');
+        $this->load->view('footer');
+    }
+    public function product()
+{
+    $this->load->view('header');
+    $this->load->view('product');
+    $this->load->view('footer');
+}
+public function supplier()
+{
+    $this->load->view('header');
+    $this->load->view('supplier');
+    $this->load->view('footer');
+}
 }
