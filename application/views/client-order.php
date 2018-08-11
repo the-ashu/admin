@@ -19,51 +19,32 @@
 <div class="container">
     <div class="row">
         <br><br><br><br><br><br><br>
-        <a href="new_product" class="pull-right btn btn-primary btn-sm waves-effect waves-light"><i class="fa fa-plus"></i> Add New</a>
+        <a href="new_order" class="pull-right btn btn-primary btn-sm waves-effect waves-light"><i class="fa fa-plus"></i> Add New</a>
         <br><br>
         <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
             <tr>
-                <th>Name</th>
-                <th>HSN code</th>
-                <th>Unit</th>
-                <th>Rate</th>
-                <th>GST type</th>
-                <th>CGST</th>
-                <th>SGST</th>
-                <th>IGST</th>
-                <th></th>
-                <th></th>
+                <th>Order Received On</th>
+                <th>Client Name</th>
+                <th>Status</th>
             </tr>
             </thead>
             <tfoot>
             <tr>
-                <th>Name</th>
-                <th>HSN code</th>
-                <th>Unit</th>
-                <th>Rate</th>
-                <th>GST type</th>
-                <th>CGST</th>
-                <th>SGST</th>
-                <th>IGST</th>
-                <th></th>
-                <th></th>
+            <tr>
+                <th>Order Received On</th>
+                <th>Client Name</th>
+                <th>Status</th>
+            </tr>
             </tr>
             </tfoot>
             <tbody>
             <?php foreach($h->result() as $row){?>
-            <tr>
-                <td><?php echo $row->name;?></td>
-                <td><?php echo $row->product_id;?></td>
-                <td><?php echo $row->weight;?></td>
-                <td><?php echo $row->rate;?></td>
-                <td><?php echo $row->gst_type;?></td>
-                <td><?php echo $row->cgst;?></td>
-                <td><?php echo $row->sgst;?></td>
-                <td><?php echo $row->igst;?></td>
-                <td> <a href="edit_product/<?php echo $row->product_id;?>" class=" btn btn-success  waves-effect waves-light"> EDIT</a></td>
-                <td> <a href="delete_product/<?php echo $row->product_id?>" class=" btn btn-danger  waves-effect waves-light"> DELETE</a></td>
-            </tr>
+                <tr>
+                    <td><?php echo $row->created;?></td>
+                    <td><?php echo $row->client_id;?></td>
+                    <td><?php echo $row->status;?></td>
+                </tr>
             <?php }?>
             </tbody>
         </table>
