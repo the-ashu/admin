@@ -2,10 +2,10 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <form action="printreportproduct" class="form-horizontal" method="post">
+                <form action="printreportproductsales" class="form-horizontal" method="post">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 style="color: #fff;"><span class="fa fa-list"></span> Reports -  Product</h3>
+                            <h3 style="color: #fff;"><span class="fa fa-list"></span> Reports -  Product- Sales</h3>
                         </div>
                         <div class="panel-body form-group-sepaquantityd">
                             <div class="row">

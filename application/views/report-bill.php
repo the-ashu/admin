@@ -2,10 +2,10 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <form action="" class="form-horizontal" method="get">
+                <form action="printreportbillissue" class="form-horizontal" method="post">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 style="color: #fff;"><span class="fa fa-list"></span> Reports -  Product</h3>
+                            <h3 style="color: #fff;"><span class="fa fa-list"></span> Reports - Bill Issue</h3>
                         </div>
                         <div class="panel-body form-group-sepaquantityd">
                             <div class="row">
@@ -22,8 +22,8 @@
 
                             </div>
                             <div class="panel-footer text-right">
-                                <input class="btn btn-primary btn-rounded" type="submit" value="Submit">
-                                <a href="index.php" class="btn btn-danger btn-rounded">Cancel</a>
+                                <input class="btn btn-primary btn-rounded" type="submit" value="Download Report">
+                                <a href="<?php echo base_url();?>welcome/dashboard" class="btn btn-danger btn-rounded">Cancel</a>
                             </div>
                         </div>
 
@@ -34,18 +34,7 @@
             </div>
         </div>
         <!-- Footer -->
-        <footer class="footer text-right hidden-print">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-6">
-                        © 2017. All rights reserved.
-                    </div>
-                    <div class="col-xs-6 text-right">
-                        Powered By <a href="http://ebiosketch.com/" class="text-white text-bold" target="_blank"> <b>Ebiosketch</b></a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+
         <!-- End Footer -->
     </div>
 </div>

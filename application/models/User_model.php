@@ -167,6 +167,18 @@ public function product()
         $this->db->where('password',$oldpass);
         $this->db->update('admin',array('password'=>$newpass));
     }
+
+    public function findsales($date1,$date2)
+    {
+        $this->db->select("bill.*,client.name");
+
+        $this->db->from('bill');
+        $this->db->join('client', 'client.client_id = bill.client_id');
+        $this->db->where('created >=', $date1);
+        $this->db->where('created <=', $date2);
+        $query = $this->db->get();
+        return $query;
+    }
 }
 
 ?>
