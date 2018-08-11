@@ -21,12 +21,18 @@ public function product()
 }
     public function purchase_product()
     {
-        $result = $this->db->get('purchase');
+      /*  $result = $this->db->get('purchase');
         return $result;
-        $this->db->select('A.*,U1.name doctor,U.name patient');
-        $this->db->join('users  U', 'U.id = A.patient_id', 'LEFT');
-        $this->db->join('users  U1', 'U1.id = A.doctor_id', 'LEFT');
-        return $this->db->get('appointments A')->result();
+        $this->db->select('purchase.*,supplier.name');
+        $this->db->from('purchase');
+        $this->db->join('supplier', 'purchase.supplier_id = supplier.supplier_id', 'INNER');
+        $re= $this->db->get();
+        return $re->result();*/
+        $this->db->select("purchase.*,supplier.name");
+        $this->db->from('purchase');
+        $this->db->join('supplier', 'supplier.supplier_id = purchase.supplier_id');
+        $query = $this->db->get();
+        return $query;
     }
 
     public function add_product($data)

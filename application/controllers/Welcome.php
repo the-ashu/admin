@@ -113,6 +113,9 @@ public function supplier()
 public function purchaseproduct()
 { if($this->session->userdata('logged_in')){
     $data1['h']=$this->User_model->purchase_product();
+   /* echo"<pre>";
+print_r($data1);
+   echo "</pre>";*/
    $this->load->view('header');
    $this->load->view('purchase-product',$data1);
    $this->load->view('footer');
