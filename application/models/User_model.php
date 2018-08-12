@@ -204,6 +204,25 @@ public function product()
         $result=$this->db->get();
         return $result;
     }
+
+    public function newprebill($pro)
+    {
+       // $this->db->where('name',$pro);
+      /* $result=$this->db->get('product');
+       return $result->result();*/
+       // $result=$this->db->get_where('product',array('name'=>$pro));
+        $this->db->where('name',$pro);
+        $result=$this->db->get('product');
+        return $result->row(0);
+      //  print_r($result->result());
+    }
+
+    public function newprepbill1($name)
+    {
+        $this->db->where('name',$name);
+        $result=$this->db->get('client');
+        return $result->row(0);
+    }
 }
 
 ?>
