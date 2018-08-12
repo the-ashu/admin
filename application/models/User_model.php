@@ -135,8 +135,14 @@ public function product()
 
     public function bill()
     {
-        $result=$this->db->get('bill_details');
-        return $result;
+
+        $this->db->select("bill_details.*,client.name,bill.*");
+
+        $this->db->from('bill_details');
+        $this->db->join('bill','bill_details.bill_id=bill.bill_id');
+        $this->db->join('client', 'client.client_id = bill.client_id');
+        $query = $this->db->get();
+        return $query;
     }
 
     public function profile()
@@ -178,6 +184,25 @@ public function product()
         $this->db->where('created <=', $date2);
         $query = $this->db->get();
         return $query;
+    }
+
+    public function printbill($id)
+    { $this->db->select("bill.*,client.name");
+        $this->db->where('bill_id',$id);
+        $this->db->from('bill');
+        $this->db->join('client', 'client.client_id = bill.client_id');
+        $result=$this->db->get();
+        $data= $result->row(0);
+        return $data;
+    }
+
+    public function printbill2($id)
+    {    $this->db->select("bill_details.*,product.name,product.product_code");
+        $this->db->where('bill_id',$id);
+        $this->db->from('bill_details');
+        $this->db->join('product','product.product_id=bill_details.product_id');
+        $result=$this->db->get();
+        return $result;
     }
 }
 

@@ -796,4 +796,20 @@ public function printreportbilldetails()
         $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
         force_download($filename, $data);
     }
+
+    public function printbill($id)
+    {
+        $data['h']=$this->User_model->printbill($id);
+        $data['k']=$this->User_model->printbill2($id);
+        $this->load->view('header');
+     $this->load->view('print_bill',$data);
+     $this->load->view('footer');
+    }
+
+    public function newbillprint()
+    {
+        $this->load->view('header');
+        $this->load->view('new_bill_print');
+        $this->load->view('footer');
+    }
 }

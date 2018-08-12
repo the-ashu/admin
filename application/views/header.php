@@ -118,51 +118,51 @@
             <div id="navigation">
                 <!-- Navigation Menu-->
                 <ul class="navigation-menu">
-                    <li class="has-submenu"><a href="dashboard">Dashboard</a></li>
-                    <li><a href="product">Product Master</a></li>
+                    <li class="has-submenu"><a href="<?php echo base_url();?>welcome/dashboard">Dashboard</a></li>
+                    <li><a href="<?php echo base_url();?>welcome/product">Product Master</a></li>
 
                     <li class="has-submenu">
                         <a href="#">Supplier</a>
                         <ul class="submenu">
-                            <li><a href="supplier">Supplier</a></li>
-                            <li><a href="purchaseproduct">Purchase Product</a></li>
+                            <li><a href="<?php echo base_url();?>welcome/supplier">Supplier</a></li>
+                            <li><a href="<?php echo base_url();?>welcome/purchaseproduct">Purchase Product</a></li>
                         </ul>
                     </li>
                     <li class="has-submenu">
                         <a href="#">Client</a>
                         <ul class="submenu">
-                            <li><a href="client">Client</a></li>
-                            <li><a href="clientproductrate">Product Rate</a></li>
-                            <li><a href="clientorder">Order</a></li>
+                            <li><a href="<?php echo base_url();?>welcome/client">Client</a></li>
+                            <li><a href="<?php echo base_url();?>welcome/clientproductrate">Product Rate</a></li>
+                            <li><a href="<?php echo base_url();?>welcome/clientorder">Order</a></li>
                         </ul>
                     </li>
-                    <li><a href="bill">Bill Issue</a></li>
+                    <li><a href="<?php echo base_url();?>welcome/bill">Bill Issue</a></li>
                     <!--<li><a href="view_sales.php">View Sales</a></li>-->
                     <li class="has-submenu">
                         <a href="#">Reports</a>
                         <ul class="submenu">
-                            <li><a href="reportproduct">Product </a></li>
-                            <li><a href="reportproductsales">Product Sales</a></li>
-                            <li><a href="reportsupplier">Supplier </a></li>
-                            <li><a href="reportpurchaseproduct">Purchase Product </a></li>
-                            <li><a href="reportpurchase">Purchase </a></li>
-                            <li><a href="reportsupplierpurchase">Supplier Purchase </a></li>
-                            <li><a href="reportclient">Client </a></li>
-                            <li><a href="reportclientrate">Client Rate </a></li>
-                            <li><a href="reportclientorder">Client Order </a></li>
-                            <li><a href="reportclientsales">Client Sales </a></li>
-                            <li><a href="reportbill">Bill Issue </a></li>
-                            <li><a href="reportbilldetails">Bill Details </a></li>
-                            <li><a href="reportsales">Sales </a></li>
+                            <li><a href="<?php echo base_url();?>welcome/reportproduct">Product </a></li>
+                            <li><a href="<?php echo base_url();?>welcome/reportproductsales">Product Sales</a></li>
+                            <li><a href="<?php echo base_url();?>welcome/reportsupplier">Supplier </a></li>
+                            <li><a href="<?php echo base_url();?>welcome/reportpurchaseproduct">Purchase Product </a></li>
+                            <li><a href="<?php echo base_url();?>welcome/reportpurchase">Purchase </a></li>
+                            <li><a href="<?php echo base_url();?>welcome/reportsupplierpurchase">Supplier Purchase </a></li>
+                            <li><a href="<?php echo base_url();?>welcome/reportclient">Client </a></li>
+                            <li><a href="<?php echo base_url();?>welcome/reportclientrate">Client Rate </a></li>
+                            <li><a href="<?php echo base_url();?>welcome/reportclientorder">Client Order </a></li>
+                            <li><a href="<?php echo base_url();?>welcome/reportclientsales">Client Sales </a></li>
+                            <li><a href="<?php echo base_url();?>welcome/reportbill">Bill Issue </a></li>
+                            <li><a href="<?php echo base_url();?>welcome/reportbilldetails">Bill Details </a></li>
+                            <li><a href="<?php echo base_url();?>welcome/reportsales">Sales </a></li>
                         </ul>
                     </li>
                     <li class="has-submenu">
                         <a href="#">Settings</a>
                         <ul class="submenu">
-                            <li><a href="profile">Profile</a></li>
-                            <li><a href="changepassword">Setting</a></li>
+                            <li><a href="<?php echo base_url();?>welcome/profile">Profile</a></li>
+                            <li><a href="<?php echo base_url();?>welcome/changepassword">Setting</a></li>
                             <li><a href="<?php echo base_url();?>assets/db.sql">Backup Database</a></li>
-                            <li><a href="logout">Logout</a></li>
+                            <li><a href="<?php echo base_url();?>welcome/logout">Logout</a></li>
                         </ul>
                     </li>
 
