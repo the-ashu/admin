@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <form action="preclientproduct" class="form-horizontal" method="post">
+                <form action="newpreclient1" class="form-horizontal" method="post">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 style="color: #fff;"><span class="fa fa-file-o"></span> Create new Client Product Rate</h3>
@@ -12,55 +12,38 @@
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">Client Name</label>
                                     <div class="col-md-5">
-                                        <select name="client_id" class="form-control" required>
-                                            <option value="<?php echo $client_name;?>"><?php echo $client_name;?></option>
+                                        <select name="client_name"  class="form-control" required>
+                                            <?php foreach($client->result() as $row){?>
+                                            <option value="<?php echo $row->name;?>"><?php echo $row->name;?></option>
+                                            <?php }?>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label  class="col-md-4 control-label">Date</label>
                                     <div class="col-md-4">
-                                        <input class="form-control inline-date"  placeholder="mm/dd/yyyy" required type="text" name="date" value="<?php echo $date;?>"  readonly>
+                                        <input class="form-control inline-date"  placeholder="mm/dd/yyyy" required type="text" name="date">
                                     </div>
                                 </div>
-
+                                <div class="form-group col-md-12">
+                                    <label class="col-md-4 control-label">Product Name</label>
+                                    <div class="col-md-5">
+                                        <select name="product_name" id="client" class="form-control" required>
+                                            <?php foreach($product->result() as $row){?>
+                                                <option value="<?php echo $row->name;?>"><?php echo $row->name;?></option>
+                                            <?php }?>
+                                        </select>
+                                    </div>
                             </div>
 
-                            <table id="product_table" class="table table-striped table-bordered table-hover">
-                                <thead>
-                                <tr>
-                                    <td class="text-left required col-md-4">Product Name</td>
-                                    <td class="text-left required col-md-1">Unit</td>
-                                    <td class="text-left required">Rate</td>
-                                    <td class="text-left required">CGST(%)</td>
-                                    <td class="text-left required">SGST(%)</td>
-                                    <td class="text-left required">IGST(%)</td>
-                                    <td></td>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr id="product_table-row0">
-                                    <td><select id="product_id0" name="product_name" class="form-control" ><option value="<?php echo $product_name;?>"><?php echo $product_name;?></option> </select></td>
-                                    <td>
-                                        <select name="weight[]" class="form-control" required id="weight0">
-                                            <option value="<?php echo $gst_type;?>"><?php echo $gst_type;?></option>
-                                        </select>
-                                    </td>
-                                    <td><input type="text" required class="form-control decimal" name="rate" id="rate" value="<?php echo $rate;?>" readonly></td>
-                                    <td><input type="text" required class="form-control decimal" name="cgst" id="cgst" value="<?php echo $cgst;?>" readonly></td>
-                                    <td><input type="text" required class="form-control decimal" name="sgst" id="sgst" value="<?php echo $sgst;?>" readonly></td>
-                                    <td><input type="text" required class="form-control decimal" name="igst" id="igst" value="<?php echo $igst;?>" readonly></td>
-                                    <td></td>
-                                </tr>
-                                </tbody>
-                            </table>
+
                             <!--end data-role="dynamic-fields-->
 
                             <br><br>
                         </div>
                         <div class="panel-footer text-right">
                             <input name="submit" class="btn btn-primary btn-rounded" type="submit" value="Submit">
-                            <a href="cancelclient/<?php echo $client_product_rate_id;?>/<?php echo $client_product_rate_description_id;?>" class="btn btn-danger btn-rounded">Cancel</a>
+                            <a href="welcome/clientproductrate" class="btn btn-danger btn-rounded">Cancel</a>
                         </div>
                     </div> <!-- end card-box -->
 

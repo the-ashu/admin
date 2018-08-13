@@ -17,7 +17,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <form id="addform" name="addform" action="actiononbill" class="form-horizontal" method="post">
+                <form id="addform" name="addform" action="newprebill1" class="form-horizontal" method="post">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 style="color: #fff;"><span class="fa fa-file-o"></span> Create new Bill</h3>
@@ -38,7 +38,7 @@
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">Contact</label>
                                     <div class="col-md-5">
-                                        <input name="contact" id="contact" class="form-control" required type="text" value="<?php echo $contact;?>">
+                                        <input name="contact" id="contact" class="form-control" required type="text" value="<?php echo $contact;?>" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -46,13 +46,14 @@
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">Email</label>
                                     <div class="col-md-5">
-                                        <input name="email" id="email" class="form-control" type="email"  value="<?php echo $email;?>>
+                                        <input name="email" id="email" class="form-control" type="email"  value="<?php echo $email;?>" readonly >
                                     </div>
+                                </div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">Address</label>
                                     <div class="col-md-5">
-                                        <textarea name="address" id="address" rows="5" class="form-control" > value="<?php echo $address;?></textarea>
+                                        <textarea name="address" id="address" rows="5" class="form-control" readonly> <?php echo $address;?></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -60,13 +61,13 @@
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">State</label>
                                     <div class="col-md-5">
-                                        <input name="state" id="state" class="form-control" type="text"  value="<?php echo $state;?>>
+                                        <input name="state" id="state" class="form-control" type="text"  value="<?php echo $state;?>" readonly>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">City</label>
                                     <div class="col-md-5">
-                                        <input name="city" id="city" class="form-control" type="text"  value="<?php echo $city;?>>
+                                        <input name="city" id="city" class="form-control" type="text"  value="<?php echo $city;?>" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -74,50 +75,50 @@
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">Pincode</label>
                                     <div class="col-md-5">
-                                        <input name="pincode" id="pincode" class="form-control" type="number"  value="<?php echo $pincode;?>>
+                                        <input name="pincode" id="pincode" class="form-control" type="number"  value="<?php echo $pincode;?>" readonly>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">GST No</label>
                                     <div class="col-md-5">
-                                        <input name="gst_no" id="gst_no" readonly class="form-control" type="text"  value="<?php echo $gst_no;?>>
+                                        <input name="gst_no" id="gst_no" readonly class="form-control" type="text"  value="<?php echo $gst_no;?>" readonly>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label  class="col-md-4 control-label">Date</label>
                                     <div class="col-md-5">
-                                        <input class="form-control" value="05-08-2018" placeholder="mm/dd/yyyy" required id="datepicker-autoclose" type="text" name="date"  value="<?php echo $invoice_date;?>>
+                                        <input class="form-control"  placeholder="mm/dd/yyyy" required id="datepicker-autoclose" type="text" name="date"  value="<?php echo $invoice_date;?>" readonly>
                                     </div>
                                 </div>
 
                                 <div class="form-group col-md-12">
                                     <label  class="col-md-4 control-label">Invoice Date</label>
                                     <div class="col-md-5">
-                                        <input type="text" name="invoice_date"   value="<?php echo $invoice_date;?> class="form-control inline-date">
+                                        <input type="text" name="invoice_date"   value="<?php echo $invoice_date;?>" class="form-control inline-date" readonly>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label  class="col-md-4 control-label">Tpt. Co.</label>
                                     <div class="col-md-5">
-                                        <input type="text" name="tpt_co" class="form-control"  value="<?php echo $tpt_no;?>>
+                                        <input type="text" name="tpt_co" class="form-control"  value="<?php echo $tpt_co;?>" readonly>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label  class="col-md-4 control-label">Gr. No.</label>
                                     <div class="col-md-5">
-                                        <input type="text" name="gr_no" class="form-control"  value="<?php echo $gr_no;?>>
+                                        <input type="text" name="gr_no" class="form-control"  value="<?php echo $gr_no;?>" readonly>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label  class="col-md-4 control-label">Way Bill Ref.</label>
                                     <div class="col-md-5">
-                                        <input type="text" name="way_bill_ref" class="form-control"  value="<?php echo $way_bill_ref;?>>
+                                        <input type="text" name="way_bill_ref" class="form-control"  value="<?php echo $way_bill_ref;?>" readonly>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label  class="col-md-4 control-label">Place of Order.</label>
                                     <div class="col-md-5">
-                                        <input type="text" name="place_of_order" class="form-control"  value="<?php echo $place_of_order;?>>
+                                        <input type="text" name="place_of_order" class="form-control"  value="<?php echo $place_of_order;?>" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -159,21 +160,21 @@
                                 </thead>
                                 <tbody>
                                 <tr id="product_table-row0">
-                                    <td><select id="product_id0" name="product_id[]" class="form-control" required onchange="product_client_detail(0,this.value)"><option value="">Select</option> </select></td>
-                                    <td><input type="text" required class="form-control" readonly name="product_code[]" id="product_code0" ></td>
-                                    <td><input type="text" required class="form-control" name="weight[]" id="weight0" readonly ></td>
-                                    <td><input type="text" required class="form-control decimal" name="rate[]" id="rate0" onchange="calAmount(0)" ></td>
-                                    <td><input type="text" required class="form-control decimal" name="quantity[]" value="1" min="1" id="quantity0" onchange="calAmount(0)" ></td>
-                                    <td><input type="text" required readonly class="form-control basic_amount decimal" name="basic_amount[]" id="basic_amount0" onchange="calAmount(0)" ></td>
-                                    <td><input type="text" required class="form-control" name="gst_type[]" readonly id="gst_type0" ></td>
-                                    <td><input type="text" required class="form-control" readonly name="cgst[]"  id="cgst0" onchange="calAmount(0)" ></td>
-                                    <td><input type="text" required class="form-control" readonly name="cgst_amount[]"  id="cgst_amount0" onchange="calAmount(0)" ></td>
-                                    <td><input type="text" required class="form-control" readonly name="sgst[]"  id="sgst0" onchange="calAmount(0)" ></td>
-                                    <td><input type="text" required class="form-control" readonly name="sgst_amount[]"  id="sgst_amount0" onchange="calAmount(0)" ></td>
-                                    <td><input type="text" required class="form-control" readonly name="igst[]"  id="igst0" onchange="calAmount(0)" ></td>
-                                    <td><input type="text" required class="form-control" readonly name="igst_amount[]"  id="igst_amount0" onchange="calAmount(0)" ></td>
-                                    <td><input type="text" required readonly class="form-control taxable_amount decimal" name="taxable_amount[]" id="taxable_amount0" onchange="calAmount(0)" ></td>
-                                    <td><input type="text" required class="form-control total decimal" name="total_amount[]" id="total_amount0" readonly  onchange="calAmount(0)" ></td>
+                                    <td><select id="product_id0" name="product_id[]" class="form-control" ><option value="<?php echo $product_name;?>"><?php echo $product_name;?></option> </select></td>
+                                    <td><input type="text" required class="form-control" value="<?php echo $product_id;?>" readonly></td>
+                                    <td><input type="text" required class="form-control" name="weight[]" value="<?php echo $weight;?>" readonly ></td>
+                                    <td><input type="text" required class="form-control decimal" name="rate[]" value="<?php echo $rate;?>" readonly></td>
+                                    <td><input type="text" required class="form-control decimal" name="quantity[]" value="<?php echo $quantity;?>" readonly></td>
+                                    <td><input type="text" required readonly class="form-control basic_amount decimal" name="basic_amount[]"  value="<?php echo $product_name;?>" readonly></td>
+                                    <td><input type="text" required class="form-control" name="gst_type[]" value="<?php echo $gst_type;?>"readonly  ></td>
+                                    <td><input type="text" required class="form-control" readonly name="cgst[]" value="<?php echo $cgst;?>"  ></td>
+                                    <td><input type="text" required class="form-control" readonly name="cgst_amount[]"  value="<?php echo $cgst_amount;?>" ></td>
+                                    <td><input type="text" required class="form-control" readonly name="sgst[]" value="<?php echo $sgst;?>" ></td>
+                                    <td><input type="text" required class="form-control" readonly name="sgst_amount[]" value="<?php echo $sgst_amount;?>" ></td>
+                                    <td><input type="text" required class="form-control" readonly name="igst[]"  value="<?php echo $igst;?>" ></td>
+                                    <td><input type="text" required class="form-control" readonly name="igst_amount[]" value="<?php echo $igst_amount;?>" ></td>
+                                    <td><input type="text" required readonly class="form-control taxable_amount decimal" name="taxable_amount[]" value="<?php echo $total_taxable_amount;?>" ></td>
+                                    <td><input type="text" required class="form-control total decimal" name="total_amount[]" value="<?php echo $total;?>" ></td>
                                     <td></td>
                                 </tr>
                                 </tbody>
@@ -185,22 +186,22 @@
                                 <input type="hidden" id="all_total" />
                                 <div class="col-md-2">
                                     <label style="color: #000;">Total Before GST Amt.</label>
-                                    <input type="text" name="sub_total" readonly value="0"  id="sub_total" class="form-control decimal">
+                                    <input type="text" name="sub_total" readonly  value="<?php echo $sub_total;?>" readonly">
                                 </div>
                                 <div class="col-md-2">
                                     <label style="color: #000;">Total GST Amt.</label>
-                                    <input type="text" name="total_taxable_amount" readonly id="total_taxable_amount"  onchange="calAmount('')" value="0" class="form-control decimal">
+                                    <input type="text" name="total_taxable_amount" readonly id="total_taxable_amount"  value="<?php echo $total_taxable_amount;?>" readonly>
                                 </div>
                                 <div class="col-md-2">
                                     <label style="color: #000;">Bill Amount</label>
-                                    <input type="text" name="bill_amount" readonly value="0"  id="bill_amount" class="form-control decimal">
+                                    <input type="text" name="bill_amount" readonly value="<?php echo $total;?>" readonly>
                                 </div>
                             </div>
                             <br><br>
                         </div>
                         <div class="panel-footer text-right">
                             <input name="submit" class="btn btn-primary btn-rounded" type="submit" value="Submit">
-                            <a href="bill.php" class="btn btn-danger btn-rounded">Cancel</a>
+                            <a href="cancelbill/<?php echo $bill_id;?>/<?php echo $bill_detail_id;?>" class="btn btn-danger btn-rounded">Cancel</a>
                         </div>
                     </div> <!-- end card-box -->
 

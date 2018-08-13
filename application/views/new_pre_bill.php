@@ -102,10 +102,10 @@
                                 </div>
                             </div>
                             <!--end data-role="dynamic-fields-->
-                        <div class="form-group col-md-12">
+                        <div class="form-control total decimal" col-md-12">
                             <label  class="col-md-4 control-label">Rate</label>
                             <div class="col-md-5">
-                                <input type="number" name="rate" class="form-control">
+                                <input type="number" name="rate" class="form-control total decimal" step="any">
                             </div>
                         </div>
                         </div>

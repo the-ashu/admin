@@ -19,7 +19,7 @@
 <div class="container">
     <div class="row">
         <br><br><br><br><br><br><br>
-        <a href="new_client" class="pull-right btn btn-primary btn-sm waves-effect waves-light"><i class="fa fa-plus"></i> Add New</a>
+        <a href="newpreclient" class="pull-right btn btn-primary btn-sm waves-effect waves-light"><i class="fa fa-plus"></i> Add New</a>
         <br><br>
         <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
@@ -46,8 +46,8 @@
                     <td><?php echo $row->date;?></td>
                     <td><?php echo $row->client_id;?></td>
                     <td><?php echo $row->status;?></td>
-                    <td>  </td>
-                    <td> </td>
+                    <td>  <a href="editclientproduct/<?php echo $row->client_product_rate_id?>/<?php echo $row->client_product_rate_id;?>" class="pull-center btn btn-primary btn-sm waves-effect waves-light" </a>  Edit </td>
+                    <td> <a href="cancelclient/<?php echo $row->client_product_rate_id?>/<?php echo $row->client_product_rate_id;?>" class="pull-center btn btn-danger btn-sm waves-effect waves-light"> Delete</a> </td>
                 </tr>
             <?php }?>
             </tbody>

@@ -34,7 +34,6 @@
                 <th>State</th>
                 <th>Pincode</th>
                 <th>Total</th>
-                <th>Edit</th>
                 <th>Delete</th>
                 <th>Print</th>
             </tr>
@@ -51,7 +50,6 @@
                 <th>State</th>
                 <th>Pincode</th>
                 <th>Total</th>
-                <th>Edit</th>
                 <th>Delete</th>
                 <th>Print</th>
             </tr>
@@ -69,8 +67,7 @@
                     <td><?php echo $row->state;?></td>
                     <td><?php echo $row->pincode;?></td>
                     <td><?php echo $row->total;?></td>
-                    <td> <a href="edit_client/<?php echo $row->client_id;?>" class=" btn btn-success  waves-effect waves-light"> EDIT</a></td>
-                    <td> <a href="delete_client/<?php echo $row->client_id?>" class=" btn btn-danger  waves-effect waves-light"> DELETE</a></td>
+                    <td> <a href="cancelbill/<?php echo $row->bill_id?>/<?php echo $row->bill_detail_id?>" class=" btn btn-danger  waves-effect waves-light"> DELETE</a></td>
                     <td> <a href="printbill/<?php echo $row->bill_id?>" class=" btn btn-primary  waves-effect waves-light"> Print</a></td>
                 </tr>
             <?php }?>

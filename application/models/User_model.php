@@ -223,6 +223,28 @@ public function product()
         $result=$this->db->get('client');
         return $result->row(0);
     }
+
+    public function newpreclient($name)
+    {
+        $this->db->where('name',$name);
+        $result=$this->db->get('client');
+        return $result->row(0);
+    }
+
+    public function newpreclient1($name)
+    {
+        $this->db->where('name',$name);
+        $result=$this->db->get('product');
+        return $result->row(0);
+    }
+
+    public function editclient($id)
+    {
+        $this->db->where('client_product_rate_id',$id);
+        $result=$this->db->get_where('client_product_rate',array('client_product_rate_id'=>$id));
+        return $result->row_array();
+    }
+
 }
 
 ?>

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <form action="functions/client-order.php?do=add" class="form-horizontal" method="post">
+                <form action="newclientorder1" class="form-horizontal" method="post">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 style="color: #fff;"><span class="fa fa-file-o"></span> Create New Client Order</h3>
@@ -12,15 +12,17 @@
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">Client Name</label>
                                     <div class="col-md-5">
-                                        <select name="client_id" id="client" class="form-control" required>
-                                            <option value="">Select</option>
+                                        <select name="client_name" id="client" class="form-control" required>
+                                            <?php foreach($client->result() as $row){?>
+                                            <option value="<?php echo $row->name;?>"><?php echo $row->name;?></option>
+                                            <?php }?>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label  class="col-md-4 control-label">Date</label>
                                     <div class="col-md-4">
-                                        <input class="form-control inline-date" value="05-08-2018" placeholder="mm/dd/yyyy" required type="text" name="date">
+                                        <input class="form-control inline-date"  placeholder="mm/dd/yyyy" required type="text" name="date">
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
@@ -46,23 +48,19 @@
                                 </thead>
                                 <tbody>
                                 <tr id="product_table-row0">
-                                    <td><select id="product_id0" name="product_id[]" class="form-control" onchange="product_client_detail(0,this.value)" required><option value="">Select</option> </select></td>
-                                    <td><select name="weight[]" class="form-control" required id="weight0"><option value="">Select</option>
+                                    <td><select id="product_id0" name="product_name" class="form-control"  required>
+                                            <?php foreach($product->result() as $row){?>
+                                            <option value="<?php echo $row->name;?>"><?php echo $row->name;?></option> <?php }?></select></td>
+                                    <td><select name="weight" class="form-control" required id="weight0"><option value="">Select</option>
                                             <option value="TON">TON</option>
                                             <option value="CFT">CFT</option>
                                             <option value="MQ">MQ</option>
                                             <option value="BAG">BAG</option><option value="PCS.">PCS.</option> </select>
                                     </td>
-                                    <td><input type="text" required class="form-control decimal" name="quantity[]" ></td>
+                                    <td><input type="text" required class="form-control decimal" name="quantity" ></td>
                                     <td></td>
                                 </tr>
                                 </tbody>
-                                <tfoot>
-                                <tr>
-                                    <td colspan="3"></td>
-                                    <td class="text-left"><a onclick="addProductRow();" data-toggle="tooltip" title="" class="btn btn-primary btn-xs" data-original-title="Add Product"><i class="fa fa-plus-circle"></i></a></td>
-                                </tr>
-                                </tfoot>
                             </table>
                             <!--end data-role="dynamic-fields-->
 
@@ -70,7 +68,7 @@
                         </div>
                         <div class="panel-footer text-right">
                             <input name="submit" class="btn btn-primary btn-rounded" type="submit" value="Submit">
-                            <a href="client-order.php" class="btn btn-danger btn-rounded">Cancel</a>
+                            <a href="<?php echo base_url();?>welcome/clientorder" class="btn btn-danger btn-rounded">Cancel</a>
                         </div>
                     </div> <!-- end card-box -->
 

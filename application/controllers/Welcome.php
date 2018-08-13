@@ -173,10 +173,12 @@ public function clientproductrate()
 else{
     $data['valid']=true;
     $this->load->view('login',$data);}}
-public function newclientproductrate()
+public function newpreclient()
 { if($this->session->userdata('logged_in')){
+    $data['client']=$this->db->get('client');
+    $data['product']=$this->db->get('product');
     $this->load->view('header');
-    $this->load->view('new-client-product-rate');
+    $this->load->view('new_pre_client_purchase',$data);
     $this->load->view('footer');
 }
 else{
@@ -194,8 +196,10 @@ else{
     $this->load->view('login',$data);}}
 public function newclientorder()
 { if($this->session->userdata('logged_in')){
+    $data['product']=$this->db->get('product');
+    $data['client']=$this->db->get('client');
     $this->load->view('header');
-    $this->load->view('new-client-order');
+    $this->load->view('new-client-order',$data);
     $this->load->view('footer');
 }
 else{
@@ -849,10 +853,11 @@ public function printreportbilldetails()
         $data['cgst']=$data['product']->cgst;
         $data['sgst']=$data['product']->sgst;
         $data['igst']=$data['product']->igst;
-        $data['cgst_amount']=($data['quantity']*$data['cgst']);
-        $data['sgst_amount']=($data['quantity']*$data['sgst']);
-        $data['igst_amount']=($data['quantity']*$data['igst']);
+        $data['product_id']=$data['product']->product_id;
         $data['sub_total']=$data['rate']*$data['quantity'];
+        $data['cgst_amount']=($data['sub_total']*$data['cgst']*0.01);
+        $data['sgst_amount']=($data['sub_total']*$data['sgst']*0.01);
+        $data['igst_amount']=($data['sub_total']*$data['igst']*0.01);
         $data['total_taxable_amount']=$data['cgst_amount']+$data['sgst_amount']+$data['igst_amount'];
         $data['total']=$data['total_taxable_amount']+$data['sub_total'];
         $data2['client_id']=$data['client_id'];
@@ -878,6 +883,7 @@ public function printreportbilldetails()
         $query ="select * from  bill order by bill_id DESC limit 1";
         $res = $this->db->query($query)->row()->bill_id;
         $data3['bill_id']=$res;
+        $data['bill_id']=$data3['bill_id'];
         $data3['product_id']=$data['product']->product_id;
         $data3['product_code']=$data['hsn_code'];
         $data3['rate']=$data['rate'];
@@ -894,8 +900,123 @@ public function printreportbilldetails()
         $data3['taxable_amount']=$data['total_taxable_amount'];
         $data3['total']=$data['total'];
         $this->db->insert('bill_details',$data3);
+        $query ="select * from  bill_details order by bill_id DESC limit 1";
+          $res = $this->db->query($query)->row()->bill_detail_id;
+         $data['bill_detail_id']=$res;
                 $this->load->view('header');
         $this->load->view('new-bill',$data);
         $this->load->view('footer');
     }
+
+    public function newprebill1()
+    {
+    redirect('welcome/bill');
+    }
+
+    public function cancelbill($id1,$id2)
+    {
+        $this->db->where('bill_id',$id1);
+        $this->db->delete('bill');
+        $this->db->where('bill_detail_id',$id2);
+        $this->db->delete('bill_details');
+       redirect('welcome/bill');
+    }
+
+   public function newpreclient1()
+   {
+       $data['date']=$this->input->post('date');
+       $data['client_name']=$this->input->post('client_name');
+       $data['product_name']=$this->input->post('product_name');
+      $data['client']=$this->User_model->newpreclient($data['client_name']);
+      $data['product']=$this->User_model->newpreclient1($data['product_name']);
+      $data['product_id']=$data['product']->product_id;
+      $data['weight']=$data['product']->weight;
+      $data['rate']=$data['product']->rate;
+      $data['gst_type']=$data['product']->gst_type;
+      $data['cgst']=$data['product']->cgst;
+      $data['sgst']=$data['product']->sgst;
+      $data['igst']=$data['product']->igst;
+      $data['client_id']=$data['client']->client_id;
+      $data2['client_id']=$data['client_id'];
+      $data2['date']=$data['date'];
+      $data2['status']=1;
+      $data2['created']=$data['date'];
+      $this->db->insert('client_product_rate',$data2);
+       $query ="select * from  client_product_rate order by client_product_rate_id DESC limit 1";
+       $res = $this->db->query($query)->row()->client_product_rate_id;
+       $data['client_product_rate_id']=$res;
+       $data3['client_product_rate_id']=$data['client_product_rate_id'];
+       $data3['product_id']=$data['product_id'];
+       $data3['weight']=$data['weight'];
+       $data3['rate']=$data['rate'];
+       $data3['sgst']=$data['sgst'];
+       $data3['cgst']=$data['cgst'];
+       $data3['igst']=$data['igst'];
+       $data3['gst_type']=$data['gst_type'];
+       $data3['added']=$data['date'];
+       $this->db->insert('client_product_rate_description',$data3);
+       $query ="select * from  client_product_rate_description order by client_product_rate_description_id DESC limit 1";
+     $res = $this->db->query($query)->row()->client_product_rate_description_id;
+       $data['client_product_rate_description_id']=$res;
+
+       $this->load->view('header');
+       $this->load->view('new-client-product-rate',$data);
+       $this->load->view('footer');
+   }
+
+   public function preclientproduct()
+   {
+       redirect('welcome/clientproductrate');
+   }
+
+   public function cancelclient($id1,$id2)
+   {
+       $this->db->where('client_product_rate_id',$id1);
+       $this->db->delete('client_product_rate');
+       $this->db->where('client_product_rate_description_id',$id2);
+       $this->db->delete('client_product_rate_description');
+       redirect('welcome/clientproductrate');
+   }
+
+public function editclientproduct($id1,$id2)
+{
+$this->db->where('client_product_rate_id',$id1);
+$data['h']=$this->db->get('client_product_rate')->row(0);
+$this->db->where('client_product_rate_description_id',$id2);
+$data['k']=$this->db->get('client_product_rate_description')->row(0);
+$data['l']=$this->db->get('client');
+$data['m']=$this->db->get('product');
+$this->load->view('header');
+$this->load->view('edit_client_product',$data);
+$this->load->view('footer');
+}
+
+public function editclientproduct1($id1)
+{
+    $name1=$this->input->post('client_name');
+    $data['weight']=$this->input->post('weight');
+    $data['cgst']=$this->input->post('cgst');
+    $data['sgst']=$this->input->post('sgst');
+    $data['igst']=$this->input->post('igst');
+    $data['rate']=$this->input->post('rate');
+    $name2=$this->input->post('product_name');
+   // $data['date']=$this->input->post('date');
+    $this->db->where('name',$name2);
+    $data1['product']=$this->db->get('product')->row(0);
+    $data['product_id']=$data1['product']->product_id;
+    $this->db->where('client_product_rate_id',$id1);
+     $this->db->update('client_product_rate_description',$data);
+    $data['date']=$this->input->post('date');
+    $this->db->where('name',$name1);
+    $data1['client']=$this->db->get('client')->row(0);
+    $data3['client_id']=$data1['client']->client_id;
+    $this->db->where('client_product_rate_id',$id1);
+    $this->db->update('client_product_rate',$data3);
+    redirect('welcome/clientproductrate');
+}
+
+public function newclientorder1()
+{
+    
+}
 }
