@@ -187,6 +187,7 @@ else{
 public function clientorder()
 { if($this->session->userdata('logged_in')){
     $data1['h']=$this->User_model->clientorder();
+    //$data['k']=$this->db->
     $this->load->view('header');
     $this->load->view('client-order',$data1);
     $this->load->view('footer');
@@ -1017,6 +1018,28 @@ public function editclientproduct1($id1)
 
 public function newclientorder1()
 {
-    
+$data['client_name']=$this->input->post('client_name');
+$data['product_name']=$this->input->post('product_name');
+    $data['date']=$this->input->post('date');
+    $data['status']=$this->input->post('status');
+    $data['weight']=$this->input->post('weight');
+    $data['quantity']=$this->input->post('quantity');
+    $this->db->where('name',$data['client_name']);
+    $data['client']=$this->db->get('client')->row(0);
+    $data1['client_id']=$data['client']->client_id;
+    $data1['date']=$data['date'];
+    $data1['status']=$data['status'];
+    $data1['created']=DATE(''.$data['date'].'');
+    $this->db->insert('client_order',$data1);
+    $query ="select * from  client_order order by client_order_id DESC limit 1";
+    $res = $this->db->query($query)->row()->client_order_id;
+    $data2['client_order_id']=$res;
+    $this->db->where('name',$data['product_name']);
+    $data['product']=$this->db->get('product')->row(0);
+    $data2['product_id']=$data['product']->product_id;
+    $data2['weight']=$data['weight'];
+    $data2['quantity']=$data['quantity'];
+    $this->db->insert('client_order_details',$data2);
+    redirect('welcome/clientorder');
 }
 }
