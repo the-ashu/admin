@@ -826,11 +826,11 @@ public function printreportbilldetails()
     {
    $data['client_name']=$this->input->post('client_name');
    $data['date']=$this->input->post('date');
-        $data['invoice_date']=$this->input->post('invoice_date');
+        $data['invoice_date']=date('Y-m-d H:i:s');
         $data['gr_no']=$this->input->post('gr_no');
         $data['way_bill_ref']=$this->input->post('way_bill_ref');
         $data['place_of_order']=$this->input->post('place_of_order');
-        $data['bill_date']=$this->input->post('date');
+        $data['bill_date']=date('Y-m-d H:i:s');
         $data['product_name']=$this->input->post('product_name');
         $data['rate']=$this->input->post('rate');
         $data['quantity']=$this->input->post('quantity');
@@ -879,7 +879,7 @@ public function printreportbilldetails()
        $data2['tpt_co']=$data['tpt_co'];
         $data2['gr_no']=$data['gr_no'];
         $data2['invoice_no']=$data['invoice_no'];
-        $data2['created']=date(date_default_timezone_get());
+        $data2['created']=date('Y-m-d H:i:s');
         $data2['way_bill_ref']=$data['way_bill_ref'];
         $data2['place_of_order']=$data['place_of_order'];
         $this->db->insert('bill',$data2);
@@ -931,7 +931,7 @@ public function printreportbilldetails()
 
    public function newpreclient1()
    {
-       $data['date']=$this->input->post('date');
+       $data['date']=date('Y-m-d H:i:s');
        $data['client_name']=$this->input->post('client_name');
        $data['product_name']=$this->input->post('product_name');
       $data['client']=$this->User_model->newpreclient($data['client_name']);
@@ -1007,13 +1007,13 @@ public function editclientproduct1($id1)
     $data['igst']=$this->input->post('igst');
     $data['rate']=$this->input->post('rate');
     $name2=$this->input->post('product_name');
-   // $data['date']=$this->input->post('date');
+   $data['date']=$this->input->date('Y-m-d H:i:s');
     $this->db->where('name',$name2);
     $data1['product']=$this->db->get('product')->row(0);
     $data['product_id']=$data1['product']->product_id;
     $this->db->where('client_product_rate_id',$id1);
      $this->db->update('client_product_rate_description',$data);
-    $data['date']=$this->input->post('date');
+    $data['date']=date('Y-m-d H:i:s');
     $this->db->where('name',$name1);
     $data1['client']=$this->db->get('client')->row(0);
     $data3['client_id']=$data1['client']->client_id;
@@ -1026,7 +1026,7 @@ public function newclientorder1()
 {
 $data['client_name']=$this->input->post('client_name');
 $data['product_name']=$this->input->post('product_name');
-    $data['date']=$this->input->post('date');
+    $data['date']=date('Y-m-d H:i:s');
     $data['status']=$this->input->post('status');
     $data['weight']=$this->input->post('weight');
     $data['quantity']=$this->input->post('quantity');
@@ -1035,7 +1035,7 @@ $data['product_name']=$this->input->post('product_name');
     $data1['client_id']=$data['client']->client_id;
     $data1['date']=$data['date'];
     $data1['status']=$data['status'];
-    $data1['created']=DATE(''.$data['date'].'');
+    $data1['created']=date('Y-m-d H:i:s');
     $this->db->insert('client_order',$data1);
     $query ="select * from  client_order order by client_order_id DESC limit 1";
     $res = $this->db->query($query)->row()->client_order_id;
@@ -1057,8 +1057,8 @@ $data['rate']=$this->input->post('rate');
     $data['quantity']=$this->input->post('quantity');
     $data['rate']=$this->input->post('rate');
     $data['invoice_no']=$this->input->post('invoice_no');
-    $data['date']=$this->input->post('date');
-    $data['invoice_date']=$this->input->post('invoice_date');
+    $data['date']=date('Y-m-d H:i:s');
+    $data['invoice_date']=date('Y-m-d H:i:s');
     $this->db->where('name',$data['supplier_name']);
     $data['supplier']=$this->db->get('supplier');
     $this->db->where('name',$data['supplier_name']);

@@ -23,7 +23,7 @@
                         <div class="clearfix"></div>
                     </div>
                 </a> </div>
-            <div class="col-md-6 col-lg-3"> <a href="clientorderphp">
+            <div class="col-md-6 col-lg-3"> <a href="clientorder">
                     <div class="widget-bg-color-icon card-box">
                         <div class="bg-icon bg-icon-purple pull-left"> <i class="fa fa-rupee  text-purple"></i> </div>
                         <div class="text-right">
@@ -169,7 +169,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card-box">
-                    <a href="bill.php" class="pull-right btn btn-default btn-sm waves-effect waves-light">View All</a>
+                    <a href="bill" class="pull-right btn btn-default btn-sm waves-effect waves-light">View All</a>
                     <h4 class="text-dark header-title m-t-0">Top 10 Bills</h4>
                     <hr />
                     <div class="table-responsive">
@@ -217,7 +217,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="card-box">
-                    <a href="supplier.php" class="pull-right btn btn-default btn-sm waves-effect waves-light">View All</a>
+                    <a href="supplier" class="pull-right btn btn-default btn-sm waves-effect waves-light">View All</a>
                     <h4 class="text-dark header-title m-t-0">Top 10 Suppliers</h4>
                     <hr />
                     <div class="table-responsive">
@@ -244,7 +244,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="card-box">
-                    <a href="client.php" class="pull-right btn btn-default btn-sm waves-effect waves-light">View All</a>
+                    <a href="client" class="pull-right btn btn-default btn-sm waves-effect waves-light">View All</a>
                     <h4 class="text-dark header-title m-t-0">Top 10 Clients</h4>
                     <hr />
                     <div class="table-responsive">
