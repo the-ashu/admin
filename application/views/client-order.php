@@ -42,7 +42,7 @@
             <?php foreach($h->result() as $row){?>
                 <tr>
                     <td><?php echo $row->created;?></td>
-                    <td><?php echo $row->client_id;?></td>
+                    <td><?php echo $row->name;?></td>
                     <td><?php echo $row->status;?></td>
                 </tr>
             <?php }?>

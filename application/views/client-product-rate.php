@@ -44,7 +44,7 @@
             <?php foreach($h->result() as $row){?>
                 <tr>
                     <td><?php echo $row->date;?></td>
-                    <td><?php echo $row->client_id;?></td>
+                    <td><?php echo $row->name;?></td>
                     <td><?php echo $row->status;?></td>
                     <td>  <a href="editclientproduct/<?php echo $row->client_product_rate_id?>/<?php echo $row->client_product_rate_id;?>" class="pull-center btn btn-primary btn-sm waves-effect waves-light" </a>  Edit </td>
                     <td> <a href="cancelclient/<?php echo $row->client_product_rate_id?>/<?php echo $row->client_product_rate_id;?>" class="pull-center btn btn-danger btn-sm waves-effect waves-light"> Delete</a> </td>

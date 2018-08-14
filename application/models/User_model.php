@@ -124,14 +124,26 @@ public function product()
 
     public function clientproductrate()
     {
-        $result = $this->db->get('client_product_rate');
-        return $result;
+       /* $result = $this->db->get('client_product_rate');
+        return $result;*/
+        $this->db->select("client_product_rate.*,client.name");
+
+        $this->db->from('client_product_rate');
+        $this->db->join('client','client_product_rate.client_id=client.client_id');
+        $query = $this->db->get();
+        return $query;
     }
 
     public function clientorder()
     {
-        $result = $this->db->get('client_order');
-        return $result;
+       /* $result = $this->db->get('client_order');
+        return $result;*/
+        $this->db->select("client_order.*,client.name");
+
+        $this->db->from('client_order');
+        $this->db->join('client', 'client.client_id = client_order.client_id');
+        $query = $this->db->get();
+        return $query;
     }
 
     public function bill()
