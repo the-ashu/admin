@@ -98,7 +98,7 @@
                             <div class="form-group col-md-12">
                                 <label  class="col-md-4 control-label">Invoice_no</label>
                                 <div class="col-md-5">
-                                    <input type="number" name="invoice_no" class="form-control">
+                                    <input type="text" name="invoice_no" class="form-control">
                                 </div>
                             </div>
                             <!--end data-role="dynamic-fields-->
