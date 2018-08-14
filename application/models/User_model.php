@@ -28,9 +28,10 @@ public function product()
         $this->db->join('supplier', 'purchase.supplier_id = supplier.supplier_id', 'INNER');
         $re= $this->db->get();
         return $re->result();*/
-        $this->db->select("purchase.*,supplier.name");
+        $this->db->select("purchase.*,supplier.name,purchase_product.*");
         $this->db->from('purchase');
         $this->db->join('supplier', 'supplier.supplier_id = purchase.supplier_id');
+        $this->db->join('purchase_product', 'purchase.purchase_id = purchase_product.purchase_id');
         $query = $this->db->get();
         return $query;
     }

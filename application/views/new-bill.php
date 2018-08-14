@@ -17,7 +17,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <form id="addform" name="addform" action="newprebill1" class="form-horizontal" method="post">
+                <form id="addform" name="addform" action="newprebill1/<?php echo $bill_detail_id;?>" class="form-horizontal" method="post">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 style="color: #fff;"><span class="fa fa-file-o"></span> Create new Bill</h3>
@@ -195,6 +195,13 @@
                                 <div class="col-md-2">
                                     <label style="color: #000;">Bill Amount</label>
                                     <input type="text" name="bill_amount" readonly value="<?php echo $total;?>" readonly>
+                                </div>
+                                <div class="col-md-2">
+                                    <label style="color: #000;">Payment Status</label>
+                                    <select name="pay_status" id="client" class="form-control" >
+                                        <option value="0">Pending</option>
+                                        <option value="1">Paid</option>
+                                    </select>
                                 </div>
                             </div>
                             <br><br>

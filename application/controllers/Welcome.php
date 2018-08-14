@@ -125,8 +125,10 @@ else{
     $this->load->view('login',$data);}}
 public function newpurchase()
 { if($this->session->userdata('logged_in')){
+    $data['h']=$this->db->get('supplier');
+    $data['k']=$this->db->get('product');
     $this->load->view('header');
-    $this->load->view('new-purchase');
+    $this->load->view('new_pre_purchase',$data);
     $this->load->view('footer');
 }
 else{
@@ -855,7 +857,7 @@ public function printreportbilldetails()
         $data['sgst']=$data['product']->sgst;
         $data['igst']=$data['product']->igst;
         $data['product_id']=$data['product']->product_id;
-        $data['sub_total']=$data['rate']*$data['quantity'];
+        $data['sub_total']=($data['rate']*$data['quantity']);
         $data['cgst_amount']=($data['sub_total']*$data['cgst']*0.01);
         $data['sgst_amount']=($data['sub_total']*$data['sgst']*0.01);
         $data['igst_amount']=($data['sub_total']*$data['igst']*0.01);
@@ -904,13 +906,17 @@ public function printreportbilldetails()
         $query ="select * from  bill_details order by bill_id DESC limit 1";
           $res = $this->db->query($query)->row()->bill_detail_id;
          $data['bill_detail_id']=$res;
-                $this->load->view('header');
+               $this->load->view('header');
         $this->load->view('new-bill',$data);
         $this->load->view('footer');
     }
 
-    public function newprebill1()
+    public function newprebill1($id)
     {
+        $data['pay_status']=$this->input->post('pay_status');
+        $this->db->where('bill_detail_id',$id);
+        $this->db->update('bill_details',$data);
+
     redirect('welcome/bill');
     }
 
@@ -1041,5 +1047,102 @@ $data['product_name']=$this->input->post('product_name');
     $data2['quantity']=$data['quantity'];
     $this->db->insert('client_order_details',$data2);
     redirect('welcome/clientorder');
+}
+
+public function newprepurchase()
+{
+$data['rate']=$this->input->post('rate');
+    $data['supplier_name']=$this->input->post('supplier_name');
+    $data['product_name']=$this->input->post('product_name');
+    $data['quantity']=$this->input->post('quantity');
+    $data['rate']=$this->input->post('rate');
+    $data['invoice_no']=$this->input->post('invoice_no');
+    $data['date']=$this->input->post('date');
+    $data['invoice_date']=$this->input->post('invoice_date');
+    $this->db->where('name',$data['supplier_name']);
+    $data['supplier']=$this->db->get('supplier');
+    $this->db->where('name',$data['supplier_name']);
+    $data['supplier']=$this->db->get('supplier')->row(0);
+    $data['supplier_id']=$data['supplier']->supplier_id;
+    $data['contact']=$data['supplier']->contact;
+    $data['email']=$data['supplier']->email;
+    $data['address']=$data['supplier']->address;
+    $data['pincode']=$data['supplier']->pincode;
+    $data['state']=$data['supplier']->state;
+    $data['city']=$data['supplier']->city;
+    $data['gst_no']=$data['supplier']->gst_no;
+    $this->db->where('name',$data['product_name']);
+    $data['product']=$this->db->get('product')->row(0);
+    $data['product_id']=$data['product']->product_id;
+    $data['hsn_code']=$data['product']->product_code;
+    $data['cgst']=$data['product']->cgst;
+    $data['sgst']=$data['product']->sgst;
+    $data['igst']=$data['product']->igst;
+    $data['gst_type']=$data['product']->gst_type;
+    $data1['supplier_id']=$data['supplier_id'];
+    $data1['contact']=$data['contact'];
+    $data1['address']=$data['address'];
+    $data1['state']=$data['state'];
+    $data1['city']=$data['city'];
+    $data1['pincode']=$data['pincode'];
+    $data1['gst_no']=$data['gst_no'];
+    $data1['invoice_no']=$data['invoice_no'];
+    $data['sub_total']=($data['rate']*$data['quantity']);
+    $data['cgst_amount']=($data['sub_total']*$data['cgst']*0.01);
+    $data['sgst_amount']=($data['sub_total']*$data['sgst']*0.01);
+    $data['igst_amount']=($data['sub_total']*$data['igst']*0.01);
+    $data['total_taxable_amount']=$data['cgst_amount']+$data['sgst_amount']+$data['igst_amount'];
+    $data['total']=$data['total_taxable_amount']+$data['sub_total'];
+    $data1['sub_total']=$data['sub_total'];
+    $data1['total_taxable_amount']=$data['total_taxable_amount'];
+    $data1['total']=$data['total'];
+    $data1['status']=1;
+    $data1['created']=$data['date'];
+    $this->db->insert('purchase',$data1);
+    $query ="select * from  purchase order by purchase_id DESC limit 1";
+    $res = $this->db->query($query)->row()->purchase_id;
+    $data2['rate']=$data['rate'];
+    $data2['purchase_id']=$res;
+    $data['purchase_id']=$data2['purchase_id'];
+    $data2['product_id']=$data['product_id'];
+    $data2['product_code']=$data['hsn_code'];
+    $data2['weight']=$data['product']->weight;
+    $data2['quantity']=$data['quantity'];
+    $data2['cgst']=$data['product']->cgst;
+    $data2['sgst']=$data['product']->sgst;
+    $data2['igst']=$data['product']->igst;
+    $data['weight']=$data2['weight'];
+    $data2['cgst_amount']=$data['cgst_amount'];
+    $data2['sgst_amount']=$data['sgst_amount'];
+    $data2['igst_amount']=$data['igst_amount'];
+    $data2['gst_type']=$data['gst_type'];
+    $data2['basic_amount']=$data['sub_total'];
+    $data2['taxable_amount']=$data['total_taxable_amount'];
+    $data2['total']=$data['total'];
+    $data2['date']=$data['date'];
+    $this->db->insert('purchase_product',$data2);
+    $query ="select * from  purchase_product order by purchase_product_id DESC limit 1";
+    $res = $this->db->query($query)->row()->purchase_product_id;
+    $data['purchase_product_id']=$res;
+    $this->load->view('header');
+    $this->load->view('new-purchase',$data);
+    $this->load->view('footer');
+}
+
+public function submitpurchase($id)
+{
+    $data['pay_status']=$this->input->post('pay_status');
+    $this->db->where('purchase_product_id',$id);
+    $this->db->update('purchase_product',$data);
+    redirect('welcome/purchaseproduct');
+}
+
+public function deletepurchase($id1,$id2)
+{
+    $this->db->where('purchase_id',$id1);
+    $this->db->delete('purchase');
+    $this->db->where('purchase_product_id',$id2);
+    $this->db->delete('purchase_product');
+    redirect('welcome/purchaseproduct');
 }
 }

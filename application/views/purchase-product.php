@@ -37,7 +37,7 @@
                 <th>Before GST</th>
                 <th>GST Amt.</th>
                 <th>Total</th>
-                <th></th>
+                <th>Payment Status</th>
                 <th></th>
             </tr>
             </thead>
@@ -56,7 +56,7 @@
                 <th>Before GST</th>
                 <th>GST Amt.</th>
                 <th>Total</th>
-                <th></th>
+                <th>Payment Status</th>
                 <th></th>
             </tr>
             </tfoot>
@@ -76,8 +76,8 @@
                     <td><?php echo $row->sub_total;?></td>
                     <td><?php echo $row->total_taxable_amount;?></td>
                     <td><?php echo $row->total;?></td>
-                    <td></td>
-                    <td></td>
+                    <td><?php if($row->pay_status==0){$p="Pending";}else{$p="Paid";}?><?php echo $p;?></td>
+                    <td> <a href="<?php echo base_url();?>welcome/deletepurchase/<?php echo $row->purchase_id;?>/<?php echo $row->purchase_product_id;?>" class="pull-right btn btn-danger btn-sm waves-effect waves-light"> Delete</a></td>
                 </tr>
             <?php }?>
             </tbody>

@@ -34,6 +34,7 @@
                 <th>State</th>
                 <th>Pincode</th>
                 <th>Total</th>
+                <th>Payment Status</th>
                 <th>Delete</th>
                 <th>Print</th>
             </tr>
@@ -50,6 +51,7 @@
                 <th>State</th>
                 <th>Pincode</th>
                 <th>Total</th>
+                <th>Payment Status</th>
                 <th>Delete</th>
                 <th>Print</th>
             </tr>
@@ -67,6 +69,7 @@
                     <td><?php echo $row->state;?></td>
                     <td><?php echo $row->pincode;?></td>
                     <td><?php echo $row->total;?></td>
+                    <td><?php if($row->pay_status==1){$p="Paid";}else{$p="Pending";}?><?php echo $p;?></td>
                     <td> <a href="cancelbill/<?php echo $row->bill_id?>/<?php echo $row->bill_detail_id?>" class=" btn btn-danger  waves-effect waves-light"> DELETE</a></td>
                     <td> <a href="printbill/<?php echo $row->bill_id?>" class=" btn btn-primary  waves-effect waves-light"> Print</a></td>
                 </tr>
