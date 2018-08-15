@@ -22,7 +22,8 @@
 
                             </div>
                             <div class="panel-footer text-right">
-                                <input class="btn btn-primary btn-rounded" type="submit" value="Download report">
+                                <input class="btn btn-primary btn-rounded" type="submit" value="View in Table">
+                                <a href="printclientorder1" class="btn btn-primary btn-rounded">Download Report</a>
                                 <a href="<?php echo base_url();?>welcome/dashboard" class="btn btn-danger btn-rounded">Cancel</a>
                             </div>
                         </div>

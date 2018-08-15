@@ -520,9 +520,25 @@ public function delete_supplier($id)
         $filename = "product_report.csv";
         $this->db->where('created >=', $date1);
         $this->db->where('created <=', $date2);
+        $data2['h']=$this->db->get('product');
+        $this->load->view('header');
+        $this->load->view('viewproduct',$data2);
+       $this->load->view('footer');
+        //$data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
+      //  force_download($filename, $data);
+    }
+
+    public function printreportproduct1()
+    {
+        $this->load->dbutil();
+        $this->load->helper('file');
+        $this->load->helper('download');
+        $delimiter = ",";
+        $newline = "\r\n";
+        $filename = "product_report.csv";
         $result=$this->db->get('product');
         $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
-        force_download($filename, $data);
+          force_download($filename, $data);
     }
 
 public function update_profile()
@@ -575,12 +591,31 @@ public function printreportsales()
     $this->db->where('bill.created <=', $date2);
     $this->db->from('bill');
     $this->db->join('client', 'client.client_id = bill.client_id');
-    $result = $this->db->get();
+    $data['h'] = $this->db->get();
     $delimiter = ",";
     $newline = "\r\n";
     $filename = "Sales_report.csv";
-    $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
-    force_download($filename, $data);
+    $this->load->view('header');
+    $this->load->view('viewsales',$data);
+    $this->load->view("footer");
+   // $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
+   // force_download($filename, $data);
+}
+
+public function printreportsales1()
+{ $this->load->dbutil();
+    $this->load->helper('file');
+    $this->load->helper('download');
+    $this->db->select("bill.*,client.name");
+    $this->db->from('bill');
+    $this->db->join('client', 'client.client_id = bill.client_id');
+    $result = $this->db->get();
+    $delimiter = ",";
+    $newline = "\r\n";
+    $filename = "Bill_Issue_report.csv";
+   $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
+     force_download($filename, $data);
+
 }
 
 public function printreportbilldetails()
@@ -597,12 +632,32 @@ public function printreportbilldetails()
     $this->db->where('bill.created >=', $date1);
     $this->db->where('bill.created <=', $date2);
     $this->db->join('client', 'client.client_id = bill.client_id');
+    $data['h'] = $this->db->get();
+    $this->load->view('header');
+    $this->load->view('viewbilldetails',$data);
+    $this->load->view('footer');
+    $delimiter = ",";
+    $newline = "\r\n";
+    $filename = "Bill_details_report.csv";
+   // $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
+   // force_download($filename, $data);
+}
+
+public function printreportbilldetails1()
+{
+    $this->load->dbutil();
+    $this->load->helper('file');
+    $this->load->helper('download');
+    $this->db->select("bill_details.*,client.name,bill.*");
+    $this->db->from('bill_details');
+    $this->db->join('bill','bill.bill_id=bill_details.bill_id');
+    $this->db->join('client', 'client.client_id = bill.client_id');
     $result = $this->db->get();
     $delimiter = ",";
     $newline = "\r\n";
     $filename = "Bill_details_report.csv";
-    $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
-    force_download($filename, $data);
+     $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
+     force_download($filename, $data);
 }
 
     public function printreportbillissue()
@@ -618,12 +673,32 @@ public function printreportbilldetails()
         $this->db->where('bill.created <=', $date2);
         $this->db->from('bill');
         $this->db->join('client', 'client.client_id = bill.client_id');
+        $data['h'] = $this->db->get();
+        $this->load->view('header');
+        $this->load->view('viewbillissue',$data);
+        $this->load->view('footer');
+        $delimiter = ",";
+        $newline = "\r\n";
+        $filename = "Bill_Issue_report.csv";
+       // $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
+       // force_download($filename, $data);
+    }
+
+    public function printbillissue1()
+    {
+        //  $result=$this->User_model->findsales($date1,$date2);
+        $this->load->dbutil();
+        $this->load->helper('file');
+        $this->load->helper('download');
+        $this->db->select("bill.*,client.name");
+        $this->db->from('bill');
+        $this->db->join('client', 'client.client_id = bill.client_id');
         $result = $this->db->get();
         $delimiter = ",";
         $newline = "\r\n";
         $filename = "Bill_Issue_report.csv";
-        $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
-        force_download($filename, $data);
+         $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
+         force_download($filename, $data);
     }
 
     public function printreportclientsales()
@@ -639,11 +714,29 @@ public function printreportbilldetails()
         $this->db->where('client.date <=', $date2);
         $this->db->from('client');
         $this->db->join('sales', 'client.name = sales.client_name');
+        $data['h'] = $this->db->get();
+        $this->load->view('header');
+        $this->load->view('viewclientsales',$data);
+        $this->load->view('footer');
+        $delimiter = ",";
+        $newline = "\r\n";
+        $filename = "client_sales.csv";
+       // $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
+    }
+
+    public function printreportclientsales1()
+    {
+        $this->load->dbutil();
+        $this->load->helper('file');
+        $this->load->helper('download');
+        $this->db->select("client.*,sales.payable_amount");
+        $this->db->from('client');
+        $this->db->join('sales', 'client.name = sales.client_name');
         $result = $this->db->get();
         $delimiter = ",";
         $newline = "\r\n";
         $filename = "client_sales.csv";
-        $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
+         $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
         force_download($filename, $data);
     }
 
@@ -657,12 +750,28 @@ public function printreportbilldetails()
         $this->load->helper('download');
         $this->db->where('date >=', $date1);
         $this->db->where('date <=', $date2);
+        $data['h'] = $this->db->get('client');
+        $this->load->view('header');
+        $this->load->view('viewclient',$data);
+        $this->load->view('footer');
+        $delimiter = ",";
+        $newline = "\r\n";
+        $filename = "client.csv";
+       // $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
+       // force_download($filename, $data);
+    }
+
+    public function printreportclient1()
+    {
+        $this->load->dbutil();
+        $this->load->helper('file');
+        $this->load->helper('download');
         $result = $this->db->get('client');
         $delimiter = ",";
         $newline = "\r\n";
         $filename = "client.csv";
         $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
-        force_download($filename, $data);
+         force_download($filename, $data);
     }
 
     public function printsupplierpurchase()
@@ -675,14 +784,33 @@ public function printreportbilldetails()
         $this->load->helper('download');
         $this->db->select("supplier.*,purchase.total");
         $this->db->from('supplier');
-        $this->db->where('supplier.date >=', $date1);
-        $this->db->where('supplier.date <=', $date2);
+        $this->db->where('supplier.date >=',$date1);
+        $this->db->where('supplier.date <=',$date2);
+        $this->db->join('purchase','supplier.supplier_id=purchase.supplier_id');
+        $data['h'] = $this->db->get();
+        $this->load->view('header');
+        $this->load->view('viewsupplierpurchase',$data);
+        $this->load->view('footer');
+        $delimiter = ",";
+        $newline = "\r\n";
+        $filename = "Supplier_purchase_report.csv";
+       // $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
+        //force_download($filename, $data);
+    }
+
+    public function printsupplierpurchase1()
+    {
+        $this->load->dbutil();
+        $this->load->helper('file');
+        $this->load->helper('download');
+        $this->db->select("supplier.*,purchase.total");
+        $this->db->from('supplier');
         $this->db->join('purchase','supplier.supplier_id=purchase.supplier_id');
         $result = $this->db->get();
         $delimiter = ",";
         $newline = "\r\n";
         $filename = "Supplier_purchase_report.csv";
-        $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
+         $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
         force_download($filename, $data);
     }
 
@@ -695,8 +823,28 @@ public function printreportbilldetails()
         $this->load->helper('file');
         $this->load->helper('download');
         $this->db->select("purchase.*,supplier.name,purchase_product.*");
-        $this->db->where('purchase.date >=', $date1);
-        $this->db->where('purchase.date <=', $date2);
+        $this->db->where('purchase.purchase_date >=', $date1);
+        $this->db->where('purchase.purchase_date <=', $date2);
+        $this->db->from('purchase');
+        $this->db->join('purchase_product','purchase_product.purchase_id=purchase.purchase_id');
+        $this->db->join('supplier', 'supplier.supplier_id = purchase.supplier_id');
+        $data['h'] = $this->db->get();
+        $this->load->view('header');
+        $this->load->view('viewpurchase',$data);
+        $this->load->view('footer');
+        $delimiter = ",";
+        $newline = "\r\n";
+        $filename = "purchase_report.csv";
+       // $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
+       // force_download($filename, $data);
+    }
+
+    public function printreportpurchase1()
+    {
+        $this->load->dbutil();
+        $this->load->helper('file');
+        $this->load->helper('download');
+        $this->db->select("purchase.*,supplier.name,purchase_product.*");
         $this->db->from('purchase');
         $this->db->join('purchase_product','purchase_product.purchase_id=purchase.purchase_id');
         $this->db->join('supplier', 'supplier.supplier_id = purchase.supplier_id');
@@ -704,8 +852,8 @@ public function printreportbilldetails()
         $delimiter = ",";
         $newline = "\r\n";
         $filename = "purchase_report.csv";
-        $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
-        force_download($filename, $data);
+         $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
+         force_download($filename, $data);
     }
 
     public function printreportpurchaseproduct()
@@ -716,17 +864,39 @@ public function printreportbilldetails()
         $this->load->dbutil();
         $this->load->helper('file');
         $this->load->helper('download');
-        $this->db->select("purchase.*,supplier.name");
+        $this->db->select("purchase.*,supplier.name,purchase_product.*");
         $this->db->where('purchase.purchase_date >=', $date1);
         $this->db->where('purchase.purchase_date <=', $date2);
+        $this->db->from('purchase');
+        $this->db->join('supplier', 'supplier.supplier_id = purchase.supplier_id');
+        $this->db->join('purchase_product', 'purchase_product.purchase_id = purchase.purchase_id');
+        $data['h'] = $this->db->get();
+        $this->load->view('header');
+        $this->load->view('viewpurchaseproduct',$data);
+        $this->load->view('footer');
+        $delimiter = ",";
+        $newline = "\r\n";
+        $filename = "purchase_product_report.csv";
+       // $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
+       // force_download($filename, $data);
+    }
+
+    public function printreportpurchaseproduct1()
+    {
+        $this->load->dbutil();
+        $this->load->helper('file');
+        $this->load->helper('download');
+        $this->db->select("purchase.*,supplier.name");
+       // $this->db->where('purchase.purchase_date >=', $date1);
+       // $this->db->where('purchase.purchase_date <=', $date2);
         $this->db->from('purchase');
         $this->db->join('supplier', 'supplier.supplier_id = purchase.supplier_id');
         $result = $this->db->get();
         $delimiter = ",";
         $newline = "\r\n";
         $filename = "purchase_product_report.csv";
-        $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
-        force_download($filename, $data);
+         $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
+         force_download($filename, $data);
     }
 
     public function printreportsupplier()
@@ -739,6 +909,22 @@ public function printreportbilldetails()
         $this->load->helper('download');
         $this->db->where('supplier.date >=', $date1);
         $this->db->where('supplier.date <=', $date2);
+        $data['h'] = $this->db->get('supplier');
+        $this->load->view('header');
+        $this->load->view('viewsupplier',$data);
+        $this->load->view('footer');
+        $delimiter = ",";
+        $newline = "\r\n";
+        $filename = "Supplier_report.csv";
+       // $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
+       // force_download($filename, $data);
+    }
+
+    public function printreportsupplier1()
+    {
+        $this->load->dbutil();
+        $this->load->helper('file');
+        $this->load->helper('download');
         $result = $this->db->get('supplier');
         $delimiter = ",";
         $newline = "\r\n";
@@ -757,12 +943,28 @@ public function printreportbilldetails()
         $this->load->helper('download');
         $this->db->where('created >=', $date1);
         $this->db->where('created <=', $date2);
+        $data['h'] = $this->db->get('product');
+        $this->load->view('header');
+        $this->load->view('viewproductsales',$data);
+        $this->load->view('footer');
+        $delimiter = ",";
+        $newline = "\r\n";
+        $filename = "Product_sales_report.csv";
+      //  $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
+      //  force_download($filename, $data);
+    }
+
+    public function printreportproductsales1()
+    {
+        $this->load->dbutil();
+        $this->load->helper('file');
+        $this->load->helper('download');
         $result = $this->db->get('product');
         $delimiter = ",";
         $newline = "\r\n";
         $filename = "Product_sales_report.csv";
-        $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
-        force_download($filename, $data);
+         $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
+         force_download($filename, $data);
     }
 
     public function printclientrate()
@@ -777,12 +979,33 @@ public function printreportbilldetails()
         $this->db->join('client_product_rate', 'client_product_rate.client_id = client.client_id');
         $this->db->join('client_product_rate_description', 'client_product_rate.client_product_rate_id = client_product_rate_description.client_product_rate_id');
         $this->db->join('product','client_product_rate_description.product_id=product.product_id');
+        $data['h'] = $this->db->get();
+        $this->load->view('header');
+        $this->load->view('viewclientrate',$data);
+        $this->load->view('footer');
+        $delimiter = ",";
+        $newline = "\r\n";
+        $filename = "Client_rate_report.csv";
+      //  $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
+       // force_download($filename, $data);
+    }
+
+    public function printclientrate1()
+    {
+        $this->load->dbutil();
+        $this->load->helper('file');
+        $this->load->helper('download');
+        $this->db->select("client.client_id,client.name,client_product_rate.client_product_rate_id,client_product_rate_description.*,product.name");
+        $this->db->from('client');
+        $this->db->join('client_product_rate', 'client_product_rate.client_id = client.client_id');
+        $this->db->join('client_product_rate_description', 'client_product_rate.client_product_rate_id = client_product_rate_description.client_product_rate_id');
+        $this->db->join('product','client_product_rate_description.product_id=product.product_id');
         $result = $this->db->get();
         $delimiter = ",";
         $newline = "\r\n";
         $filename = "Client_rate_report.csv";
-        $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
-        force_download($filename, $data);
+          $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
+         force_download($filename, $data);
     }
 
     public function printclientorder()
@@ -791,19 +1014,40 @@ public function printreportbilldetails()
         $this->load->dbutil();
         $this->load->helper('file');
         $this->load->helper('download');
-        $this->db->select("client.client_id,client.name,client_order.client_order_id,client_order_details.*");
+        $this->db->select("client.client_id,client.name,client_order.*,client_order_details.*");
         $this->db->where('client.name=', $client_name);
         $this->db->from('client');
         $this->db->join('client_order', 'client_order.client_id = client.client_id');
         $this->db->join('client_order_details', 'client_order.client_order_id = client_order_details.client_order_id');
         $this->db->join('product','client_order_details.product_id=product.product_id');
        // $this->db->join('product','client_order_details.product_id=product.product_id');
+        $data['h'] = $this->db->get();
+        $this->load->view('header');
+        $this->load->view('viewclientorder',$data);
+        $this->load->view('footer');
+        $delimiter = ",";
+        $newline = "\r\n";
+        $filename = "Client_rate_report.csv";
+       // $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
+       // force_download($filename, $data);
+    }
+
+    public function printclientorder1()
+    {
+        $this->load->dbutil();
+        $this->load->helper('file');
+        $this->load->helper('download');
+        $this->db->select("client.client_id,client.name,client_order.client_order_id,client_order_details.*");
+        $this->db->from('client');
+        $this->db->join('client_order', 'client_order.client_id = client.client_id');
+        $this->db->join('client_order_details', 'client_order.client_order_id = client_order_details.client_order_id');
+        $this->db->join('product','client_order_details.product_id=product.product_id');
         $result = $this->db->get();
         $delimiter = ",";
         $newline = "\r\n";
         $filename = "Client_rate_report.csv";
-        $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
-        force_download($filename, $data);
+         $data = $this->dbutil->csv_from_result($result, $delimiter, $newline);
+         force_download($filename, $data);
     }
 
     public function printbill($id)

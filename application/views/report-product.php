@@ -13,16 +13,17 @@
                                     <label class="control-label col-sm-4">Date</label>
                                     <div class="col-sm-5">
                                         <div class="input-daterange input-group" id="date-select">
-                                            <input type="text" class="form-control" value="" name="start_date">
+                                            <input type="text" class="form-control" value="" name="start_date" placeholder="yyyy-mm-dd">
                                             <span class="input-group-addon bg-custom b-0 text-white">to</span>
-                                            <input type="text" class="form-control" value="" name="end_date">
+                                            <input type="text" class="form-control" value="" name="end_date" placeholder="yyyy-mm-dd">
                                         </div>
                                     </div>
                                 </div>
          
                             </div>
                             <div class="panel-footer text-right">
-                                <input class="btn btn-primary btn-rounded" type="submit" value="Download Report">
+                                <a href="<?php echo base_url();?>welcome/printreportproduct1" class="btn btn-primary btn-rounded">Download Report</a>
+                                <input class="btn btn-primary btn-rounded" type="submit" value="View in table" target="_blank">
                                 <a href="<?php echo base_url();?>welcome/dashboard" class="btn btn-danger btn-rounded">Cancel</a>
                             </div>
                         </div>
