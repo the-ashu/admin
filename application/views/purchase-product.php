@@ -37,29 +37,11 @@
                 <th>Before GST</th>
                 <th>GST Amt.</th>
                 <th>Total</th>
-                <th>Payment Status</th>
+                <th>Paid</th>
+                <th>Pending</th>
                 <th></th>
             </tr>
             </thead>
-            <tfoot>
-            <tr>
-                <th>Date</th>
-                <th>Invoice No</th>
-                <th>Supplier</th>
-                <th>Contact</th>
-                <th>Email</th>
-                <th>Address</th>
-                <th>State</th>
-                <th>City</th>
-                <th>Pincode</th>
-                <th>GST NO</th>
-                <th>Before GST</th>
-                <th>GST Amt.</th>
-                <th>Total</th>
-                <th>Payment Status</th>
-                <th></th>
-            </tr>
-            </tfoot>
             <tbody>
             <?php foreach($h->result() as $row){?>
                 <tr>
@@ -76,8 +58,16 @@
                     <td><?php echo $row->sub_total;?></td>
                     <td><?php echo $row->total_taxable_amount;?></td>
                     <td><?php echo $row->total;?></td>
-                    <td><?php if($row->pay_status==0){$p="Pending";}else{$p="Paid";}?><?php echo $p;?></td>
-                    <td> <a href="<?php echo base_url();?>welcome/deletepurchase/<?php echo $row->purchase_id;?>/<?php echo $row->purchase_product_id;?>" class="pull-right btn btn-danger btn-sm waves-effect waves-light"> Delete</a></td>
+                    <td><?php echo $row->paid_amount;?></td>
+                    <td><?php echo $row->pending_amount;?></td>
+                    <td><div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Action
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="<?php echo base_url();?>welcome/deletepurchase/<?php echo $row->purchase_id;?>/<?php echo $row->purchase_product_id;?>">Delete</a></li>
+                                <li><a href="<?php echo base_url();?>welcome/editpurchase/<?php echo $row->purchase_id;?>/<?php echo $row->purchase_product_id;?>">Edit</a></li>
+                            </ul>
+                        </div></td>
                 </tr>
             <?php }?>
             </tbody>
@@ -154,6 +144,9 @@
 <script src="<?php echo base_url();?>assets/js/jquery.core.js"></script>
 <script src="<?php echo base_url();?>assets/js/jquery.app.js"></script>
 <script src="<?php echo base_url();?>assets/pages/jquery.form-pickers.init.js"></script>
+<script>
+    $('body .dropdown-toggle').dropdown();
+</script>
 
 
 </body>

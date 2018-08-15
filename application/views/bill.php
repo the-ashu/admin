@@ -34,28 +34,11 @@
                 <th>State</th>
                 <th>Pincode</th>
                 <th>Total</th>
-                <th>Payment Status</th>
-                <th>Delete</th>
-                <th>Print</th>
+                <th>Paid</th>
+                <th>Pending</th>
+                <th></th>
             </tr>
             </thead>
-            <tfoot>
-            <tr>
-                <th>Invoice NO</th>
-                <th>Date</th>
-                <th>Client</th>
-                <th>Email</th>
-                <th>Contact</th>
-                <th>Address</th>
-                <th>City</th>
-                <th>State</th>
-                <th>Pincode</th>
-                <th>Total</th>
-                <th>Payment Status</th>
-                <th>Delete</th>
-                <th>Print</th>
-            </tr>
-            </tfoot>
             <tbody>
             <?php foreach($h->result() as $row){?>
                 <tr>
@@ -69,9 +52,17 @@
                     <td><?php echo $row->state;?></td>
                     <td><?php echo $row->pincode;?></td>
                     <td><?php echo $row->total;?></td>
-                    <td><?php if($row->pay_status==1){$p="Paid";}else{$p="Pending";}?><?php echo $p;?></td>
-                    <td> <a href="cancelbill/<?php echo $row->bill_id?>/<?php echo $row->bill_detail_id?>" class=" btn btn-danger  waves-effect waves-light"> DELETE</a></td>
-                    <td> <a href="printbill/<?php echo $row->bill_id?>" class=" btn btn-primary  waves-effect waves-light"> Print</a></td>
+                    <td><?php echo $row->paid_amount;?></td>
+                    <td><?php echo $row->pending_amount;?></td>
+                    <td><div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Action
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="editbill/<?php echo $row->bill_id;?>/<?php echo $row->bill_detail_id;?>">Edit</a></li>
+                                <li><a href="cancelbill/<?php echo $row->bill_id;?>/<?php echo $row->bill_detail_id;?>" >Delete</a></li>
+                                <li><a href="printbill/<?php echo $row->bill_id;?>">Print</a></li>
+                            </ul>
+                        </div></td>
                 </tr>
             <?php }?>
             </tbody>
@@ -149,6 +140,8 @@
 <script src="<?php echo base_url();?>assets/js/jquery.app.js"></script>
 <script src="<?php echo base_url();?>assets/pages/jquery.form-pickers.init.js"></script>
 
-
+<script>
+    $('body .dropdown-toggle').dropdown();
+</script>
 </body>
 </html>

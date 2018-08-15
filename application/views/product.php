@@ -32,24 +32,10 @@
                 <th>CGST</th>
                 <th>SGST</th>
                 <th>IGST</th>
-                <th></th>
+                <th>Status</th>
                 <th></th>
             </tr>
             </thead>
-            <tfoot>
-            <tr>
-                <th>Name</th>
-                <th>HSN code</th>
-                <th>Unit</th>
-                <th>Rate</th>
-                <th>GST type</th>
-                <th>CGST</th>
-                <th>SGST</th>
-                <th>IGST</th>
-                <th></th>
-                <th></th>
-            </tr>
-            </tfoot>
             <tbody>
             <?php foreach($h->result() as $row){?>
             <tr>
@@ -61,8 +47,16 @@
                 <td><?php echo $row->cgst;?></td>
                 <td><?php echo $row->sgst;?></td>
                 <td><?php echo $row->igst;?></td>
-                <td> <a href="edit_product/<?php echo $row->product_id;?>" class=" btn btn-success  waves-effect waves-light"> EDIT</a></td>
-                <td> <a href="delete_product/<?php echo $row->product_id?>" class=" btn btn-danger  waves-effect waves-light"> DELETE</a></td>
+                <td><?php if($row->status==1)
+                    {?> <a href="productstatus/<?php echo $row->product_id;?>/<?php echo $row->status;?>" class="pull-right btn btn-primary btn-sm waves-effect waves-light"> Enable</a><?php }else {?> <a href="productstatus/<?php echo $row->product_id;?>/<?php echo $row->status;?>" class="pull-right btn btn-danger btn-sm waves-effect waves-light"> Disable</a><?php }?></td>
+                <td><div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Action
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="edit_product/<?php echo $row->product_id;?>">Edit</a></li>
+                            <li><a href="delete_product/<?php echo $row->product_id?>">Delete</a></li>
+                        </ul>
+                    </div></td>
             </tr>
             <?php }?>
             </tbody>
@@ -139,7 +133,9 @@
 <script src="<?php echo base_url();?>assets/js/jquery.core.js"></script>
 <script src="<?php echo base_url();?>assets/js/jquery.app.js"></script>
 <script src="<?php echo base_url();?>assets/pages/jquery.form-pickers.init.js"></script>
-
+<script>
+    $('body .dropdown-toggle').dropdown();
+</script>
 
 </body>
 </html>

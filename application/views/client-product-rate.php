@@ -4,8 +4,6 @@
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" type="text/javascript"></script>
@@ -27,27 +25,24 @@
                 <th>Date</th>
                 <th>Client Name</th>
                 <th>Status</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th></th>
             </tr>
             </thead>
-            <tfoot>
-            <tr>
-                <th>Date</th>
-                <th>Client Name</th>
-                <th>Status</th>
-                <th>Edit</th>
-                <th>Delete</th>
-            </tr>
-            </tfoot>
             <tbody>
             <?php foreach($h->result() as $row){?>
                 <tr>
                     <td><?php echo $row->date;?></td>
                     <td><?php echo $row->name;?></td>
-                    <td><?php echo $row->status;?></td>
-                    <td>  <a href="editclientproduct/<?php echo $row->client_product_rate_id?>/<?php echo $row->client_product_rate_id;?>" class="pull-center btn btn-primary btn-sm waves-effect waves-light" </a>  Edit </td>
-                    <td> <a href="cancelclient/<?php echo $row->client_product_rate_id?>/<?php echo $row->client_product_rate_id;?>" class="pull-center btn btn-danger btn-sm waves-effect waves-light"> Delete</a> </td>
+                    <td><?php if($row->status==1)
+                        {?> <a href="clientproductstatus/<?php echo $row->client_product_rate_id;?>/<?php echo $row->status;?>" class="pull-right btn btn-primary btn-sm waves-effect waves-light"> Enable</a><?php }else {?> <a href="clientproductstatus/<?php echo $row->client_product_rate_id;?>/<?php echo $row->status;?>" class="pull-right btn btn-danger btn-sm waves-effect waves-light"> Disable</a><?php }?></td>
+                    <td><div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Action
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="editclientproduct/<?php echo $row->client_product_rate_id?>/<?php echo $row->client_product_rate_id;?>">Edit</a></li>
+                                <li><a href="cancelclient/<?php echo $row->client_product_rate_id?>/<?php echo $row->client_product_rate_id;?>">Delete</a></li>
+                            </ul>
+                        </div></td>
                 </tr>
             <?php }?>
             </tbody>
@@ -124,7 +119,8 @@
 <script src="<?php echo base_url();?>assets/js/jquery.core.js"></script>
 <script src="<?php echo base_url();?>assets/js/jquery.app.js"></script>
 <script src="<?php echo base_url();?>assets/pages/jquery.form-pickers.init.js"></script>
-
-
+<script>
+    $('body .dropdown-toggle').dropdown();
+</script>
 </body>
 </html>

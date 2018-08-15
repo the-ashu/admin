@@ -167,14 +167,11 @@
                                 </div>
                                 <div class="col-md-2">
                                     <label style="color: #000;">Bill Amount</label>
-                                    <input type="text" name="bill_amount" readonly  value="<?php echo $total;?>"  id="bill_amount" class="form-control decimal" readonly>
+                                    <input type="text" name="total" readonly  value="<?php echo $total;?>"  id="bill_amount" class="form-control decimal" step="any" readonly>
                                 </div>
                                 <div class="col-md-2">
-                                    <label style="color: #000;">Payment Status</label>
-                                    <select name="pay_status" id="pay_status" class="form-control" >
-                                        <option value="0">Pending</option>
-                                        <option value="1">Paid</option>
-                                    </select>
+                                    <label style="color: #000;">Paid Amount</label>
+                                    <input type="text" name="paid_amount"   value="<?php echo $paid_amount;?>"  class="form-control decimal" step="any" >
                                 </div>
                             </div>
                             <br><br>

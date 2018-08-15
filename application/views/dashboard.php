@@ -184,25 +184,25 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <td><a href="bill-print.php?id=OQ==" target="_blank">PS-009</a></td>
+                                <td>PS-009</td>
                                 <td>Ramesh jha</td>
                                 <td>28-Jul-2018</td>
                                 <td>700.00</td>
                             </tr>
                             <tr>
-                                <td><a href="bill-print.php?id=OA==" target="_blank">PS-008</a></td>
+                                <td>PS-008</td>
                                 <td>madhu fertilizer </td>
                                 <td>27-Jul-2018</td>
                                 <td>11,611.20</td>
                             </tr>
                             <tr>
-                                <td><a href="bill-print.php?id=Nw==" target="_blank">PS-007</a></td>
+                                <td>PS-007</td>
                                 <td>Rahul Singh</td>
                                 <td>27-Jul-2018</td>
                                 <td>2,489.80</td>
                             </tr>
                             <tr>
-                                <td><a href="bill-print.php?id=Ng==" target="_blank">PS-006</a></td>
+                                <td>PS-006</td>
                                 <td>Rahul Singh</td>
                                 <td>25-Jul-2018</td>
                                 <td>33,099.00</td>
@@ -260,27 +260,21 @@
                             <tbody>
                             <tr>
                                 <td>Ramesh jha</td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1e6c776a6c717077666a7b7d767071727179672f295e79737f7772307d7173">[email&#160;protected]</a></td>
+                                <td>ritronixtechnology17@gmail.com</td>
                                 <td>8510895089</td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td>anil</td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="56373c372f2521333322666716313b373f3a7835393b">[email&#160;protected]</a></td>
+                                <td>ajaysweet01@gmail.com</td>
                                 <td>8583019463</td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td>madhu fertilizer </td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="60010a01191317050514505120070d01090c4e030f0d">[email&#160;protected]</a></td>
+                                <td>ajaysweet01@gmail.com</td>
                                 <td>8583019463</td>
                                 <td></td>
-                            </tr>
-                            <tr>
-                                <td>Rahul Singh</td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="46272c273f3531232332767706212b272f2a6825292b">[email&#160;protected]</a></td>
-                                <td>8583019463</td>
-                                <td>123456789123456</td>
                             </tr>
                             </tbody>
                         </table>

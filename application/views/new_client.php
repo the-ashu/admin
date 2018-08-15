@@ -23,34 +23,19 @@
                             <h3 style="color: #fff;"><span class="fa fa-file-o"></span> Create new Client</h3>
                         </div>
                         <div class="panel-body form-group-separated">
-
-
-                            <div class="row">
-                                <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">STATUS</label>
-                                    <div class="col-md-5">
-                                        <select name="status" id="unit" class="form-control" >
-                                            <option value="0">ENABLE</option>
-                                            <option value="1">DISABLE</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="row">
-                                <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">EMAIL</label>
-                                    <div class="col-md-5">
-                                        <input name="email" id="contact" class="form-control" required type="email">
-                                    </div>
-                                </div>
-                            </div>
                             <div class="row">
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">NAME</label>
                                     <div class="col-md-5">
                                         <input name="name" id="email" class="form-control" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label class="col-md-4 control-label">EMAIL</label>
+                                    <div class="col-md-5">
+                                        <input name="email" id="contact" class="form-control" required type="email">
                                     </div>
                                 </div>
                             </div>
@@ -62,6 +47,9 @@
                                     </div>
                                 </div>
                             </div>
+
+
+
                             <div class="row">
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">ADDRESS</label>
@@ -103,7 +91,18 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label class="col-md-4 control-label">STATUS</label>
+                                    <div class="col-md-5">
+                                        <select name="status" id="unit" class="form-control" >
+                                            <option value="0">ENABLE</option>
+                                            <option value="1">DISABLE</option>
+                                        </select>
+                                    </div>
+                                </div>
 
+                            </div>
 
                             <div class="panel-footer text-right">
                                 <input name="submit" class="btn btn-primary btn-rounded" type="submit" value="Submit">

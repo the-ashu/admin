@@ -74,28 +74,32 @@
                                     <input type="number" name="quantity" class="form-control">
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="form-group col-md-12">
                                 <label  class="col-md-4 control-label">Invoice_no</label>
                                 <div class="col-md-5">
-                                    <input type="number" name="invoice_no" class="form-control">
+                                    <input type="text" name="invoice_no" class="form-control">
                                 </div>
                             </div>
-                            <!--end data-role="dynamic-fields-->
-                            <div class="form-control total decimal" col-md-12">
-                            <label  class="col-md-4 control-label">Rate</label>
-                            <div class="col-md-5">
-                                <input type="number" name="rate" class="form-control total decimal" step="any">
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label  class="col-md-4 control-label">Rate</label>
+                                <div class="col-md-5">
+                                    <input type="number" name="rate" class="form-control" step="any">
+                                </div>
                             </div>
                         </div>
-                    </div>
+
                     <br><br>
-            </div>
+
             <div class="panel-footer text-right">
                 <input name="submit" class="btn btn-primary btn-rounded" type="submit" value="Submit">
                 <a href="<?php echo base_url();?>welcome/bill" class="btn btn-danger btn-rounded">Cancel</a>
             </div>
         </div> <!-- end card-box -->
-
+        </div>
         </form>
 
     </div>

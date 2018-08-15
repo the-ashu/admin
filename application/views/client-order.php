@@ -29,21 +29,13 @@
                 <th>Status</th>
             </tr>
             </thead>
-            <tfoot>
-            <tr>
-            <tr>
-                <th>Order Received On</th>
-                <th>Client Name</th>
-                <th>Status</th>
-            </tr>
-            </tr>
-            </tfoot>
             <tbody>
             <?php foreach($h->result() as $row){?>
                 <tr>
                     <td><?php echo $row->created;?></td>
                     <td><?php echo $row->name;?></td>
-                    <td><?php echo $row->status;?></td>
+                    <td><?php if($row->status==1)
+                        {?> <a href="clientorderstatus/<?php echo $row->client_order_id;?>/<?php echo $row->status;?>" class="pull-right btn btn-primary btn-sm waves-effect waves-light"> Enable</a><?php }else {?> <a href="clientorderstatus/<?php echo $row->client_order_id;?>/<?php echo $row->status;?>" class="pull-right btn btn-danger btn-sm waves-effect waves-light"> Disable</a><?php }?></td>
                 </tr>
             <?php }?>
             </tbody>
@@ -118,8 +110,6 @@
 
 <!-- App core js -->
 <script src="<?php echo base_url();?>assets/js/jquery.core.js"></script>
-<script src="<?php echo base_url();?>assets/js/jquery.app.js"></script>
-<script src="<?php echo base_url();?>assets/pages/jquery.form-pickers.init.js"></script>
 
 
 </body>

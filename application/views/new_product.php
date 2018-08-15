@@ -25,6 +25,22 @@
                         <div class="panel-body form-group-separated">
                             <div class="row">
                                 <div class="form-group col-md-12">
+                                    <label class="col-md-4 control-label">NAME</label>
+                                    <div class="col-md-5">
+                                        <input name="name" id="email" class="form-control" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label class="col-md-4 control-label">HSN CODE</label>
+                                    <div class="col-md-5">
+                                        <input name="hsn" id="email" class="form-control" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">Unit</label>
                                     <div class="col-md-5">
                                         <select name="unit" id="unit" class="form-control" >
@@ -33,6 +49,8 @@
                                             <option value="MQ">MQ</option>
                                             <option value="BAG">BAG</option>
                                             <option value="PCS">PCS</option>
+                                            <option value="PCS">KG</option>
+                                            <option value="PCS">LTR</option>
                                         </select>
                                     </div>
                                 </div>
@@ -40,11 +58,18 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-12">
+                                    <label class="col-md-4 control-label">RATE</label>
+                                    <div class="col-md-5">
+                                        <input name="rate" id="contact" class="form-control" required type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">GST TYPE</label>
                                     <div class="col-md-5">
                                         <select name="gst" id="unit" class="form-control" >
-                                            <option value="CGST">CGST</option>
-                                            <option value="SGST">SGST</option>
+                                            <option value="CGST">CGST+SGST</option>
                                             <option value="IGST">IGST</option>
                                         </select>
                                     </div>
@@ -64,30 +89,6 @@
 
                             </div>
 
-                            <div class="row">
-                                <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">RATE</label>
-                                    <div class="col-md-5">
-                                        <input name="rate" id="contact" class="form-control" required type="text">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">NAME</label>
-                                    <div class="col-md-5">
-                                        <input name="name" id="email" class="form-control" type="text">
-                                    </div>
-                                </div>
-                            </div>
-                                <div class="row">
-                                    <div class="form-group col-md-12">
-                                        <label class="col-md-4 control-label">HSN CODE</label>
-                                        <div class="col-md-5">
-                                            <input name="hsn" id="email" class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                </div>
                             <div class="row">
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">CGST</label>
