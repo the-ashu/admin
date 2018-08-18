@@ -96,8 +96,8 @@
                                     <label class="col-md-4 control-label">STATUS</label>
                                     <div class="col-md-5">
                                         <select name="status" id="unit" class="form-control" >
-                                            <option value="0">ENABLE</option>
-                                            <option value="1">DISABLE</option>
+                                            <option value="1">ENABLE</option>
+                                            <option value="0">DISABLE</option>
                                         </select>
                                     </div>
                                 </div>

@@ -40,7 +40,7 @@
             <?php foreach($h->result() as $row){?>
             <tr>
                 <td><?php echo $row->name;?></td>
-                <td><?php echo $row->product_id;?></td>
+                <td><?php echo $row->product_code;?></td>
                 <td><?php echo $row->weight;?></td>
                 <td><?php echo $row->rate;?></td>
                 <td><?php echo $row->gst_type;?></td>

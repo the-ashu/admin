@@ -26,38 +26,26 @@
 
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">EMAIL</label>
+                                    <label class="col-md-4 control-label">Client_id</label>
                                     <div class="col-md-5">
-                                        <input name="supplier_id" id="contact" class="form-control" required type="hidden" value="<?php echo $h['client_id'];?>">
+                                        <input name="supplier_id" id="contact" class="form-control" required  value="<?php echo $h['client_id'];?>" readonly>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">STATUS</label>
-                                    <div class="col-md-5">
-                                        <select name="status" id="unit" class="form-control" value="<?php echo $h['status'];?>">
-                                            <option value="0">ENABLE</option>
-                                            <option value="1">DISABLE</option>
-                                        </select>
-                                    </div>
-                                </div>
-
                             </div>
 
-                            <div class="row">
-                                <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">EMAIL</label>
-                                    <div class="col-md-5">
-                                        <input name="email" id="contact" class="form-control" required type="email" value="<?php echo $h['email'];?>">
-                                    </div>
-                                </div>
-                            </div>
                             <div class="row">
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">NAME</label>
                                     <div class="col-md-5">
                                         <input name="name" id="email" class="form-control" type="text" value="<?php echo $h['name'];?>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label class="col-md-4 control-label">EMAIL</label>
+                                    <div class="col-md-5">
+                                        <input name="email" id="contact" class="form-control" required type="email" value="<?php echo $h['email'];?>">
                                     </div>
                                 </div>
                             </div>
@@ -113,12 +101,17 @@
 
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">Client_id</label>
+                                    <label class="col-md-4 control-label">STATUS</label>
                                     <div class="col-md-5">
-                                        <input name="client_id" id="email" class="form-control" type="hidden" value="<?php echo $h['client_id'];?>">
+                                        <select name="status" id="unit" class="form-control" value="<?php echo $h['status'];?>">
+                                            <option value="1">ENABLE</option>
+                                            <option value="0">DISABLE</option>
+                                        </select>
                                     </div>
                                 </div>
+
                             </div>
+
                             <div class="panel-footer text-right">
                                 <input name="submit" class="btn btn-primary btn-rounded" type="submit" value="Update">
                             </div>

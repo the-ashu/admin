@@ -95,18 +95,23 @@
                                 <input type="number" name="quantity" class="form-control">
                             </div>
                         </div>
+                        </div>
+                        <div class="row">
                             <div class="form-group col-md-12">
                                 <label  class="col-md-4 control-label">Invoice_no</label>
                                 <div class="col-md-5">
                                     <input type="text" name="invoice_no" class="form-control">
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <!--end data-role="dynamic-fields-->
                         <div class="form-control total decimal" col-md-12">
                             <label  class="col-md-4 control-label">Rate</label>
                             <div class="col-md-5">
                                 <input type="number" name="rate" class="form-control total decimal" step="any">
                             </div>
+                        </div>
                         </div>
                         </div>
                             <br><br>

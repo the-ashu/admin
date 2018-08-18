@@ -26,25 +26,20 @@
 
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">EMAIL</label>
+                                    <label class="col-md-4 control-label">NAME</label>
                                     <div class="col-md-5">
-                                        <input name="supplier_id" id="contact" class="form-control" required type="hidden" value="<?php echo $h['supplier_id'];?>">
+                                        <input name="name" id="email" class="form-control" type="text" value="<?php echo $h['name'];?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">STATUS</label>
+                                    <label class="col-md-4 control-label">Supplier_id</label>
                                     <div class="col-md-5">
-                                        <select name="status" id="unit" class="form-control" value="<?php echo $h['status'];?>">
-                                            <option value="0">ENABLE</option>
-                                            <option value="1">DISABLE</option>
-                                        </select>
+                                        <input name="supplier_id" id="contact" class="form-control" required  value="<?php echo $h['supplier_id'];?>" readonly>
                                     </div>
                                 </div>
-
                             </div>
-
                             <div class="row">
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">EMAIL</label>
@@ -53,14 +48,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">NAME</label>
-                                    <div class="col-md-5">
-                                        <input name="name" id="email" class="form-control" type="text" value="<?php echo $h['name'];?>">
-                                    </div>
-                                </div>
-                            </div>
+
                             <div class="row">
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">contact</label>
@@ -110,7 +98,18 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label class="col-md-4 control-label">STATUS</label>
+                                    <div class="col-md-5">
+                                        <select name="status" id="unit" class="form-control" value="<?php echo $h['status'];?>">
+                                            <option value="1">ENABLE</option>
+                                            <option value="0">DISABLE</option>
+                                        </select>
+                                    </div>
+                                </div>
 
+                            </div>
 
                             <div class="panel-footer text-right">
                                 <input name="submit" class="btn btn-primary btn-rounded" type="submit" value="Submit">

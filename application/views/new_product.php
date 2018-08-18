@@ -35,7 +35,7 @@
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">HSN CODE</label>
                                     <div class="col-md-5">
-                                        <input name="hsn" id="email" class="form-control" type="text">
+                                        <input name="hsn"  class="form-control" type="text">
                                     </div>
                                 </div>
                             </div>
@@ -49,8 +49,8 @@
                                             <option value="MQ">MQ</option>
                                             <option value="BAG">BAG</option>
                                             <option value="PCS">PCS</option>
-                                            <option value="PCS">KG</option>
-                                            <option value="PCS">LTR</option>
+                                            <option value="KG">KG</option>
+                                            <option value="LTR">LTR</option>
                                         </select>
                                     </div>
                                 </div>
@@ -81,8 +81,8 @@
                                     <label class="col-md-4 control-label">STATUS</label>
                                     <div class="col-md-5">
                                         <select name="status" id="unit" class="form-control" >
-                                            <option value="0">ENABLE</option>
-                                            <option value="1">DISABLE</option>
+                                            <option value="1">ENABLE</option>
+                                            <option value="0">DISABLE</option>
                                         </select>
                                     </div>
                                 </div>

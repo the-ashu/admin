@@ -410,6 +410,7 @@ $this->load->view('footer');
 public function new_supplier1()
 {
     $data['name']=$this->input->post('name');
+    $data['date']=date('Y-m-d H:i:s');
     $data['email']=$this->input->post('email');
     $data['address']=$this->input->post('address');
     $data['contact']=$this->input->post('contact');
@@ -463,6 +464,7 @@ public function delete_supplier($id)
     public function new_client1()
     {
         $data['name']=$this->input->post('name');
+        $data['date']=date('Y-m-d H:i:s');
         $data['email']=$this->input->post('email');
         $data['address']=$this->input->post('address');
         $data['contact']=$this->input->post('contact');

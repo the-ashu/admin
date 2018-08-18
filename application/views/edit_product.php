@@ -25,6 +25,22 @@
                         <div class="panel-body form-group-separated">
                             <div class="row">
                                 <div class="form-group col-md-12">
+                                    <label class="col-md-4 control-label">NAME</label>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control" name="name" placeholder="Name" value="<?php echo $h['name'];?>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label class="col-md-4 control-label">HSN CODE</label>
+                                    <div class="col-md-5">
+                                        <input name="hsn" id="email" class="form-control"  value="<?php echo $h['product_id'];?>" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">Unit</label>
                                     <div class="col-md-5">
                                         <select name="unit" id="unit" class="form-control" value="<?php echo $h['weight'];?>" >
@@ -37,6 +53,15 @@
                                     </div>
                                 </div>
 
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label class="col-md-4 control-label">RATE</label>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control" name="rate" placeholder="Add Title" value="<?php echo $h['rate']; ?>">
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="row">
@@ -57,38 +82,14 @@
                                     <label class="col-md-4 control-label">STATUS</label>
                                     <div class="col-md-5">
                                         <select name="status" id="unit" class="form-control" value="<?php echo $h['status'];?>">
-                                            <option value="0">ENABLE</option>
-                                            <option value="1">DISABLE</option>
+                                            <option value="1">ENABLE</option>
+                                            <option value="0">DISABLE</option>
                                         </select>
                                     </div>
                                 </div>
 
                             </div>
 
-                            <div class="row">
-                                <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">RATE</label>
-                                    <div class="col-md-5">
-                                        <input type="text" class="form-control" name="rate" placeholder="Add Title" value="<?php echo $h['rate']; ?>">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">NAME</label>
-                                    <div class="col-md-5">
-                                        <input type="text" class="form-control" name="name" placeholder="Name" value="<?php echo $h['name'];?>">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">HSN CODE</label>
-                                    <div class="col-md-5">
-                                        <input name="hsn" id="email" class="form-control" type="hidden" value="<?php echo $h['product_id'];?>">
-                                    </div>
-                                </div>
-                            </div>
                             <div class="row">
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">CGST</label>
