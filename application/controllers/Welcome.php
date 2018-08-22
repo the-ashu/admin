@@ -402,7 +402,7 @@ public function edit_product($id)
 public function update_product()
 {
     $data['weight']=$this->input->post('unit');
-    $data['product_id']=$this->input->post('hsn');
+    $data['product_code']=$this->input->post('hsn');
     $data['cgst']=$this->input->post('cgst');
     $data['sgst']=$this->input->post('sgst');
     $data['igst']=$this->input->post('igst');

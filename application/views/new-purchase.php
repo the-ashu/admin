@@ -177,6 +177,7 @@
                             <br><br>
                         </div>
                         <div class="panel-footer text-right">
+                            <a href="javascript:window.print()" class="btn btn-warning btn-rounded">Print</a>
                             <input name="submit" class="btn btn-primary btn-rounded" type="submit" value="Submit">
                             <a href="<?php echo base_url();?>welcome/deletepurchase/<?php echo $purchase_id;?>/<?php echo $purchase_product_id;?>" class="btn btn-danger btn-rounded">Cancel</a>
                         </div>

@@ -50,7 +50,7 @@ public function product()
 
     public function update_product($data)
     {
-        $this->db->where('product_id',$data['product_id']);
+        $this->db->where('product_code',$data['product_code']);
         return $this->db->update('product',$data);
     }
     public function delete_product($id)

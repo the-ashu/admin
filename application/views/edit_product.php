@@ -35,7 +35,7 @@
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">HSN CODE</label>
                                     <div class="col-md-5">
-                                        <input name="hsn" id="email" class="form-control"  value="<?php echo $h['product_id'];?>" readonly>
+                                        <input name="hsn" id="email" class="form-control"  value="<?php echo $h['product_code'];?>" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -69,8 +69,7 @@
                                     <label class="col-md-4 control-label">GST TYPE</label>
                                     <div class="col-md-5">
                                         <select name="gst" id="unit" class="form-control" value="<?php echo $h['gst_type'];?>" >
-                                            <option value="CGST">CGST</option>
-                                            <option value="SGST">SGST</option>
+                                            <option value="CGST">CGST+SGST</option>
                                             <option value="IGST">IGST</option>
                                         </select>
                                     </div>
