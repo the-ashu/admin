@@ -41,7 +41,7 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">Unit</label>
+                                    <label class="col-md-4 control-label">UNIT</label>
                                     <div class="col-md-5">
                                         <select name="unit" id="unit" class="form-control" >
                                             <option value="TON">TON</option>

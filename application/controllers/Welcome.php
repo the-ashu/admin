@@ -81,7 +81,17 @@ class Welcome extends CI_Controller {
     public function dashboard()
     { if($this->session->userdata('logged_in')){
         $this->load->view('header');
-        $this->load->view('dashboard');
+        $data['pro']=$this->db->get('product')->num_rows();
+        $data['pur']=$this->db->get('purchase_product')->num_rows();
+        $data['client']=$this->db->get('client_order')->num_rows();
+        $data['bill']=$this->db->get('bill_details')->num_rows();
+        $data['h']=$this->db->get('supplier');
+        $data['k']=$this->db->get('client');
+        $this->db->select("bill.*,client.name");
+        $this->db->from('bill');
+        $this->db->join('client', 'client.client_id = bill.client_id');
+        $data['l'] = $this->db->get();
+        $this->load->view('dashboard',$data);
         $this->load->view('footer');
     }
     else{
@@ -1191,6 +1201,7 @@ public function printreportbilldetails1()
       $data['cgst']=$data['product']->cgst;
       $data['sgst']=$data['product']->sgst;
       $data['igst']=$data['product']->igst;
+      $data['unit']=$data['product']->weight;
       $data['client_id']=$data['client']->client_id;
       $data2['client_id']=$data['client_id'];
       $data2['date']=$data['date'];
@@ -1591,7 +1602,7 @@ public function supplierstatus($id1,$id2)
         $data['sgst']=$data['product']->sgst;
         $data['igst']=$data['product']->igst;
         $data['product_id']=$data['product']->product_id;
-        $data['sub_total']=($data['rate']*$data['quantity']);
+        $data['sub_total']=$data['rate']*$data['quantity'];
         $data['cgst_amount']=($data['sub_total']*$data['cgst']*0.01);
         $data['sgst_amount']=($data['sub_total']*$data['sgst']*0.01);
         $data['igst_amount']=($data['sub_total']*$data['igst']*0.01);

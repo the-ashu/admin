@@ -41,7 +41,7 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">contact</label>
+                                    <label class="col-md-4 control-label">CONTACT</label>
                                     <div class="col-md-5">
                                         <input name="contact" id="email" class="form-control" type="text">
                                     </div>
@@ -60,7 +60,7 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">City</label>
+                                    <label class="col-md-4 control-label">CITY</label>
                                     <div class="col-md-5">
                                         <input name="city" id="email" class="form-control" type="text">
                                     </div>
@@ -68,7 +68,7 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">State</label>
+                                    <label class="col-md-4 control-label">STATE</label>
                                     <div class="col-md-5">
                                         <input name="state" id="email" class="form-control" type="text">
                                     </div>
@@ -76,7 +76,7 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">Pin Code</label>
+                                    <label class="col-md-4 control-label">PIN CODE</label>
                                     <div class="col-md-5">
                                         <input name="pincode" id="email" class="form-control" type="text">
                                     </div>

@@ -10,7 +10,7 @@
                         <div class="panel-body form-group-separated">
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">Client Name</label>
+                                    <label class="col-md-4 control-label">CLIENT NAME</label>
                                     <div class="col-md-5">
                                         <select name="client_name"  class="form-control" required>
                                             <?php foreach($client->result() as $row){?>
@@ -20,13 +20,13 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <label  class="col-md-4 control-label">Date</label>
+                                    <label  class="col-md-4 control-label">DATE</label>
                                     <div class="col-md-4">
                                         <input class="form-control inline-date"  placeholder="mm/dd/yyyy" required type="text" name="date">
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">Product Name</label>
+                                    <label class="col-md-4 control-label">PRODUCT NAME</label>
                                     <div class="col-md-5">
                                         <select name="product_name" id="client" class="form-control" required>
                                             <?php foreach($product->result() as $row){?>

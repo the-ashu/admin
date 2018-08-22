@@ -7,7 +7,7 @@
                     <div class="widget-bg-color-icon card-box fadeInDown animated">
                         <div class="bg-icon bg-icon-info pull-left"> <i class="md md-add-shopping-cart text-info"></i> </div>
                         <div class="text-right">
-                            <h3 class="text-dark"><b class="counter">3</b></h3>
+                            <h3 class="text-dark"><b class="counter"><?php echo $pro;?></b></h3>
                             <p class="text-muted">All Products</p>
                         </div>
                         <div class="clearfix"></div>
@@ -17,7 +17,7 @@
                     <div class="widget-bg-color-icon card-box">
                         <div class="bg-icon bg-icon-pink pull-left"> <i class="md md-equalizer text-pink"></i> </div>
                         <div class="text-right">
-                            <h3 class="text-dark"><b class="counter">1</b></h3>
+                            <h3 class="text-dark"><b class="counter"><?php echo $pur;?></b></h3>
                             <p class="text-muted">All Purchase Products</p>
                         </div>
                         <div class="clearfix"></div>
@@ -27,7 +27,7 @@
                     <div class="widget-bg-color-icon card-box">
                         <div class="bg-icon bg-icon-purple pull-left"> <i class="fa fa-rupee  text-purple"></i> </div>
                         <div class="text-right">
-                            <h3 class="text-dark"><b class="counter">0</b></h3>
+                            <h3 class="text-dark"><b class="counter"><?php echo $client;?></b></h3>
                             <p class="text-muted">All Client Orders</p>
                         </div>
                         <div class="clearfix"></div>
@@ -39,7 +39,7 @@
                     <div class="widget-bg-color-icon card-box">
                         <div class="bg-icon bg-icon-success pull-left"> <i class="md md-remove-red-eye text-success"></i> </div>
                         <div class="text-right">
-                            <h3 class="text-dark"><b class="counter">4</b></h3>
+                            <h3 class="text-dark"><b class="counter"><?php echo $bill;?></b></h3>
                             <p class="text-muted">All Bill Issues</p>
                         </div>
                         <div class="clearfix"></div>
@@ -183,30 +183,14 @@
                             </tr>
                             </thead>
                             <tbody>
+                            <?php $i=0; foreach($l->result() as $row){if($i<=10){?>
                             <tr>
-                                <td>PS-009</td>
-                                <td>Ramesh jha</td>
-                                <td>28-Jul-2018</td>
-                                <td>700.00</td>
+                                <td><?php echo $row->invoice_no;?></td>
+                                <td><?php echo $row->name;?></td>
+                                <td><?php echo $row->bill_date;?></td>
+                                <td><?php echo $row->total;?></td>
                             </tr>
-                            <tr>
-                                <td>PS-008</td>
-                                <td>madhu fertilizer </td>
-                                <td>27-Jul-2018</td>
-                                <td>11,611.20</td>
-                            </tr>
-                            <tr>
-                                <td>PS-007</td>
-                                <td>Rahul Singh</td>
-                                <td>27-Jul-2018</td>
-                                <td>2,489.80</td>
-                            </tr>
-                            <tr>
-                                <td>PS-006</td>
-                                <td>Rahul Singh</td>
-                                <td>25-Jul-2018</td>
-                                <td>33,099.00</td>
-                            </tr>
+                            <?php $i++;}}?>
                             </tbody>
                         </table>
                     </div>
@@ -231,12 +215,14 @@
                             </tr>
                             </thead>
                             <tbody>
+                            <?php $i=1; foreach($h->result() as $row){ if($i<=10){?>
                             <tr>
-                                <td>pi</td>
-                                <td></td>
-                                <td>986653635</td>
-                                <td>23AZNPP3888M1ZH</td>
+                                <td><?php echo $row->name;?></td>
+                                <td><?php echo $row->email;?></td>
+                                <td><?php echo $row->contact;?></td>
+                                <td><?php echo $row->gst_no;?></td>
                             </tr>
+                            <?php $i++;}}?>
                             </tbody>
                         </table>
                     </div>
@@ -258,24 +244,14 @@
                             </tr>
                             </thead>
                             <tbody>
+                            <?php $i=0; foreach($k->result() as $row){if($i<=10){?>
                             <tr>
-                                <td>Ramesh jha</td>
-                                <td>ritronixtechnology17@gmail.com</td>
-                                <td>8510895089</td>
-                                <td></td>
+                                <td<?php echo $row->name;?></td>
+                                <td><?php echo $row->email;?></td>
+                                <td><?php echo $row->contact;?></td>
+                                <td><?php echo $row->gst_no;?></td>
                             </tr>
-                            <tr>
-                                <td>anil</td>
-                                <td>ajaysweet01@gmail.com</td>
-                                <td>8583019463</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>madhu fertilizer </td>
-                                <td>ajaysweet01@gmail.com</td>
-                                <td>8583019463</td>
-                                <td></td>
-                            </tr>
+                            <?php $i++;}}?>
                             </tbody>
                         </table>
                     </div>

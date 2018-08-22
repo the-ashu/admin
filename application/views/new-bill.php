@@ -25,7 +25,7 @@
                         <div class="panel-body form-group-separated">
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">Client Name</label>
+                                    <label class="col-md-4 control-label">CLIENT NAME</label>
                                     <div class="col-md-5">
                                         <select name="client_id" id="client" class="form-control" >
                                             <option value="<?php echo $client_name;?>"><?php echo $client_name;?></option>
@@ -36,7 +36,7 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">Contact</label>
+                                    <label class="col-md-4 control-label">CONTACT</label>
                                     <div class="col-md-5">
                                         <input name="contact" id="contact" class="form-control" required type="text" value="<?php echo $contact;?>" readonly>
                                     </div>
@@ -44,14 +44,14 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">Email</label>
+                                    <label class="col-md-4 control-label">EMAIL</label>
                                     <div class="col-md-5">
                                         <input name="email" id="email" class="form-control" type="email"  value="<?php echo $email;?>" readonly >
                                     </div>
                                 </div>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">Address</label>
+                                    <label class="col-md-4 control-label">ADDRESS</label>
                                     <div class="col-md-5">
                                         <textarea name="address" id="address" rows="5" class="form-control" readonly> <?php echo $address;?></textarea>
                                     </div>
@@ -59,13 +59,13 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">State</label>
+                                    <label class="col-md-4 control-label">STATE</label>
                                     <div class="col-md-5">
                                         <input name="state" id="state" class="form-control" type="text"  value="<?php echo $state;?>" readonly>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">City</label>
+                                    <label class="col-md-4 control-label">CITY</label>
                                     <div class="col-md-5">
                                         <input name="city" id="city" class="form-control" type="text"  value="<?php echo $city;?>" readonly>
                                     </div>
@@ -73,26 +73,26 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">Pincode</label>
+                                    <label class="col-md-4 control-label">PINCODE</label>
                                     <div class="col-md-5">
                                         <input name="pincode" id="pincode" class="form-control" type="number"  value="<?php echo $pincode;?>" readonly>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">GST No</label>
+                                    <label class="col-md-4 control-label">GST NO</label>
                                     <div class="col-md-5">
                                         <input name="gst_no" id="gst_no" readonly class="form-control" type="text"  value="<?php echo $gst_no;?>" readonly>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <label  class="col-md-4 control-label">Date</label>
+                                    <label  class="col-md-4 control-label">DATE</label>
                                     <div class="col-md-5">
                                         <input class="form-control"  placeholder="mm/dd/yyyy" required id="datepicker-autoclose" type="text" name="date"  value="<?php echo $invoice_date;?>" readonly>
                                     </div>
                                 </div>
 
                                 <div class="form-group col-md-12">
-                                    <label  class="col-md-4 control-label">Invoice Date</label>
+                                    <label  class="col-md-4 control-label">INVOICE DATE</label>
                                     <div class="col-md-5">
                                         <input type="text" name="invoice_date"   value="<?php echo $invoice_date;?>" class="form-control inline-date" readonly>
                                     </div>
@@ -140,7 +140,7 @@
                                     <th></th>
                                 </tr>
                                 <tr>
-                                    <th class="text-left required col-md-2">Product Name</th>
+                                    <th class="text-left required col-md-2">Product NAME</th>
                                     <th class="text-left">HSN Code</th>
                                     <th class="text-left">Unit</th>
                                     <th class="text-left">Rate</th>

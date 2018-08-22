@@ -5,7 +5,7 @@
                 © 2018. All rights reserved.
             </div>
             <div class="col-xs-6 text-right">
-                Powered By <a href="http://ebiosketch.com/" class="text-white text-bold" target="_blank"> <b>Retronix Technology</b></a>
+                Powered By <a href="http://ebiosketch.com/" class="text-white text-bold" target="_blank"> <b>Ritronix Technology Pvt. Ltd.</b></a>
             </div>
         </div>
     </div>

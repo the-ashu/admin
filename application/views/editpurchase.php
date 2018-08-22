@@ -25,7 +25,7 @@
                         <div class="panel-body form-group-separated">
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">Supplier Name</label>
+                                    <label class="col-md-4 control-label">SUPPLIER NAME</label>
                                     <div class="col-md-5">
                                         <select name="supplier_name" id="client" class="form-control" ">
                                         <?php foreach($h->result() as $row){ ?>
@@ -43,7 +43,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-12">
-                                <label class="col-md-4 control-label">Product Name</label>
+                                <label class="col-md-4 control-label">PRODUCT NAME</label>
                                 <div class="col-md-5">
                                     <select name="product_name" id="client" class="form-control" ">
                                     <?php foreach($k->result() as $row){ ?>
@@ -56,7 +56,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-12">
-                                <label  class="col-md-4 control-label">Quantity</label>
+                                <label  class="col-md-4 control-label">QUANTITY</label>
                                 <div class="col-md-5">
                                     <input type="number" name="quantity" class="form-control" value="<?php echo $g->quantity;?>">
                                 </div>
@@ -64,7 +64,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-12">
-                                <label  class="col-md-4 control-label">Invoice_no</label>
+                                <label  class="col-md-4 control-label">INVOICE_NO</label>
                                 <div class="col-md-5">
                                     <input type="text" name="invoice_no" class="form-control" value="<?php echo $f->invoice_no;?>">
                                 </div>
@@ -72,7 +72,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-12">
-                                <label  class="col-md-4 control-label">Rate</label>
+                                <label  class="col-md-4 control-label">RATE</label>
                                 <div class="col-md-5">
                                     <input type="number" name="rate" class="form-control" step="any" value="<?php echo $g->rate;?>">
                                 </div>

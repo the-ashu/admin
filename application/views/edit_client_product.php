@@ -10,7 +10,7 @@
                         <div class="panel-body form-group-separated">
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">Client Name</label>
+                                    <label class="col-md-4 control-label">CLIENT NAME</label>
                                     <div class="col-md-5">
                                         <select name="client_name" class="form-control" required>
                                             <?php foreach($l->result() as $row){?>
@@ -20,7 +20,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <label  class="col-md-4 control-label">Date</label>
+                                    <label  class="col-md-4 control-label">DATE</label>
                                     <div class="col-md-4">
                                         <input class="form-control inline-date"  placeholder="mm/dd/yyyy" required type="text" name="date" value="<?php echo $h->date;?>"  >
                                     </div>
@@ -31,9 +31,9 @@
                             <table id="product_table" class="table table-striped table-bordered table-hover">
                                 <thead>
                                 <tr>
-                                    <td class="text-left required col-md-4">Product Name</td>
-                                    <td class="text-left required col-md-1">Unit</td>
-                                    <td class="text-left required">Rate</td>
+                                    <td class="text-left required col-md-4">PRODUCT NAME</td>
+                                    <td class="text-left required col-md-1">UNIT</td>
+                                    <td class="text-left required">RATE</td>
                                     <td class="text-left required">CGST(%)</td>
                                     <td class="text-left required">SGST(%)</td>
                                     <td class="text-left required">IGST(%)</td>
