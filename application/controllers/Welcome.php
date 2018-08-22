@@ -50,8 +50,18 @@ class Welcome extends CI_Controller {
                 );
 
                 $this->session->set_userdata($user_data);
+                $data['pro']=$this->db->get('product')->num_rows();
+                $data['pur']=$this->db->get('purchase_product')->num_rows();
+                $data['client']=$this->db->get('client_order')->num_rows();
+                $data['bill']=$this->db->get('bill_details')->num_rows();
+                $data['h']=$this->db->get('supplier');
+                $data['k']=$this->db->get('client');
+                $this->db->select("bill.*,client.name");
+                $this->db->from('bill');
+                $this->db->join('client', 'client.client_id = bill.client_id');
+                $data['l'] = $this->db->get();
                 $this->load->view('header');
-                $this->load->view('dashboard');
+                $this->load->view('dashboard',$data);
                 $this->load->view('footer');
                 //echo "ashu";
                 // Set message
