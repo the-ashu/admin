@@ -1558,6 +1558,9 @@ public function supplierstatus($id1,$id2)
         $data2['date']=$data['date'];
         $this->db->where('purchase_product_id',$id2);
         $this->db->update('purchase_product',$data2);
+        $this->db->where('purchase_product_id',$id2);
+        $data['purchase_product']=$this->db->get('purchase_product')->row(0);
+        $data['paid_amount']=$data['purchase_product']->paid_amount;
         $data['purchase_product_id']=$id2;
         $this->load->view('header');
         $this->load->view('new-purchase',$data);
