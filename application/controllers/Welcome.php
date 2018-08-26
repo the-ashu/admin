@@ -1660,6 +1660,9 @@ public function supplierstatus($id1,$id2)
         $this->db->where('bill_detail_id',$id2);
         $this->db->update('bill_details',$data3);
         $data['bill_detail_id']=$id2;
+        $this->db->where('bill_detail_id',$id2);
+        $data['bill_detail']=$this->db->get('bill_details')->row(0);
+        $data['paid_amount']=$data['bill_detail']->paid_amount;
         $this->load->view('header');
         $this->load->view('new-bill',$data);
         $this->load->view('footer');
