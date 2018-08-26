@@ -50,7 +50,10 @@
                                             <option value="BAG">BAG</option>
                                             <option value="PCS">PCS</option>
                                             <option value="KG">KG</option>
-                                            <option value="LTR">LTR</option>
+                                            <option value="LTR">ML</option>
+                                            <option value="LTR">MM</option>
+                                            <option value="LTR">GRAM</option>
+                                            <option value="LTR">MG</option>
                                         </select>
                                     </div>
                                 </div>
