@@ -43,21 +43,9 @@
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">UNIT</label>
                                     <div class="col-md-5">
-                                        <select name="unit" id="unit" class="form-control" >
-                                            <option value="TON">TON</option>
-                                            <option value="CFT">CFT</option>
-                                            <option value="MQ">MQ</option>
-                                            <option value="BAG">BAG</option>
-                                            <option value="PCS">PCS</option>
-                                            <option value="KG">KG</option>
-                                            <option value="LTR">ML</option>
-                                            <option value="LTR">MM</option>
-                                            <option value="LTR">GRAM</option>
-                                            <option value="LTR">MG</option>
-                                        </select>
+                                        <input name="unit"  class="form-control" type="text">
                                     </div>
                                 </div>
-
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-12">

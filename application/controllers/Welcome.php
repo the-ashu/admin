@@ -1180,7 +1180,7 @@ public function printreportbilldetails1()
 
     public function newprebill1($id)
     {
-        $data['paid_amount']=$this->input->post('paid_amount');
+        $data['paid_amount']=($this->input->post('paid_amount'))+($this->input->post('paid_amount1'));
         $data['pending_amount']=$this->input->post('total')-$data['paid_amount'];
         $this->db->where('bill_detail_id',$id);
         $this->db->update('bill_details',$data);
@@ -1401,7 +1401,7 @@ $data['rate']=$this->input->post('rate');
 
 public function submitpurchase($id)
 {
-    $data['paid_amount']=$this->input->post('paid_amount');
+    $data['paid_amount']=($this->input->post('paid_amount'))+($this->input->post('paid_amount1'));
     $data['pending_amount']=($this->input->post('total'))-$data['paid_amount'];
     $this->db->where('purchase_product_id',$id);
     $this->db->update('purchase_product',$data);
