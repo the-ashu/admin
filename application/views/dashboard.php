@@ -246,7 +246,7 @@
                             <tbody>
                             <?php $i=0; foreach($k->result() as $row){if($i<=10){?>
                             <tr>
-                                <td<?php echo $row->name;?></td>
+                                <td><?php echo $row->name;?></td>
                                 <td><?php echo $row->email;?></td>
                                 <td><?php echo $row->contact;?></td>
                                 <td><?php echo $row->gst_no;?></td>

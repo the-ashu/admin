@@ -139,7 +139,7 @@
                                     <td><input type="text" required class="form-control" name="weight[]" value="<?php echo $weight;?>" readonly ></td>
                                     <td><input type="text" required class="form-control decimal" name="rate[]" value="<?php echo $rate;?>" readonly></td>
                                     <td><input type="text" required class="form-control decimal" name="quantity[]" value="<?php echo $quantity;?>" readonly></td>
-                                    <td><input type="text" required readonly class="form-control basic_amount decimal" name="basic_amount[]"  value="<?php echo $product_name;?>" readonly></td>
+                                    <td><input type="text" required readonly class="form-control basic_amount decimal" name="basic_amount[]"  value="<?php echo $sub_total;?>" readonly></td>
                                     <td><input type="text" required class="form-control" name="gst_type[]" value="<?php echo $gst_type;?>"readonly  ></td>
                                     <td><input type="text" required class="form-control" readonly name="cgst[]" value="<?php echo $cgst;?>"  ></td>
                                     <td><input type="text" required class="form-control" readonly name="cgst_amount[]"  value="<?php echo $cgst_amount;?>" ></td>
