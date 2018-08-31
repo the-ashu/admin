@@ -608,11 +608,11 @@ public function printreportsales()
     $this->load->dbutil();
     $this->load->helper('file');
     $this->load->helper('download');
-    $this->db->select("bill.*,client.name");
-    $this->db->where('bill.created >=', $date1);
-    $this->db->where('bill.created <=', $date2);
-    $this->db->from('bill');
-    $this->db->join('client', 'client.client_id = bill.client_id');
+    $this->db->select("sales.*");
+    //$this->db->where('bill.created >=', $date1);
+   // $this->db->where('bill.created <=', $date2);
+    $this->db->from('sales');
+   // $this->db->join('client', 'client.client_id = bill.client_id');
     $data['h'] = $this->db->get();
     $delimiter = ",";
     $newline = "\r\n";
