@@ -37,7 +37,7 @@
         </tr>
         </thead>
         <tbody>
-        <?php $i=1; foreach($h->result() as $row){?>
+        <?php $i=1;$subtotal=0;$cgst=0;$sgst=0;$igst=0;$tax=0;$total=0; foreach($h->result() as $row){?>
             <tr>
                 <td><?php echo $row->invoice_no;?></td>
                 <td><?php echo $row->date;?></td>
@@ -50,7 +50,19 @@
                 <td><?php echo $row->total_taxable_amount;?></td>
                 <td><?php echo $row->total;?></td>
             </tr>
-            <?php $i++; }?>
+            <?php $i++;$tax+=$row->total_taxable_amount;$cgst+=$row->cgst_amount;;$sgst+=$row->sgst_amount;;$igst+=$row->igst_amount;$total+=$row->total; }?>
+        <tr>
+            <th>Total</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><?php echo $subtotal;?></td>
+            <td><?php echo $cgst;?></td>
+            <td><?php echo $sgst?></td>
+            <td><?php echo $igst;?></td>
+            <td><?php echo $tax;?></td>
+            <td><?php echo $total;?></td>
+        </tr>
         </tbody>
     </table>
 </div>

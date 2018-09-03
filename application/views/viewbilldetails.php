@@ -39,7 +39,7 @@
         </tr>
         </thead>
         <tbody>
-        <?php $i=1; foreach($h->result() as $row){?>
+        <?php $i=1;$total=0;$cgst=0;$sgst=0;$igst=0; foreach($h->result() as $row){?>
             <tr>
                 <td><?php echo $row->invoice_no;?></td>
                 <td><?php echo $row->name;?></td>
@@ -54,7 +54,21 @@
                 <td><?php echo $row->igst;?></td>
                 <td><?php echo $row->total;?></td>
             </tr>
-            <?php $i++; }?>
+            <?php $i++;$total+=$row->total;$cgst+=$row->cgst;$sgst+=$row->sgst;$igst+=$row->igst; }?>
+        <tr>
+            <th>Total</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><?php echo $cgst;?></td>
+            <td><?php echo $sgst;?></td>
+            <td><?php echo $igst;?></td>
+            <td><?php echo $total;?></td>
+        </tr>
         </tbody>
     </table>
 </div>

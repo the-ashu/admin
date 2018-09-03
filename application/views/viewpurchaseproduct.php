@@ -34,7 +34,7 @@
         </tr>
         </thead>
         <tbody>
-        <?php $i=1; foreach($h->result() as $row){?>
+        <?php $i=1;$subtotal=0;$totaltaxableamount=0;$total=0; foreach($h->result() as $row){?>
             <tr>
                 <td><?php echo $row->purchase_date?></td>
                 <td> <?php echo $row->name;?></td>
@@ -44,7 +44,16 @@
                 <td><?php echo $row->total_taxable_amount;?></td>
                 <td><?php echo $row->total;?></td>
             </tr>
-            <?php $i++; }?>
+            <?php $i++;$total+=$row->total;$subtotal+=$row->sub_total;$totaltaxableamount+=$row->total_taxable_amount; }?>
+        <tr>
+            <th>Total</th>
+            <td> </td>
+            <td></td>
+            <td></td>
+            <td><?php echo $subtotal;?></td>
+            <td><?php echo $totaltaxableamount;?></td>
+            <td><?php echo $total;?></td>
+        </tr>
         </tbody>
     </table>
 </div>

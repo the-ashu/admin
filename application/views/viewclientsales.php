@@ -32,7 +32,7 @@
         </tr>
         </thead>
         <tbody>
-        <?php $i=1; foreach($h->result() as $row){?>
+        <?php $i=1;$total=0; foreach($h->result() as $row){?>
             <tr>
                 <td><?php echo $row->name;?></td>
                 <td> <?php echo $row->email;?></td>
@@ -40,7 +40,14 @@
                 <td><?php echo $row->gst_no;?></td>
                 <td><?php echo $row->total;?></td>
             </tr>
-            <?php $i++; }?>
+            <?php $i++;$total+=$row->total; }?>
+        <tr>
+            <th>Total</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><?php echo $total;?></td>
+        </tr>
         </tbody>
     </table>
 </div>

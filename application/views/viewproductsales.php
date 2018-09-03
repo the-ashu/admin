@@ -31,14 +31,20 @@
         </tr>
         </thead>
         <tbody>
-        <?php $i=1; foreach($h->result() as $row){?>
+        <?php $i=1; $total=0;foreach($h->result() as $row){?>
             <tr>
                 <td><?php echo $i;?></td>
                 <td> <?php echo $row->product_code;?></td>
                 <td><?php echo $row->name;?></td>
                 <td><?php echo $row->rate;?></td>
             </tr>
-            <?php $i++; }?>
+            <?php $i++; $total+=$row->rate;}?>
+        <tr>
+            <th>Total</th>
+            <td> </td>
+            <td></td>
+            <td><?php echo $total;?></td>
+        </tr>
         </tbody>
     </table>
 </div>
