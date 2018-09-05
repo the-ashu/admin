@@ -385,7 +385,7 @@ public function new_product1()
      $data['status']=$this->input->post('status');
     $data['name']=$this->input->post('name');
     $data['rate']=$this->input->post('rate');
-    $data['created']=date("hh:mm:yyyy");
+    $data['created']=date('Y-m-d H:i:s');
     $this->User_model->add_product($data);
     $this->product();
 }
@@ -845,8 +845,8 @@ public function printreportbilldetails1()
         $this->load->helper('file');
         $this->load->helper('download');
         $this->db->select("purchase.*,supplier.name,purchase_product.*");
-        $this->db->where('purchase.purchase_date >=', $date1);
-        $this->db->where('purchase.purchase_date <=', $date2);
+        $this->db->where('purchase.created >=', $date1);
+        $this->db->where('purchase.created <=', $date2);
         $this->db->from('purchase');
         $this->db->join('purchase_product','purchase_product.purchase_id=purchase.purchase_id');
         $this->db->join('supplier', 'supplier.supplier_id = purchase.supplier_id');
@@ -887,8 +887,8 @@ public function printreportbilldetails1()
         $this->load->helper('file');
         $this->load->helper('download');
         $this->db->select("purchase.*,supplier.name,purchase_product.*");
-        $this->db->where('purchase.purchase_date >=', $date1);
-        $this->db->where('purchase.purchase_date <=', $date2);
+        $this->db->where('purchase.created >=', $date1);
+        $this->db->where('purchase.created <=', $date2);
         $this->db->from('purchase');
         $this->db->join('supplier', 'supplier.supplier_id = purchase.supplier_id');
         $this->db->join('purchase_product', 'purchase_product.purchase_id = purchase.purchase_id');

@@ -47,7 +47,7 @@
                 <td><?php echo $row->cgst;?></td>
                 <td><?php echo $row->sgst;?></td>
                 <td><?php echo $row->igst;?></td>
-                <td><?php echo $row->total_taxable_ammount;?></td>
+                <td><?php echo $row->total_taxable_amount;?></td>
                 <td><?php echo $row->total;?></td>
             </tr>
             <?php $i++;$basicamount+=$row->basic_amount;$tax+=$row->total_taxable_amount;$cgst+=$row->cgst;$sgst+=$row->sgst;$igst+=$row->igst;$total+=$row->total; }?>
