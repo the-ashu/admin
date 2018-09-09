@@ -1390,6 +1390,7 @@ $data['rate']=$this->input->post('rate');
     $data2['sgst_amount']=$data['sgst_amount'];
     $data2['igst_amount']=$data['igst_amount'];
     $data2['gst_type']=$data['gst_type'];
+    $data2['invoice_no']=$data1['invoice_no'];
     $data2['basic_amount']=$data['sub_total'];
     $data2['taxable_amount']=$data['total_taxable_amount'];
     $data2['total']=$data['total'];
@@ -1397,17 +1398,18 @@ $data['rate']=$this->input->post('rate');
     $this->db->insert('purchase_product',$data2);
     $query ="select * from  purchase_product order by purchase_product_id DESC limit 1";
     $res = $this->db->query($query)->row()->purchase_product_id;
+    $data['pm']=$this->User_model->purchase_detail($data2['invoice_no']);
     $data['purchase_product_id']=$res;
     $this->load->view('header');
     $this->load->view('new-purchase',$data);
     $this->load->view('footer');
 }
 
-public function submitpurchase($id)
+public function submitpurchase($invoice)
 {
     $data['paid_amount']=($this->input->post('paid_amount'))+($this->input->post('paid_amount1'));
     $data['pending_amount']=($this->input->post('total'))-$data['paid_amount'];
-    $this->db->where('purchase_product_id',$id);
+    $this->db->where('invoice_no',$invoice);
     $this->db->update('purchase_product',$data);
     redirect('welcome/purchaseproduct');
 }
@@ -1560,12 +1562,14 @@ public function supplierstatus($id1,$id2)
         $data2['taxable_amount']=$data['total_taxable_amount'];
         $data2['total']=$data['total'];
         $data2['date']=$data['date'];
+        $data2['invoice_no']=$data1['invoice_no'];
         $this->db->where('purchase_product_id',$id2);
         $this->db->update('purchase_product',$data2);
         $this->db->where('purchase_product_id',$id2);
         $data['purchase_product']=$this->db->get('purchase_product')->row(0);
         $data['paid_amount']=$data['purchase_product']->paid_amount;
         $data['purchase_product_id']=$id2;
+       $data['pm']=$this->User_model->purchase_detail($data1['invoice_no']);
         $this->load->view('header');
         $this->load->view('new-purchase',$data);
         $this->load->view('footer');

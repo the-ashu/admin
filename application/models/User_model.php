@@ -170,6 +170,15 @@ public function product()
         return $query;
     }
 
+    public function purchase_detail($invoice){
+        $this->db->select("purchase_product.*,product.name");
+        $this->db->from('purchase_product');
+        $this->db->join('product','product.product_id=purchase_product.product_id');
+        $this->db->where('invoice_no',$invoice);
+        $query=$this->db->get();
+        return $query;
+    }
+
     public function profile()
     {
         $query=$this->db->get('admin');
