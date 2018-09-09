@@ -75,7 +75,7 @@
                                     </div>
                                 </div>
                             </div>
-
+                        <div class="ashu">
                         <div class="row">
                             <div class="form-group col-md-12">
                                 <label class="col-md-4 control-label">PRODUCT NAME</label>
@@ -201,6 +201,26 @@
 
 
 <script type="text/javascript">
+    $(document).ready(function () {
+        var max_fields = 100; //maximum input boxes allowed
+        var wrapper = $(".ashu"); //Fields wrapper
+        var add_button = $(".add_field_button_invoice_1"); //Add button ID
+        var x = 1; //initlal text box count
+        $(add_button).click(function (e) { //on add input button click
+            e.preventDefault();
+            if (x < max_fields) { //max input box allowed
+                x++; //text box increment
+
+                $(wrapper).append('<div class="form-group" style="margin-top:20px;"> <div class="row"><div class="col-md-4"> <input type="text" id="name1" name="name[]" value="" class="form-control amount" /></div><div class="col-md-4"> <input type="text" id="qty1" name="quantity[]" value="" class="form-control amount" /></div><div class="col-md-2"><a href="#" class="remove_field_inv btn btn-danger"><?php echo lang('remove'); ?></a></div></div> </div>'); //add input box
+            }
+        });
+
+        $(wrapper).on("click", ".remove_field_inv", function (e) { //user click on remove text
+            e.preventDefault();
+            $(this).closest('.form-group').remove();
+
+        })
+    });
 
     jQuery(document).ready(function($) {
         //decimal validation
