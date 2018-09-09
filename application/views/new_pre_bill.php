@@ -29,7 +29,7 @@
                                     <div class="col-md-5">
                                         <select name="client_name" id="client" class="form-control" ">
                                         <?php foreach($h->result() as $row){ ?>
-                                        <option value="<?php echo $row->name;?>"><?php echo $row->name;?></option>
+                                            <option value="<?php echo $row->name;?>"><?php echo $row->name;?></option>
                                         <?php }?>
                                         </select>
                                     </div>
@@ -37,45 +37,44 @@
 
                             </div>
 
-                                <div class="form-group col-md-12">
-                                    <label  class="col-md-4 control-label">DATE</label>
-                                    <div class="col-md-5">
-                                        <input class="form-control"  placeholder="mm/dd/yyyy" required id="datepicker-autoclose" type="text" name="date">
-                                    </div>
-                                </div>
-
-                                <div class="form-group col-md-12">
-                                    <label  class="col-md-4 control-label">INVOICE DATE</label>
-                                    <div class="col-md-5">
-                                        <input type="text" name="invoice_date"  placeholder="mm/dd/yyyy" class="form-control inline-date">
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <label  class="col-md-4 control-label">Tpt. Co.</label>
-                                    <div class="col-md-5">
-                                        <input type="text" name="tpt_co" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <label  class="col-md-4 control-label">Gr. No.</label>
-                                    <div class="col-md-5">
-                                        <input type="text" name="gr_no" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <label  class="col-md-4 control-label">Way Bill Ref.</label>
-                                    <div class="col-md-5">
-                                        <input type="text" name="way_bill_ref" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <label  class="col-md-4 control-label">Place of Order.</label>
-                                    <div class="col-md-5">
-                                        <input type="text" name="place_of_order" class="form-control">
-                                    </div>
+                            <div class="form-group col-md-12">
+                                <label  class="col-md-4 control-label">DATE</label>
+                                <div class="col-md-5">
+                                    <input class="form-control"  placeholder="mm/dd/yyyy" required id="datepicker-autoclose" type="text" name="date">
                                 </div>
                             </div>
-                        <div class="ashu">
+
+                            <div class="form-group col-md-12">
+                                <label  class="col-md-4 control-label">INVOICE DATE</label>
+                                <div class="col-md-5">
+                                    <input type="text" name="invoice_date"  placeholder="mm/dd/yyyy" class="form-control inline-date">
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label  class="col-md-4 control-label">Tpt. Co.</label>
+                                <div class="col-md-5">
+                                    <input type="text" name="tpt_co" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label  class="col-md-4 control-label">Gr. No.</label>
+                                <div class="col-md-5">
+                                    <input type="text" name="gr_no" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label  class="col-md-4 control-label">Way Bill Ref.</label>
+                                <div class="col-md-5">
+                                    <input type="text" name="way_bill_ref" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label  class="col-md-4 control-label">Place of Order.</label>
+                                <div class="col-md-5">
+                                    <input type="text" name="place_of_order" class="form-control">
+                                </div>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="form-group col-md-12">
                                 <label class="col-md-4 control-label">PRODUCT NAME</label>
@@ -90,12 +89,12 @@
 
                         </div>
                         <div class="row">
-                        <div class="form-group col-md-12">
-                            <label  class="col-md-4 control-label">QUANTITY</label>
-                            <div class="col-md-5">
-                                <input type="number" name="quantity" class="form-control">
+                            <div class="form-group col-md-12">
+                                <label  class="col-md-4 control-label">QUANTITY</label>
+                                <div class="col-md-5">
+                                    <input type="number" name="quantity" class="form-control">
+                                </div>
                             </div>
-                        </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-12">
@@ -107,30 +106,30 @@
                         </div>
                         <div class="row">
                             <!--end data-role="dynamic-fields-->
-                        <div class="form-group col-md-12">
-                            <label  class="col-md-4 control-label">RATE</label>
-                            <div class="col-md-5">
-                                <input type="number" name="rate" class="form-control total decimal" step="any">
+                            <div class="form-group col-md-12">
+                                <label  class="col-md-4 control-label">RATE</label>
+                                <div class="col-md-5">
+                                    <input type="number" name="rate" class="form-control total decimal" step="any">
+                                </div>
                             </div>
                         </div>
-                        </div>
-                        </div>
-                            <br><br>
-                        </div>
-                        <div class="panel-footer text-right">
-                            <input name="submit" class="btn btn-primary btn-rounded" type="submit" value="Submit">
-                            <a href="<?php echo base_url();?>welcome/bill" class="btn btn-danger btn-rounded">Cancel</a>
-                        </div>
-                    </div> <!-- end card-box -->
-
-                </form>
-
+                    </div>
+                    <br><br>
             </div>
-        </div>
-        <!-- Footer -->
+            <div class="panel-footer text-right">
+                <input name="submit" class="btn btn-primary btn-rounded" type="submit" value="Submit">
+                <a href="<?php echo base_url();?>welcome/bill" class="btn btn-danger btn-rounded">Cancel</a>
+            </div>
+        </div> <!-- end card-box -->
 
-        <!-- End Footer -->
+        </form>
+
     </div>
+</div>
+<!-- Footer -->
+
+<!-- End Footer -->
+</div>
 </div>
 
 <!-- jQuery  -->
@@ -201,27 +200,6 @@
 
 
 <script type="text/javascript">
-    $(document).ready(function () {
-        var max_fields = 100; //maximum input boxes allowed
-        var wrapper = $(".ashu"); //Fields wrapper
-        var add_button = $(".add_field_button_invoice_1"); //Add button ID
-        var x = 1; //initlal text box count
-        $(add_button).click(function (e) { //on add input button click
-            e.preventDefault();
-            if (x < max_fields) { //max input box allowed
-                x++; //text box increment
-
-                $(wrapper).append('<div class="form-group" style="margin-top:20px;"> <div class="row"><div class="col-md-4"> <input type="text" id="name1" name="name[]" value="" class="form-control amount" /></div><div class="col-md-4"> <input type="text" id="qty1" name="quantity[]" value="" class="form-control amount" /></div><div class="col-md-2"><a href="#" class="remove_field_inv btn btn-danger"><?php echo lang('remove'); ?></a></div></div> </div>'); //add input box
-            }
-        });
-
-        $(wrapper).on("click", ".remove_field_inv", function (e) { //user click on remove text
-            e.preventDefault();
-            $(this).closest('.form-group').remove();
-
-        })
-    });
-
     jQuery(document).ready(function($) {
         //decimal validation
         $(".decimal").keypress(function(evt){
