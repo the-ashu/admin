@@ -184,11 +184,11 @@
                                             </tr>
                                             </thead>
                                             <tbody>
+                                            <?php $i=1;$total=0;$tax=0;$basic=0; foreach($pm->result() as $row){?>
                                             <tr>
-                                                <?php $i=1; foreach($k->result() as $row){?>
                                                 <td><?php echo $i;?></td>
                                                 <td><?php echo $row->name;?> </td>
-                                                    <td><?php echo $row->product_code;?></td>
+                                                <td><?php echo $row->product_code;?></td>
                                                 <td><?php echo $row->weight;?></td>
                                                 <td><?php echo $row->rate;?></td>
                                                 <td><?php echo $row->quantity;?></td>
@@ -203,7 +203,7 @@
                                             </tr>
                                             </tbody>
                                             <tfoot>
-                                            <tr class="nobrd">
+                                           <?php /*?> <tr class="nobrd">
                                                 <th></th>
                                                 <th></th>
                                                 <th></th>
@@ -218,8 +218,8 @@
                                                 <th></th>
                                                 <th class="text-left col-md-2"><?php echo $row->igst_amount;?></th>
                                                 <th><?php echo $row->total;?></th>
-                                                <?php $i++; } ?>
-                                            </tr>
+                                            </tr><?php */?>
+                                            <?php $i++;$total+=$row->total;$basic+=$row->basic_amount;$tax+=$row->taxable_amount; } ?>
                                             </tfoot>
                                             <tbody>
                                         </table>
@@ -236,14 +236,14 @@
                                 <div class="col-md-4 col-sm-4 col-xs-4">
                                     <div class="sub_total">
                                         <h4 class="col-md-10 col-sm-10 col-xs-10"><b>Total Before GST Amt.:</b></h4>
-                                        <h4 class="col-md-2 col-sm-2 col-xs-2"><b><?php echo $h->sub_total;?></b></h4>
+                                        <h4 class="col-md-2 col-sm-2 col-xs-2"><b><?php echo $basic;?></b></h4>
 
                                         <h4 class="col-md-10 col-sm-10 col-xs-10"><b>Total GST Amt.:</b></h4>
-                                        <h4 class="col-md-2 col-sm-2 col-xs-2"><b><?php echo $h->total_taxable_amount;?></b></h4>
+                                        <h4 class="col-md-2 col-sm-2 col-xs-2"><b><?php echo $tax;?></b></h4>
 
                                     </div>
                                     <hr>
-                                    <h4 class="col-md-10 col-sm-10 col-xs-10"><b>Bill Amount:</b></h4> <h4 class="col-md-2 col-sm-2 col-xs-2"><b><?php echo $h->total;?></b></h4>
+                                    <h4 class="col-md-10 col-sm-10 col-xs-10"><b>Bill Amount:</b></h4> <h4 class="col-md-2 col-sm-2 col-xs-2"><b><?php echo $total;?></b></h4>
                                 </div>
                             </div>
                             <div class="row" style="border-radius: 0px;">

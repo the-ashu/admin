@@ -158,6 +158,18 @@ public function product()
         return $query;
     }
 
+    public function bill_details($invoice)
+    {
+
+        $this->db->select("bill_details.*,product.name");
+
+        $this->db->from('bill_details');
+        $this->db->join('product','product.product_id=bill_details.product_id');
+        $this->db->where('invoice_no',$invoice);
+        $query = $this->db->get();
+        return $query;
+    }
+
     public function profile()
     {
         $query=$this->db->get('admin');

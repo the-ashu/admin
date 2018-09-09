@@ -60,7 +60,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="editbill/<?php echo $row->bill_id;?>/<?php echo $row->bill_detail_id;?>">Edit</a></li>
                                 <li><a href="cancelbill/<?php echo $row->bill_id;?>/<?php echo $row->bill_detail_id;?>" >Delete</a></li>
-                                <li><a href="printbill/<?php echo $row->bill_id;?>">Print</a></li>
+                                <li><a href="printbill/<?php echo $row->bill_id;?>/<?php echo $row->invoice_no?>">Print</a></li>
                             </ul>
                         </div></td>
                 </tr>

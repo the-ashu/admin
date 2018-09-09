@@ -75,6 +75,7 @@
                                     </div>
                                 </div>
                             </div>
+
                         <div class="row">
                             <div class="form-group col-md-12">
                                 <label class="col-md-4 control-label">PRODUCT NAME</label>
@@ -200,6 +201,7 @@
 
 
 <script type="text/javascript">
+
     jQuery(document).ready(function($) {
         //decimal validation
         $(".decimal").keypress(function(evt){

@@ -87,7 +87,7 @@
                             <div class="form-group col-md-12">
                                 <label  class="col-md-4 control-label">Invoice_no</label>
                                 <div class="col-md-5">
-                                    <input type="text" name="invoice_no" class="form-control" value="<?php echo $f->invoice_no;?>">
+                                    <input type="text" name="invoice_no" class="form-control" value="<?php echo $f->invoice_no;?> "readonly>
                                 </div>
                             </div>
                         </div>

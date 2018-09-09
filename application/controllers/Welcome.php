@@ -1076,6 +1076,8 @@ public function printreportbilldetails1()
     {
         $data['h']=$this->User_model->printbill($id);
         $data['k']=$this->User_model->printbill2($id);
+        $invoice=$data['h']->invoice_no;
+        $data['pm']=$this->User_model->bill_details($invoice);
         $this->load->view('header');
      $this->load->view('print_bill',$data);
      $this->load->view('footer');
@@ -1164,6 +1166,7 @@ public function printreportbilldetails1()
         $data3['cgst']=$data['cgst'];
         $data3['sgst']=$data['sgst'];
         $data3['igst']=$data['igst'];
+        $data3['invoice_no']=$data2['invoice_no'];
         $data3['cgst_amount']=$data['cgst_amount'];
         $data3['sgst_amount']=$data['sgst_amount'];
         $data3['igst_amount']=$data['igst_amount'];
@@ -1173,16 +1176,17 @@ public function printreportbilldetails1()
         $query ="select * from  bill_details order by bill_id DESC limit 1";
           $res = $this->db->query($query)->row()->bill_detail_id;
          $data['bill_detail_id']=$res;
+         $data['pm']=$this->User_model->bill_details($data['invoice_no']);
                $this->load->view('header');
         $this->load->view('new-bill',$data);
         $this->load->view('footer');
     }
 
-    public function newprebill1($id)
+    public function newprebill1($invoice)
     {
         $data['paid_amount']=($this->input->post('paid_amount'))+($this->input->post('paid_amount1'));
         $data['pending_amount']=$this->input->post('total')-$data['paid_amount'];
-        $this->db->where('bill_detail_id',$id);
+        $this->db->where('invoice_no',$invoice);
         $this->db->update('bill_details',$data);
 
     redirect('welcome/bill');
@@ -1659,6 +1663,7 @@ public function supplierstatus($id1,$id2)
         $data3['sgst_amount']=$data['sgst_amount'];
         $data3['igst_amount']=$data['igst_amount'];
         $data3['taxable_amount']=$data['total_taxable_amount'];
+        $data3['invoice_no']=$data2['invoice_no'];
         $data3['total']=$data['total'];
         $this->db->where('bill_detail_id',$id2);
         $this->db->update('bill_details',$data3);
@@ -1666,6 +1671,7 @@ public function supplierstatus($id1,$id2)
         $this->db->where('bill_detail_id',$id2);
         $data['bill_detail']=$this->db->get('bill_details')->row(0);
         $data['paid_amount']=$data['bill_detail']->paid_amount;
+        $data['pm']=$this->User_model->bill_details($data2['invoice_no']);
         $this->load->view('header');
         $this->load->view('new-bill',$data);
         $this->load->view('footer');

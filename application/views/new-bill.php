@@ -17,7 +17,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <form id="addform" name="addform" action="<?php echo base_url();?>welcome/newprebill1/<?php echo $bill_detail_id;?>" class="form-horizontal" method="post">
+                <form id="addform" name="addform" action="<?php echo base_url();?>welcome/newprebill1/<?php echo $invoice_no;?>" class="form-horizontal" method="post">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 style="color: #fff;"><span class="fa fa-file-o"></span> Create new Bill</h3>
@@ -159,24 +159,26 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <?php $total=0; $tax=0;$basic=0;foreach($pm->result() as $row){?>
                                 <tr id="product_table-row0">
-                                    <td><select id="product_id0" name="product_id[]" class="form-control" ><option value="<?php echo $product_name;?>"><?php echo $product_name;?></option> </select></td>
-                                    <td><input type="text" required class="form-control" value="<?php echo $product_id;?>" readonly></td>
-                                    <td><input type="text" required class="form-control" name="weight[]" value="<?php echo $weight;?>" readonly ></td>
-                                    <td><input type="text" required class="form-control decimal" name="rate[]" value="<?php echo $rate;?>" readonly></td>
-                                    <td><input type="text" required class="form-control decimal" name="quantity[]" value="<?php echo $quantity;?>" readonly></td>
-                                    <td><input type="text" required readonly class="form-control basic_amount decimal" name="basic_amount[]"  value="<?php echo $sub_total;?>" readonly></td>
-                                    <td><input type="text" required class="form-control" name="gst_type[]" value="<?php echo $gst_type;?>"readonly  ></td>
-                                    <td><input type="text" required class="form-control" readonly name="cgst[]" value="<?php echo $cgst;?>"  ></td>
-                                    <td><input type="text" required class="form-control" readonly name="cgst_amount[]"  value="<?php echo $cgst_amount;?>" ></td>
-                                    <td><input type="text" required class="form-control" readonly name="sgst[]" value="<?php echo $sgst;?>" ></td>
-                                    <td><input type="text" required class="form-control" readonly name="sgst_amount[]" value="<?php echo $sgst_amount;?>" ></td>
-                                    <td><input type="text" required class="form-control" readonly name="igst[]"  value="<?php echo $igst;?>" ></td>
-                                    <td><input type="text" required class="form-control" readonly name="igst_amount[]" value="<?php echo $igst_amount;?>" ></td>
-                                    <td><input type="text" required readonly class="form-control taxable_amount decimal" name="taxable_amount[]" value="<?php echo $total_taxable_amount;?>" ></td>
-                                    <td><input type="text" required class="form-control total decimal" name="total_amount[]" value="<?php echo $total;?>" ></td>
+                                    <td><select id="product_id0" name="product_id[]" class="form-control" ><option value="<?php echo $row->name;?>"><?php echo $row->name;?></option> </select></td>
+                                    <td><input type="text" required class="form-control" value="<?php echo $row->product_id;?>" readonly></td>
+                                    <td><input type="text" required class="form-control" name="weight[]" value="<?php echo $row->weight;?>" readonly ></td>
+                                    <td><input type="text" required class="form-control decimal" name="rate[]" value="<?php echo $row->rate;?>" readonly></td>
+                                    <td><input type="text" required class="form-control decimal" name="quantity[]" value="<?php echo $row->quantity;?>" readonly></td>
+                                    <td><input type="text" required readonly class="form-control basic_amount decimal" name="basic_amount[]"  value="<?php echo $row->basic_amount;?>" readonly></td>
+                                    <td><input type="text" required class="form-control" name="gst_type[]" value="<?php echo $row->gst_type;?>"readonly  ></td>
+                                    <td><input type="text" required class="form-control" readonly name="cgst[]" value="<?php echo $row->cgst;?>"  ></td>
+                                    <td><input type="text" required class="form-control" readonly name="cgst_amount[]"  value="<?php echo $row->cgst_amount;?>" ></td>
+                                    <td><input type="text" required class="form-control" readonly name="sgst[]" value="<?php echo $row->sgst;?>" ></td>
+                                    <td><input type="text" required class="form-control" readonly name="sgst_amount[]" value="<?php echo $row->sgst_amount;?>" ></td>
+                                    <td><input type="text" required class="form-control" readonly name="igst[]"  value="<?php echo $row->igst;?>" ></td>
+                                    <td><input type="text" required class="form-control" readonly name="igst_amount[]" value="<?php echo $row->igst_amount;?>" ></td>
+                                    <td><input type="text" required readonly class="form-control taxable_amount decimal" name="taxable_amount[]" value="<?php echo $row->taxable_amount;?>" ></td>
+                                    <td><input type="text" required class="form-control total decimal" name="total_amount[]" value="<?php echo $row->total;?>" readonly></td>
                                     <td></td>
                                 </tr>
+                                <?php $total+=$row->total;$tax+=$row->taxable_amount;$basic+=$row->basic_amount; }?>
                                 </tbody>
                                 <tfoot>
                                 </tfoot>
@@ -186,11 +188,11 @@
                                 <input type="hidden" id="all_total" />
                                 <div class="col-md-2">
                                     <label style="color: #000;">Total Before GST Amt.</label>
-                                    <input type="text" name="sub_total" readonly  value="<?php echo $sub_total;?>" readonly">
+                                    <input type="text" name="sub_total" readonly  value="<?php echo $basic;?>" readonly">
                                 </div>
                                 <div class="col-md-2">
                                     <label style="color: #000;">Total GST Amt.</label>
-                                    <input type="text" name="total_taxable_amount" readonly id="total_taxable_amount"  value="<?php echo $total_taxable_amount;?>" readonly>
+                                    <input type="text" name="total_taxable_amount" readonly id="total_taxable_amount"  value="<?php echo $tax;?>" readonly>
                                 </div>
                                 <div class="col-md-2">
                                     <label style="color: #000;">Bill Amount</label>
