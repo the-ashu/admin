@@ -196,7 +196,7 @@
                                 </div>
                                 <div class="col-md-2">
                                     <label style="color: #000;">Bill Amount</label>
-                                    <input type="text" name="total" readonly value="<?php echo $total;?>" readonly>
+                                    <input type="text" name="total" readonly value="<?php echo $full_total;?>" readonly>
                                 </div>
                                 <div class="col-md-2">
                                     <label style="color: #000;">Paid Amount</label>

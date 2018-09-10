@@ -169,7 +169,7 @@
                                 </div>
                                 <div class="col-md-2">
                                     <label style="color: #000;">Bill Amount</label>
-                                    <input type="text" name="total" readonly  value="<?php echo $total;?>"  id="bill_amount" class="form-control decimal" step="any" readonly>
+                                    <input type="text" name="total" readonly  value="<?php echo $full_total;?>"  id="bill_amount" class="form-control decimal" step="any" readonly>
                                 </div>
                                 <div class="col-md-2">
                                     <label style="color: #000;">Paid Amount</label>

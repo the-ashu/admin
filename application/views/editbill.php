@@ -40,25 +40,26 @@
                             <div class="form-group col-md-12">
                                 <label  class="col-md-4 control-label">Tpt. Co.</label>
                                 <div class="col-md-5">
-                                    <input type="text" name="tpt_co" value="<?php echo $f->tpt_co;?>" class="form-control">
+                                    <input type="text" name="tpt_co" value="<?php echo $f->tpt_co;?>" class="form-control" readonly>
                                 </div>
                             </div>
+                            <input type="hidden" name="full_total" value="<?php echo $g->full_total;?>" class="form-control" readonly>
                             <div class="form-group col-md-12">
                                 <label  class="col-md-4 control-label">Gr. No.</label>
                                 <div class="col-md-5">
-                                    <input type="text" name="gr_no" value="<?php echo $f->gr_no;?>" class="form-control">
+                                    <input type="text" name="gr_no" value="<?php echo $f->gr_no;?>" class="form-control" readonly>
                                 </div>
                             </div>
                             <div class="form-group col-md-12">
                                 <label  class="col-md-4 control-label">Way Bill Ref.</label>
                                 <div class="col-md-5">
-                                    <input type="text" name="way_bill_ref" value=" <?php echo $f->way_bill_ref;?>" class="form-control">
+                                    <input type="text" name="way_bill_ref" value=" <?php echo $f->way_bill_ref;?>" class="form-control" readonly>
                                 </div>
                             </div>
                             <div class="form-group col-md-12">
                                 <label  class="col-md-4 control-label">Place of Order.</label>
                                 <div class="col-md-5">
-                                    <input type="text" name="place_of_order" value="<?php echo $f->place_of_order;?>" class="form-control">
+                                    <input type="text" name="place_of_order" value="<?php echo $f->place_of_order;?>" class="form-control" readonly>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +80,7 @@
                             <div class="form-group col-md-12">
                                 <label  class="col-md-4 control-label">QUANTITY</label>
                                 <div class="col-md-5">
-                                    <input type="number" name="quantity" class="form-control" value="<?php echo $g->quantity;?>">
+                                    <input type="number" name="quantity" class="form-control" value="<?php echo $g->quantity;?>" readonly>
                                 </div>
                             </div>
                         </div>
@@ -96,7 +97,7 @@
                             <div class="form-group col-md-12">
                             <label  class="col-md-4 control-label">Rate</label>
                             <div class="col-md-5">
-                                <input type="number" name="rate" class="form-control total decimal" step="any" value="<?php echo $g->rate;?>">
+                                <input type="number" name="rate" class="form-control total decimal" step="any" value="<?php echo $g->rate;?>"readonly>
                             </div>
                         </div>
                     </div>

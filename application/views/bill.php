@@ -51,7 +51,7 @@
                     <td><?php echo $row->city;?></td>
                     <td><?php echo $row->state;?></td>
                     <td><?php echo $row->pincode;?></td>
-                    <td><?php echo $row->total;?></td>
+                    <td><?php echo $row->full_total;?></td>
                     <td><?php echo $row->paid_amount;?></td>
                     <td><?php echo $row->pending_amount;?></td>
                     <td><div class="dropdown">

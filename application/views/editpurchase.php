@@ -39,7 +39,6 @@
 
 
 
-
                         </div>
                         <div class="row">
                             <div class="form-group col-md-12">
@@ -58,15 +57,16 @@
                             <div class="form-group col-md-12">
                                 <label  class="col-md-4 control-label">QUANTITY</label>
                                 <div class="col-md-5">
-                                    <input type="number" name="quantity" class="form-control" value="<?php echo $g->quantity;?>">
+                                    <input type="number" name="quantity" class="form-control" value="<?php echo $g->quantity;?>"readonly>
                                 </div>
                             </div>
                         </div>
+                        <input type="hidden" name="quantity" class="form-control" value="<?php echo $g->full_total;?>">
                         <div class="row">
                             <div class="form-group col-md-12">
                                 <label  class="col-md-4 control-label">INVOICE_NO</label>
                                 <div class="col-md-5">
-                                    <input type="text" name="invoice_no" class="form-control" value="<?php echo $f->invoice_no;?>">
+                                    <input type="text" name="invoice_no" class="form-control" value="<?php echo $f->invoice_no;?>"readonly>
                                 </div>
                             </div>
                         </div>
@@ -74,7 +74,7 @@
                             <div class="form-group col-md-12">
                                 <label  class="col-md-4 control-label">RATE</label>
                                 <div class="col-md-5">
-                                    <input type="number" name="rate" class="form-control" step="any" value="<?php echo $g->rate;?>">
+                                    <input type="number" name="rate" class="form-control" step="any" value="<?php echo $g->rate;?>"readonly>
                                 </div>
                             </div>
                         </div>
