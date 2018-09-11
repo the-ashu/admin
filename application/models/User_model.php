@@ -28,11 +28,17 @@ public function product()
         $this->db->join('supplier', 'purchase.supplier_id = supplier.supplier_id', 'INNER');
         $re= $this->db->get();
         return $re->result();*/
-        $this->db->select("purchase.*,supplier.name,purchase_product.*");
+        $this->db->select("purchase.*,supplier.*,purchase_product.*");
         $this->db->from('purchase');
         $this->db->join('supplier', 'supplier.supplier_id = purchase.supplier_id');
         $this->db->join('purchase_product', 'purchase.purchase_id = purchase_product.purchase_id');
         $query = $this->db->get();
+        return $query;
+    }
+
+    public function pur()
+    {
+        $query=$this->db->get('full_purchase');
         return $query;
     }
 
@@ -146,18 +152,28 @@ public function product()
         return $query;
     }
 
-    public function bill()
+    public function bill1()
     {
 
+        /*$this->db->select("bill_details.*,client.name,bill.*");
+
+        $this->db->from('bill_details');
+        $this->db->join('bill','bill_details.bill_id=bill.bill_id');
+        $this->db->join('client', 'client.client_id = bill.client_id');
+        $query = $this->db->get();*/
+        $query=$this->db->get('full_bills');
+        return $query;
+    }
+
+    public function bill()
+    {
         $this->db->select("bill_details.*,client.name,bill.*");
 
         $this->db->from('bill_details');
         $this->db->join('bill','bill_details.bill_id=bill.bill_id');
         $this->db->join('client', 'client.client_id = bill.client_id');
         $query = $this->db->get();
-        return $query;
     }
-
     public function bill_details($invoice)
     {
 

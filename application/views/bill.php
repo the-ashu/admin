@@ -43,7 +43,7 @@
             <?php foreach($h->result() as $row){?>
                 <tr>
                     <td><?php echo $row->invoice_no;?></td>
-                    <td><?php echo $row->created;?></td>
+                    <td><?php echo $row->date;?></td>
                     <td><?php echo $row->name;?></td>
                     <td><?php echo $row->email;?></td>
                     <td><?php echo $row->contact;?></td>
@@ -51,7 +51,7 @@
                     <td><?php echo $row->city;?></td>
                     <td><?php echo $row->state;?></td>
                     <td><?php echo $row->pincode;?></td>
-                    <td><?php echo $row->full_total;?></td>
+                    <td><?php echo $row->total;?></td>
                     <td><?php echo $row->paid_amount;?></td>
                     <td><?php echo $row->pending_amount;?></td>
                     <td><div class="dropdown">

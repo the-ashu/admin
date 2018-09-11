@@ -27,7 +27,7 @@
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">CLIENT NAME</label>
                                     <div class="col-md-5">
-                                        <select name="client_id" id="client" class="form-control" >
+                                        <select name="client_name" id="client" class="form-control" >
                                             <option value="<?php echo $client_name;?>"><?php echo $client_name;?></option>
                                         </select>
                                     </div>
@@ -122,6 +122,8 @@
                                     </div>
                                 </div>
                             </div>
+                        <input type="hidden" name="bill_id" class="form-control"  value="<?php echo $bill_id;?>" readonly>
+                        <input type="hidden" name="bill_detail_id" class="form-control"  value="<?php echo $bill_detail_id;?>" readonly>
                             <table id="product_table" class="table table-striped table-bordered table-hover">
                                 <thead>
                                 <tr class="nobrd">
@@ -163,8 +165,8 @@
                                 <tr id="product_table-row0">
                                     <td><select id="product_id0" name="product_id[]" class="form-control" ><option value="<?php echo $row->name;?>"><?php echo $row->name;?></option> </select></td>
                                     <td><input type="text" required class="form-control" value="<?php echo $row->product_id;?>" readonly></td>
-                                    <td><input type="text" required class="form-control" name="weight[]" value="<?php echo $row->weight;?>" readonly ></td>
-                                    <td><input type="text" required class="form-control decimal" name="rate[]" value="<?php echo $row->rate;?>" readonly></td>
+                                    <td><input type="text" required class="form-control" name="weight" value="<?php echo $row->weight;?>" readonly ></td>
+                                    <td><input type="text" required class="form-control decimal" name="rate" value="<?php echo $row->rate;?>" readonly></td>
                                     <td><input type="text" required class="form-control decimal" name="quantity[]" value="<?php echo $row->quantity;?>" readonly></td>
                                     <td><input type="text" required readonly class="form-control basic_amount decimal" name="basic_amount[]"  value="<?php echo $row->basic_amount;?>" readonly></td>
                                     <td><input type="text" required class="form-control" name="gst_type[]" value="<?php echo $row->gst_type;?>"readonly  ></td>

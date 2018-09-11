@@ -43,9 +43,9 @@
             </tr>
             </thead>
             <tbody>
-            <?php foreach($h->result() as $row){?>
+            <?php foreach($k->result() as $row){?>
                 <tr>
-                    <td><?php echo $row->created;?></td>
+                    <td><?php echo $row->date;?></td>
                     <td><?php echo $row->invoice_no?></td>
                     <td><?php  echo $row->name;?></td>
                     <td><?php echo $row->contact;?></td>
@@ -55,9 +55,9 @@
                     <td><?php echo $row->city;?></td>
                     <td><?php echo $row->pincode;?></td>
                     <td><?php echo $row->gst_no;?></td>
-                    <td><?php echo $row->sub_total;?></td>
+                    <td><?php echo $row->basic_amount;?></td>
                     <td><?php echo $row->total_taxable_amount;?></td>
-                    <td><?php echo $row->full_total;?></td>
+                    <td><?php echo $row->total;?></td>
                     <td><?php echo $row->paid_amount;?></td>
                     <td><?php echo $row->pending_amount;?></td>
                     <td><div class="dropdown">

@@ -92,9 +92,9 @@ class Welcome extends CI_Controller {
     { if($this->session->userdata('logged_in')){
         $this->load->view('header');
         $data['pro']=$this->db->get('product')->num_rows();
-        $data['pur']=$this->db->get('purchase_product')->num_rows();
+        $data['pur']=$this->db->get('full_purchase')->num_rows();
         $data['client']=$this->db->get('client_order')->num_rows();
-        $data['bill']=$this->db->get('bill_details')->num_rows();
+        $data['bill']=$this->db->get('full_bills')->num_rows();
         $data['h']=$this->db->get('supplier');
         $data['k']=$this->db->get('client');
         $this->db->select("bill.*,client.name");
@@ -133,6 +133,7 @@ public function supplier()
 public function purchaseproduct()
 { if($this->session->userdata('logged_in')){
     $data1['h']=$this->User_model->purchase_product();
+    $data1['k']=$this->User_model->pur();
    /* echo"<pre>";
 print_r($data1);
    echo "</pre>";*/
@@ -166,7 +167,8 @@ else{
     $this->load->view('login',$data);}}
 public function bill()
 { if($this->session->userdata('logged_in')){
-    $data1['h']=$this->User_model->bill();
+    $data1['h']=$this->User_model->bill1();
+    $data1['k']=$this->User_model->bill();
     $this->load->view('header');
     $this->load->view('bill',$data1);
     $this->load->view('footer');
@@ -1202,16 +1204,46 @@ public function printreportbilldetails1()
         $data['pending_amount']=$this->input->post('total')-$data['paid_amount'];
         $this->db->where('invoice_no',$invoice);
         $this->db->update('bill_details',$data);
-
+        $da['name']=$this->input->post('client_name');
+        $da['date']=$this->input->post('invoice_date');
+        $da['invoice_no']=$invoice;
+        $da['email']=$this->input->post('email');
+        $da['contact']=$this->input->post('contact');
+        $da['address']=$this->input->post('address');
+        $da['city']=$this->input->post('city');
+        $da['state']=$this->input->post('state');
+        $da['pincode']=$this->input->post('pincode');
+        $da['total']=$this->input->post('total');
+        $da['paid_amount']=$data['paid_amount'];
+        $da['pending_amount']=$data['pending_amount'];
+        $da['bill_id']=$this->input->post('bill_id');
+        $da['bill_detail_id']=$this->input->post('bill_detail_id');
+        $da['way_bill_ref']=$this->input->post('way_bill_ref');
+        $da['gst_no']=$this->input->post('gst_no');
+        $da['place_of_order']=$this->input->post('place_of_order');
+        $da['tpt_co']=$this->input->post('tpt_co');
+        $da['gr_no']=$this->input->post('gr_no');
+        $this->db->insert('full_bills',$da);
     redirect('welcome/bill');
     }
-
+public function newprebill2($invoice)
+{
+    $data['paid_amount']=($this->input->post('paid_amount'))+($this->input->post('paid_amount1'));
+    $data['pending_amount']=$this->input->post('total')-$data['paid_amount'];
+    $this->db->where('invoice_no',$invoice);
+    $this->db->update('bill_details',$data);
+    $this->db->where('invoice_no',$invoice);
+    $this->db->update('full_bills',$data);
+    redirect('welcome/bill');
+}
     public function cancelbill($id1,$id2)
     {
         $this->db->where('bill_id',$id1);
         $this->db->delete('bill');
         $this->db->where('bill_detail_id',$id2);
         $this->db->delete('bill_details');
+        $this->db->where('bill_detail_id',$id2);
+        $this->db->delete('full_bills');
        redirect('welcome/bill');
     }
 
@@ -1440,6 +1472,35 @@ public function submitpurchase($invoice)
     $data['pending_amount']=($this->input->post('total'))-$data['paid_amount'];
     $this->db->where('invoice_no',$invoice);
     $this->db->update('purchase_product',$data);
+    $da['name']=$this->input->post('supplier_name');
+    $da['invoice_no']=$invoice;
+    $da['date']=$this->input->post('date');
+    $da['contact']=$this->input->post('contact');
+    $da['email']=$this->input->post('email');
+    $da['address']=$this->input->post('address');
+    $da['state']=$this->input->post('state');
+    $da['city']=$this->input->post('city');
+    $da['pincode']=$this->input->post('pincode');
+    $da['gst_no']=$this->input->post('gst_no');
+    $da['basic_amount']=$this->input->post('sub_total');
+    $da['total_taxable_amount']=$this->input->post('total_taxable_amount');
+    $da['total']=$this->input->post('total');
+    $da['paid_amount']=$data['paid_amount'];
+    $da['pending_amount']=$data['pending_amount'];
+    $da['purchase_id']=$this->input->post('purchase_id');
+    $da['purchase_product_id']=$this->input->post('purchase_product_id');
+    $this->db->insert('full_purchase',$da);
+    redirect('welcome/purchaseproduct');
+}
+
+public function submitpurchase1($invoice)
+{
+    $data['paid_amount']=($this->input->post('paid_amount'))+($this->input->post('paid_amount1'));
+    $data['pending_amount']=($this->input->post('total'))-$data['paid_amount'];
+    $this->db->where('invoice_no',$invoice);
+    $this->db->update('purchase_product',$data);
+    $this->db->where('invoice_no',$invoice);
+    $this->db->update('full_purchase',$data);
     redirect('welcome/purchaseproduct');
 }
 
@@ -1449,6 +1510,8 @@ public function deletepurchase($id1,$id2)
     $this->db->delete('purchase');
     $this->db->where('purchase_product_id',$id2);
     $this->db->delete('purchase_product');
+    $this->db->where('purchase_product_id',$id2);
+    $this->db->delete('full_purchase');
     redirect('welcome/purchaseproduct');
 }
 
@@ -1571,8 +1634,8 @@ public function supplierstatus($id1,$id2)
         $data1['total']=$data['total'];
         $data1['status']=1;
         $data1['created']=$data['date'];
-        $this->db->where('purchase_id',$id1);
-        $this->db->update('purchase',$data1);
+      //  $this->db->where('purchase_id',$id1);
+      //  $this->db->update('purchase',$data1);
         $data2['rate']=$data['rate'];
         $data2['purchase_id']=$id1;
         $data['purchase_id']=$data2['purchase_id'];
@@ -1594,14 +1657,14 @@ public function supplierstatus($id1,$id2)
         $data2['date']=$data['date'];
         $data2['invoice_no']=$data1['invoice_no'];
         $this->db->where('purchase_product_id',$id2);
-        $this->db->update('purchase_product',$data2);
+       // $this->db->update('purchase_product',$data2);
         $this->db->where('purchase_product_id',$id2);
         $data['purchase_product']=$this->db->get('purchase_product')->row(0);
         $data['paid_amount']=$data['purchase_product']->paid_amount;
         $data['purchase_product_id']=$id2;
        $data['pm']=$this->User_model->purchase_detail($data1['invoice_no']);
         $this->load->view('header');
-        $this->load->view('new-purchase',$data);
+        $this->load->view('editpurchase1',$data);
         $this->load->view('footer');
     }
 
@@ -1680,8 +1743,8 @@ public function supplierstatus($id1,$id2)
         $data2['created']=date('Y-m-d H:i:s');
         $data2['way_bill_ref']=$data['way_bill_ref'];
         $data2['place_of_order']=$data['place_of_order'];
-        $this->db->where('bill_id',$id1);
-        $this->db->update('bill',$data2);
+      //  $this->db->where('bill_id',$id1);
+       // $this->db->update('bill',$data2);
         $data3['bill_id']=$id1;
         $data['bill_id']=$data3['bill_id'];
         $data3['product_id']=$data['product']->product_id;
@@ -1700,15 +1763,15 @@ public function supplierstatus($id1,$id2)
         $data3['taxable_amount']=$data['total_taxable_amount'];
         $data3['invoice_no']=$data2['invoice_no'];
         $data3['total']=$data['total'];
-        $this->db->where('bill_detail_id',$id2);
-        $this->db->update('bill_details',$data3);
+      //  $this->db->where('bill_detail_id',$id2);
+      //  $this->db->update('bill_details',$data3);
         $data['bill_detail_id']=$id2;
         $this->db->where('bill_detail_id',$id2);
         $data['bill_detail']=$this->db->get('bill_details')->row(0);
         $data['paid_amount']=$data['bill_detail']->paid_amount;
         $data['pm']=$this->User_model->bill_details($data2['invoice_no']);
         $this->load->view('header');
-        $this->load->view('new-bill',$data);
+        $this->load->view('editbill1',$data);
         $this->load->view('footer');
     }
 }

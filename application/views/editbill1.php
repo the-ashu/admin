@@ -17,66 +17,206 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <form id="addform" name="addform" action="<?php echo base_url();?>welcome/editpurchase1/<?php echo $f->purchase_id;?>/<?php echo $g->purchase_product_id;?>" class="form-horizontal" method="post">
+                <form id="addform" name="addform" action="<?php echo base_url();?>welcome/newprebill2/<?php echo $invoice_no;?>" class="form-horizontal" method="post">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 style="color: #fff;"><span class="fa fa-file-o"></span> Create new purchase product</h3>
+                            <h3 style="color: #fff;"><span class="fa fa-file-o"></span> Create new Bill</h3>
                         </div>
                         <div class="panel-body form-group-separated">
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label class="col-md-4 control-label">SUPPLIER NAME</label>
+                                    <label class="col-md-4 control-label">CLIENT NAME</label>
                                     <div class="col-md-5">
-                                        <select name="supplier_name" id="client" class="form-control" ">
-                                        <?php foreach($h->result() as $row){ ?>
-                                            <option value="<?php echo $row->name;?>"><?php echo $row->name;?></option>
-                                        <?php }?>
+                                        <select name="client_name" id="client" class="form-control" >
+                                            <option value="<?php echo $client_name;?>"><?php echo $client_name;?></option>
                                         </select>
                                     </div>
                                 </div>
 
                             </div>
-
-
-
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-12">
-                                <label class="col-md-4 control-label">PRODUCT NAME</label>
-                                <div class="col-md-5">
-                                    <select name="product_name" id="client" class="form-control" ">
-                                    <?php foreach($k->result() as $row){ ?>
-                                        <option value="<?php echo $row->name;?>"><?php echo $row->name;?></option>
-                                    <?php }?>
-                                    </select>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label class="col-md-4 control-label">CONTACT</label>
+                                    <div class="col-md-5">
+                                        <input name="contact" id="contact" class="form-control" required type="text" value="<?php echo $contact;?>" readonly>
+                                    </div>
                                 </div>
                             </div>
-
-                        </div>
-
-                                    <input type="hidden" name="quantity" class="form-control" value="<?php echo $g->quantity;?>"readonly>
-
-                        <input type="hidden" name="full_total" class="form-control" value="<?php echo $g->full_total;?>">
-                        <div class="row">
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label class="col-md-4 control-label">EMAIL</label>
+                                    <div class="col-md-5">
+                                        <input name="email" id="email" class="form-control" type="email"  value="<?php echo $email;?>" readonly >
+                                    </div>
+                                </div>
+                            </div>
                             <div class="form-group col-md-12">
-                                <label  class="col-md-4 control-label">INVOICE_NO</label>
+                                <label class="col-md-4 control-label">ADDRESS</label>
                                 <div class="col-md-5">
-                                    <input type="text" name="invoice_no" class="form-control" value="<?php echo $f->invoice_no;?>"readonly>
+                                    <textarea name="address" id="address" rows="5" class="form-control" readonly> <?php echo $address;?></textarea>
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label class="col-md-4 control-label">STATE</label>
+                                <div class="col-md-5">
+                                    <input name="state" id="state" class="form-control" type="text"  value="<?php echo $state;?>" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label class="col-md-4 control-label">CITY</label>
+                                <div class="col-md-5">
+                                    <input name="city" id="city" class="form-control" type="text"  value="<?php echo $city;?>" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label class="col-md-4 control-label">PINCODE</label>
+                                <div class="col-md-5">
+                                    <input name="pincode" id="pincode" class="form-control" type="number"  value="<?php echo $pincode;?>" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label class="col-md-4 control-label">GST NO</label>
+                                <div class="col-md-5">
+                                    <input name="gst_no" id="gst_no" readonly class="form-control" type="text"  value="<?php echo $gst_no;?>" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label  class="col-md-4 control-label">DATE</label>
+                                <div class="col-md-5">
+                                    <input class="form-control"  placeholder="mm/dd/yyyy" required id="datepicker-autoclose" type="text" name="date"  value="<?php echo $invoice_date;?>" readonly>
+                                </div>
+                            </div>
 
-                                    <input type="hidden" name="rate" class="form-control" step="any" value="<?php echo $g->rate;?>"readonly>
-
-
+                            <div class="form-group col-md-12">
+                                <label  class="col-md-4 control-label">INVOICE DATE</label>
+                                <div class="col-md-5">
+                                    <input type="text" name="invoice_date"   value="<?php echo $invoice_date;?>" class="form-control inline-date" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label  class="col-md-4 control-label">Tpt. Co.</label>
+                                <div class="col-md-5">
+                                    <input type="text" name="tpt_co" class="form-control"  value="<?php echo $tpt_co;?>" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label  class="col-md-4 control-label">Gr. No.</label>
+                                <div class="col-md-5">
+                                    <input type="text" name="gr_no" class="form-control"  value="<?php echo $gr_no;?>" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label  class="col-md-4 control-label">Way Bill Ref.</label>
+                                <div class="col-md-5">
+                                    <input type="text" name="way_bill_ref" class="form-control"  value="<?php echo $way_bill_ref;?>" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label  class="col-md-4 control-label">Place of Order.</label>
+                                <div class="col-md-5">
+                                    <input type="text" name="place_of_order" class="form-control"  value="<?php echo $place_of_order;?>" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" name="bill_id" class="form-control"  value="<?php echo $bill_id;?>" readonly>
+                        <input type="hidden" name="bill_detail_id" class="form-control"  value="<?php echo $bill_detail_id;?>" readonly>
+                        <table id="product_table" class="table table-striped table-bordered table-hover">
+                            <thead>
+                            <tr class="nobrd">
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th colspan="2" class="text-center col-md-1">CGST</th>
+                                <th colspan="2" class="text-center col-md-1">SGST</th>
+                                <th colspan="2" class="text-center col-md-1">IGST</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th class="text-left required col-md-2">Product NAME</th>
+                                <th class="text-left">HSN Code</th>
+                                <th class="text-left">Unit</th>
+                                <th class="text-left">Rate</th>
+                                <th class="text-left">Qty</th>
+                                <th class="text-left">Before GST.</th>
+                                <th class="text-left">GST Type</th>
+                                <th class="text-left">Rate</th>
+                                <th class="text-left">Amount</th>
+                                <th class="text-left">Rate</th>
+                                <th class="text-left">Amount</th>
+                                <th class="text-left">Rate</th>
+                                <th class="text-left">Amount</th>
+                                <th class="text-left">GST Amt.</th>
+                                <th class="text-left">Total</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php $total=0; $tax=0;$basic=0;foreach($pm->result() as $row){?>
+                                <tr id="product_table-row0">
+                                    <td><select id="product_id0" name="product_id[]" class="form-control" ><option value="<?php echo $row->name;?>"><?php echo $row->name;?></option> </select></td>
+                                    <td><input type="text" required class="form-control" value="<?php echo $row->product_id;?>" readonly></td>
+                                    <td><input type="text" required class="form-control" name="weight" value="<?php echo $row->weight;?>" readonly ></td>
+                                    <td><input type="text" required class="form-control decimal" name="rate" value="<?php echo $row->rate;?>" readonly></td>
+                                    <td><input type="text" required class="form-control decimal" name="quantity[]" value="<?php echo $row->quantity;?>" readonly></td>
+                                    <td><input type="text" required readonly class="form-control basic_amount decimal" name="basic_amount[]"  value="<?php echo $row->basic_amount;?>" readonly></td>
+                                    <td><input type="text" required class="form-control" name="gst_type[]" value="<?php echo $row->gst_type;?>"readonly  ></td>
+                                    <td><input type="text" required class="form-control" readonly name="cgst[]" value="<?php echo $row->cgst;?>"  ></td>
+                                    <td><input type="text" required class="form-control" readonly name="cgst_amount[]"  value="<?php echo $row->cgst_amount;?>" ></td>
+                                    <td><input type="text" required class="form-control" readonly name="sgst[]" value="<?php echo $row->sgst;?>" ></td>
+                                    <td><input type="text" required class="form-control" readonly name="sgst_amount[]" value="<?php echo $row->sgst_amount;?>" ></td>
+                                    <td><input type="text" required class="form-control" readonly name="igst[]"  value="<?php echo $row->igst;?>" ></td>
+                                    <td><input type="text" required class="form-control" readonly name="igst_amount[]" value="<?php echo $row->igst_amount;?>" ></td>
+                                    <td><input type="text" required readonly class="form-control taxable_amount decimal" name="taxable_amount[]" value="<?php echo $row->taxable_amount;?>" ></td>
+                                    <td><input type="text" required class="form-control total decimal" name="total_amount[]" value="<?php echo $row->total;?>" readonly></td>
+                                    <td></td>
+                                </tr>
+                                <?php $total+=$row->total;$tax+=$row->taxable_amount;$basic+=$row->basic_amount; }?>
+                            </tbody>
+                            <tfoot>
+                            </tfoot>
+                        </table>
+                        <!--end data-role="dynamic-fields-->
+                        <div class="clearfix">
+                            <input type="hidden" id="all_total" />
+                            <div class="col-md-2">
+                                <label style="color: #000;">Total Before GST Amt.</label>
+                                <input type="text" name="sub_total" readonly  value="<?php echo $basic;?>" readonly">
+                            </div>
+                            <div class="col-md-2">
+                                <label style="color: #000;">Total GST Amt.</label>
+                                <input type="text" name="total_taxable_amount" readonly id="total_taxable_amount"  value="<?php echo $tax;?>" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label style="color: #000;">Bill Amount</label>
+                                <input type="text" name="total" readonly value="<?php echo $full_total;?>" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label style="color: #000;">Paid Amount</label>
+                                <input type="text" name="paid_amount1"  value="<?php echo $paid_amount;?>" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label style="color: #000;">Enter Amount</label>
+                                <input type="text" name="paid_amount"   >
+                            </div>
+                        </div>
                         <br><br>
+                    </div>
+                    <div class="panel-footer text-right">
+                        <input name="submit" class="btn btn-primary btn-rounded" type="submit" value="Submit">
+                        <a href="cancelbill/<?php echo $bill_id;?>/<?php echo $bill_detail_id;?>" class="btn btn-danger btn-rounded">Cancel</a>
+                    </div>
+            </div> <!-- end card-box -->
 
-                        <div class="panel-footer text-right">
-                            <input name="submit" class="btn btn-primary btn-rounded" type="submit" value="Submit">
-                            <a href="<?php echo base_url();?>welcome/purchaseproduct" class="btn btn-danger btn-rounded">Cancel</a>
-                        </div>
-                    </div> <!-- end card-box -->
-            </div>
             </form>
 
         </div>
