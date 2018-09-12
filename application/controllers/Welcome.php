@@ -97,10 +97,10 @@ class Welcome extends CI_Controller {
         $data['bill']=$this->db->get('full_bills')->num_rows();
         $data['h']=$this->db->get('supplier');
         $data['k']=$this->db->get('client');
-        $this->db->select("bill.*,client.name");
+       /* $this->db->select("bill.*,client.name");
         $this->db->from('bill');
-        $this->db->join('client', 'client.client_id = bill.client_id');
-        $data['l'] = $this->db->get();
+        $this->db->join('client', 'client.client_id = bill.client_id');*/
+        $data['l'] = $this->db->get('full_bills');
         $this->load->view('dashboard',$data);
         $this->load->view('footer');
     }

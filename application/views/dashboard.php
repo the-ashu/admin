@@ -187,7 +187,7 @@
                             <tr>
                                 <td><?php echo $row->invoice_no;?></td>
                                 <td><?php echo $row->name;?></td>
-                                <td><?php echo $row->bill_date;?></td>
+                                <td><?php echo $row->date;?></td>
                                 <td><?php echo $row->total;?></td>
                             </tr>
                             <?php $i++;}}?>
