@@ -238,7 +238,7 @@ public function product()
 
     public function printbill($id)
     { $this->db->select("bill.*,client.name");
-        $this->db->where('bill_id',$id);
+        $this->db->where('invoice_no',$id);
         $this->db->from('bill');
         $this->db->join('client', 'client.client_id = bill.client_id');
         $result=$this->db->get();
@@ -248,7 +248,7 @@ public function product()
 
     public function printbill2($id)
     {    $this->db->select("bill_details.*,product.name,product.product_code");
-        $this->db->where('bill_id',$id);
+        $this->db->where('invoice_no',$id);
         $this->db->from('bill_details');
         $this->db->join('product','product.product_id=bill_details.product_id');
         $result=$this->db->get();

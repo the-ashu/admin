@@ -64,8 +64,8 @@
                             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Action
                                 <span class="caret"></span></button>
                             <ul class="dropdown-menu">
-                                <li><a href="<?php echo base_url();?>welcome/deletepurchase/<?php echo $row->purchase_id;?>/<?php echo $row->purchase_product_id;?>">Delete</a></li>
-                                <li><a href="<?php echo base_url();?>welcome/editpurchase/<?php echo $row->purchase_id;?>/<?php echo $row->purchase_product_id;?>">Edit</a></li>
+                                <li><a href="<?php echo base_url();?>welcome/deletepurchase/<?php echo $row->invoice_no;?>">Delete</a></li>
+                                <li><a href="<?php echo base_url();?>welcome/editpurchase1/<?php echo $row->invoice_no;?>">Edit</a></li>
                             </ul>
                         </div></td>
                 </tr>

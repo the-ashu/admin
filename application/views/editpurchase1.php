@@ -37,7 +37,7 @@
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">CONTACT</label>
                                     <div class="col-md-5">
-                                        <input name="contact" id="contact" class="form-control" required type="text" value="<?php echo $contact;?>" readonly>
+                                        <input name="contact" id="contact" class="form-control" required type="text" value="<?php echo $contact;?>">
                                     </div>
                                 </div>
                             </div>
@@ -45,13 +45,13 @@
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">EMAIL</label>
                                     <div class="col-md-5">
-                                        <input name="email" id="email" class="form-control" type="email"value="<?php echo $email;?>" readonly>
+                                        <input name="email" id="email" class="form-control" type="email"value="<?php echo $email;?>" >
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">ADDRESS</label>
                                     <div class="col-md-5">
-                                        <textarea name="address" id="address" rows="5" class="form-control" readonly><?php echo $address;?></textarea>
+                                        <textarea name="address" id="address" rows="5" class="form-control" ><?php echo $address;?></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -59,29 +59,27 @@
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">STATE</label>
                                     <div class="col-md-5">
-                                        <input name="state" id="state" class="form-control" type="text" value="<?php echo $state;?>" readonly>
+                                        <input name="state" id="state" class="form-control" type="text" value="<?php echo $state;?>" >
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">CITY</label>
                                     <div class="col-md-5">
-                                        <input name="city" id="city" class="form-control" type="text" value="<?php echo $city;?>" readonly>
+                                        <input name="city" id="city" class="form-control" type="text" value="<?php echo $city;?>" >
                                     </div>
                                 </div>
                             </div>
-                            <input name="purchase_id" id="city" class="form-control" type="hidden" value="<?php echo $purchase_id;?>" readonly>
-                            <input name="purchase_product_id" id="city" class="form-control" type="hidden" value="<?php echo $purchase_product_id;?>" readonly>
                             <div class="row">
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">PINCODE</label>
                                     <div class="col-md-5">
-                                        <input name="pincode" id="pincode" class="form-control" type="number" value="<?php echo $pincode;?>" readonly>
+                                        <input name="pincode" id="pincode" class="form-control" type="number" value="<?php echo $pincode;?>" >
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">GST NO</label>
                                     <div class="col-md-5">
-                                        <input name="gst_no" id="gst_no" readonly class="form-control" type="text" value="<?php echo $gst_no;?>" readonly>
+                                        <input name="gst_no" id="gst_no"  class="form-control" type="text" value="<?php echo $gst_no;?>" >
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
@@ -152,26 +150,44 @@
                                         <td><input type="text" required class="form-control" readonly name="igst_amount[]" value="<?php echo $row->igst_amount;?>" ></td>
                                         <td><input type="text" required readonly class="form-control taxable_amount decimal" name="taxable_amount[]" value="<?php echo $row->taxable_amount;?>" ></td>
                                         <td><input type="text" required class="form-control total decimal" name="total_amount[]" value="<?php echo $row->total;?>" ></td>
+                                        <td><div class="dropdown">
+                                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Action
+                                                    <span class="caret"></span></button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="<?php echo base_url();?>welcome/editpurchaseproduct/<?php echo $row->purchase_id;?>/<?php echo $row->purchase_product_id;?>/<?php echo $row->invoice_no;?>">Edit</a></li>
+                                                    <li><a href="<?php echo base_url();?>welcome/cancelpurchaseproduct/<?php echo $row->purchase_id;?>/<?php echo $row->purchase_product_id;?>/<?php echo $row->invoice_no;?>" >Delete</a></li>
+                                                </ul>
+                                            </div></td>
                                         <td></td>
                                     </tr>
                                     </tr>
                                     <?php $total+=$row->total;$tax+=$row->taxable_amount;$basic+=$row->basic_amount;} ?>
                                 </tbody>
                             </table>
+
+                            <br><br>
+                            <!--end data-role="dynamic-fields-->
+                            <div class="clearfix">
+                                <input type="hidden" id="all_total" />
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <a href="<?php echo base_url();?>welcome/addpurchaseproduct/<?php echo $invoice_no;?>" class="btn btn-info" role="button">Add Products</a>
+                                    </div>
+                                </div>
                             <!--end data-role="dynamic-fields-->
                             <div class="clearfix">
                                 <input type="hidden" id="all_total" />
                                 <div class="col-md-2">
                                     <label style="color: #000;">Total Before GST Amt.</label>
-                                    <input type="text" name="sub_total" readonly   id="sub_total" class="form-control decimal" value="<?php echo $basic;?>" readonly>
+                                    <input type="text" name="sub_total" readonly   id="sub_total" class="form-control decimal" value="<?php echo $basic1;?>" readonly>
                                 </div>
                                 <div class="col-md-2">
                                     <label style="color: #000;">Total GST Amt.</label>
-                                    <input type="text" name="total_taxable_amount" readonly id="total_taxable_amount"   value="<?php echo $tax;?>" class="form-control decimal" readonly>
+                                    <input type="text" name="total_taxable_amount" readonly id="total_taxable_amount"   value="<?php echo $tax1;?>" class="form-control decimal" readonly>
                                 </div>
                                 <div class="col-md-2">
                                     <label style="color: #000;">Bill Amount</label>
-                                    <input type="text" name="total" readonly  value="<?php echo $full_total;?>"  id="bill_amount" class="form-control decimal" step="any" readonly>
+                                    <input type="text" name="total" readonly  value="<?php echo $total;?>"  id="bill_amount" class="form-control decimal" step="any" readonly>
                                 </div>
                                 <div class="col-md-2">
                                     <label style="color: #000;">Paid Amount</label>
@@ -187,7 +203,7 @@
                         <div class="panel-footer text-right">
                             <a href="javascript:window.print()" class="btn btn-warning btn-rounded">Print</a>
                             <input name="submit" class="btn btn-primary btn-rounded" type="submit" value="Submit">
-                            <a href="<?php echo base_url();?>welcome/deletepurchase/<?php echo $purchase_id;?>/<?php echo $purchase_product_id;?>" class="btn btn-danger btn-rounded">Cancel</a>
+                            <a href="<?php echo base_url();?>welcome/purchaseproduct" class="btn btn-danger btn-rounded">Cancel</a>
                         </div>
                     </div> <!-- end card-box -->
 

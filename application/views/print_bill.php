@@ -244,6 +244,8 @@
                                     </div>
                                     <hr>
                                     <h4 class="col-md-10 col-sm-10 col-xs-10"><b>Bill Amount:</b></h4> <h4 class="col-md-2 col-sm-2 col-xs-2"><b><?php echo $total;?></b></h4>
+                                    <h4 class="col-md-10 col-sm-10 col-xs-10"><b>Paid Amount:</b></h4> <h4 class="col-md-2 col-sm-2 col-xs-2"><b><?php echo $paid_amount;?></b></h4>
+                                    <h4 class="col-md-10 col-sm-10 col-xs-10"><b>Pending Amount:</b></h4> <h4 class="col-md-2 col-sm-2 col-xs-2"><b><?php echo $pending_amount;?></b></h4>
                                 </div>
                             </div>
                             <div class="row" style="border-radius: 0px;">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 12, 2018 at 11:37 AM
+-- Generation Time: Sep 17, 2018 at 11:30 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.1.12
 
@@ -236,59 +236,10 @@ CREATE TABLE `bill` (
 --
 
 INSERT INTO `bill` (`bill_id`, `client_id`, `invoice_no`, `contact`, `email`, `address`, `state`, `city`, `pincode`, `gst_no`, `bill_date`, `sub_total`, `total_taxable_amount`, `total`, `full_total`, `invoice_date`, `tpt_co`, `gr_no`, `way_bill_ref`, `place_of_order`, `status`, `created`) VALUES
-(6, 5, 'PS-006', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '2018-07-25', '28050.000', '5049.000', '33099.000', '0.000', '2018-07-25', '', '', '', '', 'pending', '2018-07-25 13:22:15'),
-(7, 5, 'PS-007', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '2018-07-27', '2110.000', '379.800', '2489.800', '0.000', '2018-07-27', '', '', '', '', 'pending', '2018-07-27 16:59:03'),
-(10, 5, NULL, '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '2268.000', '36.000', '2304.000', '0.000', '0000-00-00', '', 'zxzx', 'cxc', 'sdsds', NULL, NULL),
-(11, 5, '456', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '335.000', '45.000', '380.000', '34524.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(12, 5, '456', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '335.000', '45.000', '380.000', '34524.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(13, 5, '456', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '335.000', '45.000', '380.000', '34524.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(14, 5, '456', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '335.000', '45.000', '380.000', '34524.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(18, 5, '7899', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '0.000', '0.000', '0.000', '0.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(19, 5, '7899', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '2520.000', '1008.000', '3528.000', '0.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(20, 5, '7899', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '2520.000', '1008.000', '3528.000', '0.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(21, 5, '7899', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '2520.000', '1008.000', '3528.000', '0.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(22, 5, '7899', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '2520.000', '1008.000', '3528.000', '0.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(23, 5, '7899', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '2520.000', '1008.000', '3528.000', '0.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(24, 5, '7899', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '2520.000', '1008.000', '3528.000', '0.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(25, 5, '7899', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '2520.000', '1008.000', '3528.000', '0.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(26, 5, '7899', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '2520.000', '1008.000', '3528.000', '0.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(27, 5, '7899', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '2520.000', '1008.000', '3528.000', '0.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(28, 5, '7899', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '2520.000', '1008.000', '3528.000', '0.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(29, 5, '7899', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '2520.000', '1008.000', '3528.000', '0.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(30, 5, '7899', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '2520.000', '1008.000', '3528.000', '0.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(31, 5, '7899', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '2520.000', '1008.000', '3528.000', '0.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(32, 5, '7899', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '2520.000', '1008.000', '3528.000', '0.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(33, 5, '7899', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '2520.000', '1008.000', '3528.000', '0.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(34, 5, '8989', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '706.500', '162.000', '868.500', '0.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(35, 5, '8989', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '706.500', '162.000', '868.500', '0.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(36, 5, '8989', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '706.500', '162.000', '868.500', '0.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(39, 5, '5656', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '0.000', '0.000', '0.000', '0.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(40, 5, '5656', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '0.000', '0.000', '0.000', '0.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(41, 5, '5656', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '0.000', '0.000', '0.000', '0.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(42, 5, '5656', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '2744.000', '493.920', '3237.920', '0.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(43, 5, '5656', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '2744.000', '493.920', '3237.920', '0.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(44, 5, '5454', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '180.000', '32.400', '212.400', '0.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(45, 5, '5454', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '180.000', '32.400', '212.400', '0.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(48, 5, '4545', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '123456789123456', '0000-00-00', '16000.000', '2880.000', '18880.000', '0.000', '0000-00-00', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '0000-00-00 00:00:00'),
-(107, 6, 'dsdsj55 ', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-10', '12600.000', '2268.000', '14868.000', '999999999.999', '2018-09-10', 'zz', 'zxzx', ' cxc', 'sdsds', NULL, '2018-09-10 20:25:58'),
-(108, 7, 'dsdsj55', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-10', '999999999.999', '999999999.999', '999999999.999', '999999999.999', '2018-09-10', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '2018-09-10 20:24:24'),
-(109, 6, '600 ', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-10', '12600.000', '2268.000', '14868.000', '20250.720', '2018-09-10', 'zz', 'zxzx', ' cxc', 'sdsds', NULL, '2018-09-10 20:34:52'),
-(110, 6, '600', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-10', '504.000', '90.720', '594.720', '20250.720', '2018-09-10', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '2018-09-10 20:34:32'),
-(111, 6, '333', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-11', '12600.000', '2268.000', '14868.000', '15916.320', '2018-09-11', 'xxz', 'zzx', 'cxc', 'sdsds', NULL, '2018-09-11 14:48:03'),
-(112, 6, '333', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-11', '672.000', '376.320', '1048.320', '15916.320', '2018-09-11', 'xxz', 'zzx', 'cxc', 'sdsds', NULL, '2018-09-11 14:48:03'),
-(113, 6, '190', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-11', '504.000', '90.720', '594.720', '844.320', '2018-09-11', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '2018-09-11 15:21:10'),
-(115, 6, '115', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-11', '12600.000', '2268.000', '14868.000', '41076.000', '2018-09-11', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '2018-09-11 15:27:26'),
-(117, 7, '455', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-11', '12600.000', '7056.000', '19656.000', '39480.000', '2018-09-11', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '2018-09-11 15:52:28'),
-(119, 6, '420', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-11', '12600.000', '7056.000', '19656.000', '34524.000', '2018-09-11', 'xxz', 'zxzx', 'cxc', 'sdsds', NULL, '2018-09-11 15:55:04'),
-(121, 6, '230', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-11', '12600.000', '7056.000', '19656.000', '24111.360', '2018-09-11', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '2018-09-11 15:59:34'),
-(124, 6, '122', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-11', '12600.000', '7056.000', '19656.000', '20448.960', '2018-09-11', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '2018-09-11 16:58:14'),
-(126, 6, '134', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-11', '6300.000', '3528.000', '9828.000', '36036.000', '2018-09-11', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '2018-09-11 17:25:08'),
-(128, 6, '456', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-11', '12600.000', '7056.000', '19656.000', '34524.000', '2018-09-11', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '2018-09-11 17:27:21'),
-(129, 6, '456', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-11', '12600.000', '2268.000', '14868.000', '34524.000', '2018-09-11', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '2018-09-11 17:27:21'),
-(130, 6, '111', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-12', '12600.000', '2268.000', '14868.000', '15654.240', '2018-09-12', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '2018-09-12 11:33:01'),
-(132, 6, '112', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-12', '12600.000', '7056.000', '19656.000', '54180.000', '2018-09-12', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '2018-09-12 11:34:20'),
-(133, 6, '112', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-12', '12600.000', '7056.000', '19656.000', '54180.000', '2018-09-12', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '2018-09-12 11:34:20'),
-(134, 6, '112', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-12', '12600.000', '2268.000', '14868.000', '54180.000', '2018-09-12', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '2018-09-12 11:34:20');
+(160, 6, '420', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-16', '12600.000', '2268.000', '14868.000', '70812.000', '2018-09-16', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '2018-09-16 16:25:40'),
+(162, 6, '420', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-16', '12600.000', '2268.000', '14868.000', '70812.000', '2018-09-16', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '2018-09-16 16:25:40'),
+(165, 6, '134', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-16', '12600.000', '7056.000', '19656.000', '20442.240', '2018-09-16', 'zz', 'zxzx', 'xzxz', 'sdsds', NULL, '2018-09-16 16:41:44'),
+(166, 6, '134', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-16', '588.000', '105.840', '693.840', '20442.240', '2018-09-16', 'zz', 'zxzx', 'xzxz', 'sdsds', NULL, '2018-09-16 16:41:44');
 
 -- --------------------------------------------------------
 
@@ -325,10 +276,10 @@ CREATE TABLE `bill_details` (
 --
 
 INSERT INTO `bill_details` (`bill_detail_id`, `bill_id`, `invoice_no`, `product_id`, `product_code`, `rate`, `weight`, `quantity`, `basic_amount`, `gst_type`, `cgst`, `cgst_amount`, `sgst`, `sgst_amount`, `igst`, `igst_amount`, `taxable_amount`, `total`, `full_total`, `paid_amount`, `pending_amount`) VALUES
-(124, 130, 111, 9108, '9090', '2100.000', NULL, '6.000', '12600.000', 'CGST', '9.000', '1134.000', '9.000', '1134.000', '0.000', '0.000', '2268.000', '14868.000', '15654.240', '15000.000', '654.240'),
-(126, 132, 112, 9109, '9090', '2100.000', NULL, '6.000', '12600.000', 'IGST', '0.000', '0.000', '56.000', '7056.000', '0.000', '0.000', '7056.000', '19656.000', '54180.000', '54180.000', '0.000'),
-(127, 133, 112, 9109, '9090', '2100.000', NULL, '6.000', '12600.000', 'IGST', '0.000', '0.000', '56.000', '7056.000', '0.000', '0.000', '7056.000', '19656.000', '54180.000', '54180.000', '0.000'),
-(128, 134, 112, 9108, '9090', '2100.000', NULL, '6.000', '12600.000', 'CGST', '9.000', '1134.000', '9.000', '1134.000', '0.000', '0.000', '2268.000', '14868.000', '54180.000', '54180.000', '0.000');
+(154, 160, 420, 9108, '9090', '2100.000', NULL, '6.000', '12600.000', 'CGST', '9.000', '1134.000', '9.000', '1134.000', '0.000', '0.000', '2268.000', '14868.000', '70812.000', '30000.000', '-264.000'),
+(156, 162, 420, 9108, '9090', '2100.000', NULL, '6.000', '12600.000', 'CGST', '9.000', '1134.000', '9.000', '1134.000', '0.000', '0.000', '2268.000', '14868.000', '70812.000', '30000.000', '-264.000'),
+(159, 165, 134, 9109, '9090', '2100.000', NULL, '6.000', '12600.000', 'IGST', '0.000', '0.000', '56.000', '7056.000', '0.000', '0.000', '7056.000', '19656.000', '20442.240', '20042.000', '400.240'),
+(160, 166, 134, 9108, '9090', '84.000', 'jk', '7.000', '588.000', 'CGST', '9.000', '52.920', '9.000', '52.920', '0.000', '0.000', '105.840', '693.840', '20442.240', '20042.000', '400.240');
 
 -- --------------------------------------------------------
 
@@ -530,15 +481,19 @@ CREATE TABLE `full_bills` (
   `tpt_co` varchar(255) NOT NULL,
   `gr_no` varchar(255) NOT NULL,
   `way_bill_ref` varchar(255) NOT NULL,
-  `place_of_order` varchar(255) NOT NULL
+  `place_of_order` varchar(255) NOT NULL,
+  `sub_total` decimal(12,3) NOT NULL,
+  `taxable_amount` double(12,3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `full_bills`
 --
 
-INSERT INTO `full_bills` (`id`, `bill_id`, `bill_detail_id`, `invoice_no`, `name`, `email`, `date`, `contact`, `address`, `city`, `state`, `pincode`, `total`, `paid_amount`, `pending_amount`, `gst_no`, `tpt_co`, `gr_no`, `way_bill_ref`, `place_of_order`) VALUES
-(13, 134, 128, 112, 'madhu fertilizer ', 'ajaysweet01@gmail.com', '2018-09-12', '8583019463', ' Kolkata', 'kolkata', 'kolkata', 700011, '54180.000', '54180.000', '0.000', 0, 'zz', 'zxzx', 'cxc', 'sdsds');
+INSERT INTO `full_bills` (`id`, `bill_id`, `bill_detail_id`, `invoice_no`, `name`, `email`, `date`, `contact`, `address`, `city`, `state`, `pincode`, `total`, `paid_amount`, `pending_amount`, `gst_no`, `tpt_co`, `gr_no`, `way_bill_ref`, `place_of_order`, `sub_total`, `taxable_amount`) VALUES
+(22, 162, 156, 420, 'madhu fertilizer ', 'madhufertilizer@gmail.com', '2018-09-16', '8583019463', ' chunar', 'kolkata', 'kolkata', 700011, '29736.000', '30000.000', '-264.000', 0, 'zz', 'zxzx', 'cxc', 'sdsds', '25200.000', 0.000),
+(23, 166, 160, 134, 'madhu fertilizer ', 'madhu fertilizer', '2018-09-16', '8583019463', '   Kolkata', 'kolkata', 'kolkata', 700011, '20165.040', '20042.000', '400.240', 0, 'zz', 'zxzx', 'xzxz', 'ghghgh', '13356.000', 6985.440),
+(24, 168, 162, 123, 'madhu fertilizer ', 'ajaysweet01@gmail.com', '2018-09-17', '8583019463', '  chunar', 'kolkata', 'kolkata', 700011, '0.000', '1465.000', '-1465.000', 0, 'zz', 'zzx', 'cxc', 'sdsds', '0.000', -2268.000);
 
 -- --------------------------------------------------------
 
@@ -572,7 +527,7 @@ CREATE TABLE `full_purchase` (
 --
 
 INSERT INTO `full_purchase` (`id`, `invoice_no`, `name`, `contact`, `email`, `address`, `city`, `state`, `pincode`, `gst_no`, `basic_amount`, `total_taxable_amount`, `total`, `paid_amount`, `pending_amount`, `purchase_id`, `purchase_product_id`, `date`) VALUES
-(2, 112, 'pi2', '986653635', 'ashuspoj@gmail.com', 'xnjkcnjkcnkjcn', 'kjkjksdsk', 'jsksjdkj', 231304, 23, '25200.000', '9324.000', '34524.000', '34524.000', '0.000', 56, 80, '2018-09-12');
+(8, 132, 'pi2', '986653635', 'ashuspoj@gmail.com', 'xnjkcnjkcnkjcn', 'kjkjksdsk', 'jsksjdkj', 2147483647, 24, '25788.000', '4641.840', '30429.840', '15025.000', '15404.840', 81, 105, '2018-09-17');
 
 -- --------------------------------------------------------
 
@@ -633,8 +588,13 @@ CREATE TABLE `purchase` (
 --
 
 INSERT INTO `purchase` (`purchase_id`, `supplier_id`, `contact`, `email`, `address`, `state`, `city`, `pincode`, `gst_no`, `invoice_no`, `purchase_date`, `sub_total`, `total_taxable_amount`, `total`, `full_total`, `status`, `created`) VALUES
-(55, 6, '986653635', NULL, 'xnjkcnjkcnkjcn', 'jsksjdkj', 'kjkjksdsk', 231304, '23AZNPP3888M1ZH', '112', NULL, '12600.000', '2268.000', '14868.000', '34524.000', '1', '2018-09-12 11:36:01'),
-(56, 6, '986653635', NULL, 'xnjkcnjkcnkjcn', 'jsksjdkj', 'kjkjksdsk', 231304, '23AZNPP3888M1ZH', '112', NULL, '12600.000', '7056.000', '19656.000', '34524.000', '1', '2018-09-12 11:36:01');
+(80, 6, '986653635', NULL, 'xnjkcnjkcnkjcn', 'jsksjdkj', 'kjkjksdsk', 231304, '23AZNPP3888M1ZH', '132', NULL, '12600.000', '2268.000', '14868.000', '15654.240', '1', '2018-09-17 11:15:41'),
+(81, 6, '986653635', NULL, 'xnjkcnjkcnkjcn', 'jsksjdkj', 'kjkjksdsk', 231304, '23AZNPP3888M1ZH', '132', NULL, '588.000', '105.840', '693.840', '15654.240', '1', '2018-09-17 11:15:41'),
+(82, 6, '986653635', 'ashuspoj@gmail.com', 'xnjkcnjkcnkjcn', 'jsksjdkj', 'kjkjksdsk', 231304, '23', '132', NULL, '12600.000', '2268.000', '14868.000', '0.000', NULL, '2018-09-17 11:23:27'),
+(83, 6, '986653635', 'ashuspoj@gmail.com', 'xnjkcnjkcnkjcn', 'jsksjdkj', 'kjkjksdsk', 231304, '23', '132', NULL, '12600.000', '2268.000', '14868.000', '0.000', NULL, '2018-09-17 11:27:01'),
+(84, 6, '986653635', 'ashuspoj@gmail.com', 'xnjkcnjkcnkjcn', 'jsksjdkj', 'kjkjksdsk', 231304, '23', '132', NULL, '16800.000', '3024.000', '19824.000', '0.000', NULL, '2018-09-17 11:27:01'),
+(85, 6, '986653635', 'ashuspoj@gmail.com', 'xnjkcnjkcnkjcn', 'jsksjdkj', 'kjkjksdsk', 231304, '23', '132', NULL, '672.000', '120.960', '792.960', '0.000', NULL, '2018-09-17 11:27:01'),
+(86, 6, '986653635', 'ashuspoj@gmail.com', 'xnjkcnjkcnkjcn', 'jsksjdkj', 'kjkjksdsk', 231304, '23', '132', NULL, '16800.000', '3024.000', '19824.000', '0.000', NULL, '2018-09-17 11:27:01');
 
 -- --------------------------------------------------------
 
@@ -672,8 +632,9 @@ CREATE TABLE `purchase_product` (
 --
 
 INSERT INTO `purchase_product` (`purchase_product_id`, `purchase_id`, `product_id`, `product_code`, `invoice_no`, `rate`, `weight`, `quantity`, `basic_amount`, `gst_type`, `cgst`, `cgst_amount`, `sgst`, `sgst_amount`, `igst`, `igst_amount`, `taxable_amount`, `total`, `full_total`, `paid_amount`, `pending_amount`, `Date`) VALUES
-(79, 55, 9108, '9090', 112, '2100.000', 'jk', '6.000', '12600.000', 'CGST', '9.000', '1134.000', '9.000', '1134.000', '0.000', '0.000', '2268.000', '14868.000', 34524.000, '34524.000', '0.000', '2018-09-12'),
-(80, 56, 9109, '9090', 112, '2100.000', 'uy', '6.000', '12600.000', 'IGST', '0.000', '0.000', '56.000', '7056.000', '0.000', '0.000', '7056.000', '19656.000', 34524.000, '34524.000', '0.000', '2018-09-12');
+(104, 80, 9108, '9090', 132, '2100.000', 'jk', '6.000', '12600.000', 'CGST', '9.000', '1134.000', '9.000', '1134.000', '0.000', '0.000', '2268.000', '14868.000', 15654.240, '15025.000', '15404.840', '2018-09-17'),
+(105, 81, 9108, NULL, 132, '84.000', NULL, '7.000', '588.000', NULL, '9.000', '0.000', '9.000', '0.000', '0.000', '0.000', '105.840', '693.840', 15654.240, '15025.000', '15404.840', '2018-09-17'),
+(106, 166, 9108, '9090', 132, '2100.000', NULL, '6.000', '12600.000', 'CGST', '9.000', '1134.000', '9.000', '1134.000', '0.000', '0.000', '2268.000', '14868.000', 0.000, '15025.000', '15404.840', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -888,13 +849,13 @@ ALTER TABLE `admin_login`
 -- AUTO_INCREMENT for table `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `bill_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
+  MODIFY `bill_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170;
 
 --
 -- AUTO_INCREMENT for table `bill_details`
 --
 ALTER TABLE `bill_details`
-  MODIFY `bill_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
+  MODIFY `bill_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=164;
 
 --
 -- AUTO_INCREMENT for table `branch`
@@ -942,13 +903,13 @@ ALTER TABLE `client_product_rate_description`
 -- AUTO_INCREMENT for table `full_bills`
 --
 ALTER TABLE `full_bills`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `full_purchase`
 --
 ALTER TABLE `full_purchase`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -960,13 +921,13 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `purchase`
 --
 ALTER TABLE `purchase`
-  MODIFY `purchase_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `purchase_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
 -- AUTO_INCREMENT for table `purchase_product`
 --
 ALTER TABLE `purchase_product`
-  MODIFY `purchase_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `purchase_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
 
 --
 -- AUTO_INCREMENT for table `sales`

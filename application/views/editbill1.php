@@ -38,7 +38,7 @@
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">CONTACT</label>
                                     <div class="col-md-5">
-                                        <input name="contact" id="contact" class="form-control" required type="text" value="<?php echo $contact;?>" readonly>
+                                        <input name="contact" id="contact" class="form-control" required type="text" value="<?php echo $contact;?>" >
                                     </div>
                                 </div>
                             </div>
@@ -53,7 +53,7 @@
                             <div class="form-group col-md-12">
                                 <label class="col-md-4 control-label">ADDRESS</label>
                                 <div class="col-md-5">
-                                    <textarea name="address" id="address" rows="5" class="form-control" readonly> <?php echo $address;?></textarea>
+                                    <textarea name="address" id="address" rows="5" class="form-control" > <?php echo $address;?></textarea>
                                 </div>
                             </div>
                         </div>
@@ -61,13 +61,13 @@
                             <div class="form-group col-md-12">
                                 <label class="col-md-4 control-label">STATE</label>
                                 <div class="col-md-5">
-                                    <input name="state" id="state" class="form-control" type="text"  value="<?php echo $state;?>" readonly>
+                                    <input name="state" id="state" class="form-control" type="text"  value="<?php echo $state;?>" >
                                 </div>
                             </div>
                             <div class="form-group col-md-12">
                                 <label class="col-md-4 control-label">CITY</label>
                                 <div class="col-md-5">
-                                    <input name="city" id="city" class="form-control" type="text"  value="<?php echo $city;?>" readonly>
+                                    <input name="city" id="city" class="form-control" type="text"  value="<?php echo $city;?>" >
                                 </div>
                             </div>
                         </div>
@@ -75,55 +75,53 @@
                             <div class="form-group col-md-12">
                                 <label class="col-md-4 control-label">PINCODE</label>
                                 <div class="col-md-5">
-                                    <input name="pincode" id="pincode" class="form-control" type="number"  value="<?php echo $pincode;?>" readonly>
+                                    <input name="pincode" id="pincode" class="form-control" type="number"  value="<?php echo $pincode;?>" >
                                 </div>
                             </div>
                             <div class="form-group col-md-12">
                                 <label class="col-md-4 control-label">GST NO</label>
                                 <div class="col-md-5">
-                                    <input name="gst_no" id="gst_no" readonly class="form-control" type="text"  value="<?php echo $gst_no;?>" readonly>
+                                    <input name="gst_no" id="gst_no" readonly class="form-control" type="text"  value="<?php echo $gst_no;?>" >
                                 </div>
                             </div>
                             <div class="form-group col-md-12">
                                 <label  class="col-md-4 control-label">DATE</label>
                                 <div class="col-md-5">
-                                    <input class="form-control"  placeholder="mm/dd/yyyy" required id="datepicker-autoclose" type="text" name="date"  value="<?php echo $invoice_date;?>" readonly>
+                                    <input class="form-control"  placeholder="mm/dd/yyyy" required id="datepicker-autoclose" type="text" name="date"  value="<?php echo $invoice_date;?>" >
                                 </div>
                             </div>
 
                             <div class="form-group col-md-12">
                                 <label  class="col-md-4 control-label">INVOICE DATE</label>
                                 <div class="col-md-5">
-                                    <input type="text" name="invoice_date"   value="<?php echo $invoice_date;?>" class="form-control inline-date" readonly>
+                                    <input type="text" name="invoice_date"   value="<?php echo $invoice_date;?>" class="form-control inline-date" >
                                 </div>
                             </div>
                             <div class="form-group col-md-12">
                                 <label  class="col-md-4 control-label">Tpt. Co.</label>
                                 <div class="col-md-5">
-                                    <input type="text" name="tpt_co" class="form-control"  value="<?php echo $tpt_co;?>" readonly>
+                                    <input type="text" name="tpt_co" class="form-control"  value="<?php echo $tpt_co;?>" >
                                 </div>
                             </div>
                             <div class="form-group col-md-12">
                                 <label  class="col-md-4 control-label">Gr. No.</label>
                                 <div class="col-md-5">
-                                    <input type="text" name="gr_no" class="form-control"  value="<?php echo $gr_no;?>" readonly>
+                                    <input type="text" name="gr_no" class="form-control"  value="<?php echo $gr_no;?>" >
                                 </div>
                             </div>
                             <div class="form-group col-md-12">
                                 <label  class="col-md-4 control-label">Way Bill Ref.</label>
                                 <div class="col-md-5">
-                                    <input type="text" name="way_bill_ref" class="form-control"  value="<?php echo $way_bill_ref;?>" readonly>
+                                    <input type="text" name="way_bill_ref" class="form-control"  value="<?php echo $way_bill_ref;?>" >
                                 </div>
                             </div>
                             <div class="form-group col-md-12">
                                 <label  class="col-md-4 control-label">Place of Order.</label>
                                 <div class="col-md-5">
-                                    <input type="text" name="place_of_order" class="form-control"  value="<?php echo $place_of_order;?>" readonly>
+                                    <input type="text" name="place_of_order" class="form-control"  value="<?php echo $place_of_order;?>" >
                                 </div>
                             </div>
                         </div>
-                        <input type="hidden" name="bill_id" class="form-control"  value="<?php echo $bill_id;?>" readonly>
-                        <input type="hidden" name="bill_detail_id" class="form-control"  value="<?php echo $bill_detail_id;?>" readonly>
                         <table id="product_table" class="table table-striped table-bordered table-hover">
                             <thead>
                             <tr class="nobrd">
@@ -157,6 +155,7 @@
                                 <th class="text-left">Amount</th>
                                 <th class="text-left">GST Amt.</th>
                                 <th class="text-left">Total</th>
+                                <th>edit</th>
                                 <th></th>
                             </tr>
                             </thead>
@@ -178,6 +177,14 @@
                                     <td><input type="text" required class="form-control" readonly name="igst_amount[]" value="<?php echo $row->igst_amount;?>" ></td>
                                     <td><input type="text" required readonly class="form-control taxable_amount decimal" name="taxable_amount[]" value="<?php echo $row->taxable_amount;?>" ></td>
                                     <td><input type="text" required class="form-control total decimal" name="total_amount[]" value="<?php echo $row->total;?>" readonly></td>
+                                  <td> <div class="dropdown">
+                                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Action
+                                                <span class="caret"></span></button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="<?php echo base_url();?>welcome/editbillproduct/<?php echo $row->bill_id;?>/<?php echo $row->bill_detail_id;?>/<?php echo $row->invoice_no;?>">Edit</a></li>
+                                                <li><a href="<?php echo base_url();?>welcome/cancelbillproduct/<?php echo $row->bill_id;?>/<?php echo $row->bill_detail_id;?>/<?php echo $row->invoice_no;?>" >Delete</a></li>
+                                            </ul>
+                                        </div></td>
                                     <td></td>
                                 </tr>
                                 <?php $total+=$row->total;$tax+=$row->taxable_amount;$basic+=$row->basic_amount; }?>
@@ -185,9 +192,15 @@
                             <tfoot>
                             </tfoot>
                         </table>
+                        <br><br>
                         <!--end data-role="dynamic-fields-->
                         <div class="clearfix">
                             <input type="hidden" id="all_total" />
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <a href="<?php echo base_url();?>welcome/addbillproduct/<?php echo $invoice_no;?>" class="btn btn-info" role="button">Add Products</a>
+                                </div>
+                            </div>
                             <div class="col-md-2">
                                 <label style="color: #000;">Total Before GST Amt.</label>
                                 <input type="text" name="sub_total" readonly  value="<?php echo $basic;?>" readonly">
@@ -198,22 +211,22 @@
                             </div>
                             <div class="col-md-2">
                                 <label style="color: #000;">Bill Amount</label>
-                                <input type="text" name="total" readonly value="<?php echo $full_total;?>" readonly>
+                                <input type="number" name="total" readonly value="<?php echo $full_total;?>" step="any" readonly>
                             </div>
                             <div class="col-md-2">
                                 <label style="color: #000;">Paid Amount</label>
-                                <input type="text" name="paid_amount1"  value="<?php echo $paid_amount;?>" readonly>
+                                <input type="number" name="paid_amount" step="any" value="<?php echo $paid_amount;?>" readonly>
                             </div>
                             <div class="col-md-2">
                                 <label style="color: #000;">Enter Amount</label>
-                                <input type="text" name="paid_amount"   >
+                                <input type="number" name="paid_amount1" step="any"  >
                             </div>
                         </div>
                         <br><br>
                     </div>
                     <div class="panel-footer text-right">
                         <input name="submit" class="btn btn-primary btn-rounded" type="submit" value="Submit">
-                        <a href="cancelbill/<?php echo $bill_id;?>/<?php echo $bill_detail_id;?>" class="btn btn-danger btn-rounded">Cancel</a>
+                        <a href="<?php echo base_url();?>welcome/bill" class="btn btn-danger btn-rounded">Cancel</a>
                     </div>
             </div> <!-- end card-box -->
 
