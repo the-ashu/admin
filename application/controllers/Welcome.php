@@ -1340,7 +1340,7 @@ public function editclientproduct1($id1)
     $data['igst']=$this->input->post('igst');
     $data['rate']=$this->input->post('rate');
     $name2=$this->input->post('product_name');
-   $data['date']=$this->input->date('Y-m-d H:i:s');
+   $data['added']=date('Y-m-d H:i:s');
     $this->db->where('name',$name2);
     $data1['product']=$this->db->get('product')->row(0);
     $data['product_id']=$data1['product']->product_id;
