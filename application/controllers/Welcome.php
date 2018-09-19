@@ -727,12 +727,14 @@ public function printreportbilldetails1()
         $this->load->dbutil();
         $this->load->helper('file');
         $this->load->helper('download');
-        $this->db->select("client.*,sales.payable_amount");
-        $this->db->where('client.date >=', $date1);
-        $this->db->where('client.date <=', $date2);
+       /* $this->db->select("client.*,full_bills.*");
+        $this->db->where('full_bills.date >=', $date1);
+        $this->db->where('full_bills.date <=', $date2);
         $this->db->from('client');
-        $this->db->join('sales', 'client.name = sales.client_name');
-        $data['h'] = $this->db->get();
+        $this->db->join('full_bills', 'client.name = full_bills.name');*/
+       $this->db->where('date>=',$date1);
+        $this->db->where('date<=',$date2);
+        $data['h'] = $this->db->get('full_bills');
         $this->load->view('header');
         $this->load->view('viewclientsales',$data);
         $this->load->view('footer');
@@ -747,10 +749,7 @@ public function printreportbilldetails1()
         $this->load->dbutil();
         $this->load->helper('file');
         $this->load->helper('download');
-        $this->db->select("client.*,sales.payable_amount");
-        $this->db->from('client');
-        $this->db->join('sales', 'client.name = sales.client_name');
-        $result = $this->db->get();
+        $result = $this->db->get('full_bills');
         $delimiter = ",";
         $newline = "\r\n";
         $filename = "client_sales.csv";
@@ -987,12 +986,12 @@ public function printreportbilldetails1()
 
     public function printclientrate()
     {
-        $client_name=$this->input->post('client_name');
+       $client_name=$this->input->post('client_name');
         $this->load->dbutil();
         $this->load->helper('file');
         $this->load->helper('download');
         $this->db->select("client.client_id,client.name,client_product_rate.client_product_rate_id,client_product_rate_description.*,product.name");
-        $this->db->where('client.name=', $client_name);
+        $this->db->where('client.name', $client_name);
         $this->db->from('client');
         $this->db->join('client_product_rate', 'client_product_rate.client_id = client.client_id');
         $this->db->join('client_product_rate_description', 'client_product_rate.client_product_rate_id = client_product_rate_description.client_product_rate_id');
@@ -1033,7 +1032,7 @@ public function printreportbilldetails1()
         $this->load->helper('file');
         $this->load->helper('download');
         $this->db->select("client.client_id,client.name,client_order.*,client_order_details.*");
-        $this->db->where('client.name=', $client_name);
+        $this->db->where('client.name', $client_name);
         $this->db->from('client');
         $this->db->join('client_order', 'client_order.client_id = client.client_id');
         $this->db->join('client_order_details', 'client_order.client_order_id = client_order_details.client_order_id');

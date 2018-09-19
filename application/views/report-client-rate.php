@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <form action="printclientrate" class="form-horizontal" method="get">
+                <form action="printclientrate" class="form-horizontal" method="post">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 style="color: #fff;"><span class="fa fa-list"></span> Reports -  Client Rate</h3>
