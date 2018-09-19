@@ -163,7 +163,7 @@
                             <?php $total=0; $tax=0;$basic=0;foreach($pm->result() as $row){?>
                                 <tr id="product_table-row0">
                                     <td><select id="product_id0" name="product_id[]" class="form-control" ><option value="<?php echo $row->name;?>"><?php echo $row->name;?></option> </select></td>
-                                    <td><input type="text" required class="form-control" value="<?php echo $row->product_id;?>" readonly></td>
+                                    <td><input type="text" required class="form-control" value="<?php echo $row->product_code;?>" readonly></td>
                                     <td><input type="text" required class="form-control" name="weight" value="<?php echo $row->weight;?>" readonly ></td>
                                     <td><input type="text" required class="form-control decimal" name="rate" value="<?php echo $row->rate;?>" readonly></td>
                                     <td><input type="text" required class="form-control decimal" name="quantity[]" value="<?php echo $row->quantity;?>" readonly></td>

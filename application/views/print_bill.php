@@ -97,8 +97,8 @@
                                     <div class="pull-right text-right">
                                         <div class="col-md-12">
                                             <strong>Invoice No.
-                                                <?php echo $h->invoice_no;?></strong><br />
-                                            <strong>Invoice Date: <?php echo $h->invoice_date?></strong> <br>
+                                                <?php echo $l->invoice_no;?></strong><br />
+                                            <strong>Invoice Date: <?php echo $l->date?></strong> <br>
                                             <select class="hidden-print hidden" onchange="window.location='?id=Nw==&pc='+this.value">
                                                 <option value="T1JJR0lOQUwgRk9SIFJFQ0lQSUVOVA==" >ORIGINAL FOR RECIPIENT</option>
                                                 <option value="RFVQTElDQVRFIEZPUiBUUkFOU1BPUlRFUg==" >DUPLICATE FOR TRANSPORTER</option>
@@ -116,33 +116,33 @@
                             <div class="clearfix row">
                                 <div class="col-md-7 col-sm-7 col-xs-7">
                                     <div class="row">
-                                        <div class="col-md-4 col-sm-4 col-xs-4"><strong>Name: </strong></div> <div class="col-md-8 col-sm-8 col-xs-8"><b><?php echo $h->name;?></b></div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4"><strong>Name: </strong></div> <div class="col-md-8 col-sm-8 col-xs-8"><b><?php echo $l->name;?></b></div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4 col-sm-4 col-xs-4"><strong>Address: </strong></div> <div class="col-md-8 col-sm-8 col-xs-8"><?php echo $h->city;?></div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4"><strong>Address: </strong></div> <div class="col-md-8 col-sm-8 col-xs-8"><?php echo $l->city;?></div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4 col-sm-4 col-xs-4"><strong>Buyer GSTIN: </strong></div> <div class="col-md-8 col-sm-8 col-xs-8"><?php echo $h->gst_no;?></div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4"><strong>Buyer GSTIN: </strong></div> <div class="col-md-8 col-sm-8 col-xs-8"><?php echo $l->gst_no;?></div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4 col-sm-4 col-xs-4"><strong>State: </strong></div> <div class="col-md-8 col-sm-8 col-xs-8"><?php echo $h->state;?></div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4"><strong>State: </strong></div> <div class="col-md-8 col-sm-8 col-xs-8"><?php echo $l->state;?></div>
                                     </div>
                                 </div>
                                 <div class="col-md-5 col-sm-5 col-xs-5">
                                     <div class="row">
-                                        <div class="col-md-5 col-sm-5 col-xs-5"><strong>Tpt. Co.</strong></div><?php echo $h->tpt_co;?> <div class="col-md-7 col-sm-7 col-xs-7"></div>
+                                        <div class="col-md-5 col-sm-5 col-xs-5"><strong>Tpt. Co.</strong></div><?php echo $l->tpt_co;?> <div class="col-md-7 col-sm-7 col-xs-7"></div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-5 col-sm-5 col-xs-5"><strong>Gr. No.</strong></div><?php echo $h->gr_no;?> <div class="col-md-7 col-sm-7 col-xs-7"></div>
+                                        <div class="col-md-5 col-sm-5 col-xs-5"><strong>Gr. No.</strong></div><?php echo $l->gr_no;?> <div class="col-md-7 col-sm-7 col-xs-7"></div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-5 col-sm-5 col-xs-5"><strong>Date: </strong></div><?php echo $h->bill_date;?> <div class="col-md-7 col-sm-7 col-xs-7"></div>
+                                        <div class="col-md-5 col-sm-5 col-xs-5"><strong>Date: </strong></div><?php echo $l->date;?> <div class="col-md-7 col-sm-7 col-xs-7"></div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-5 col-sm-5 col-xs-5"><strong>Way Bill Ref.</strong></div><?php echo $h->way_bill_ref;?> <div class="col-md-7 col-sm-7 col-xs-7"></div>
+                                        <div class="col-md-5 col-sm-5 col-xs-5"><strong>Way Bill Ref.</strong></div><?php echo $l->way_bill_ref;?> <div class="col-md-7 col-sm-7 col-xs-7"></div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-5 col-sm-5 col-xs-5"><strong>Place of Supply: </strong></div><?php echo $h->place_of_order;?> <div class="col-md-7 col-sm-7 col-xs-7"></div>
+                                        <div class="col-md-5 col-sm-5 col-xs-5"><strong>Place of Supply: </strong></div><?php echo $l->place_of_order;?> <div class="col-md-7 col-sm-7 col-xs-7"></div>
                                     </div>
                                 </div>
 
