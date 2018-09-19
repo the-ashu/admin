@@ -40,7 +40,7 @@
         <?php $i=1;$basicamount=0;$cgst=0;$sgst=0;$igst=0;$tax=0;$total=0; foreach($h->result() as $row){?>
             <tr>
                 <td><?php echo $row->invoice_no;?></td>
-                <td> <?php echo $row->purchase_date;?></td>
+                <td> <?php echo $row->created;?></td>
                 <td><?php echo $row->name;?></td>
                 <td><?php echo $row->gst_no;?></td>
                 <td><?php echo $row->basic_amount;?></td>

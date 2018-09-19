@@ -48,15 +48,12 @@
             <input type="text" name="place_of_order" class="form-control">
         </div>
     </div>
-    <div class="row">
         <div class="form-group col-md-12">
             <label  class="col-md-4 control-label">INVOICE NO</label>
             <div class="col-md-5">
                 <input type="text" name="invoice_no" class="form-control">
             </div>
         </div>
-    </div>
-    <div class="col-md-12" >
         <div id="field">
             <div id="field0">
                 <!-- Text input-->
@@ -70,14 +67,12 @@
                         </select>
                     </div>
                 </div>
-                <div class="row">
                     <div class="form-group col-md-12">
                         <label  class="col-md-4 control-label">QUANTITY</label>
                         <div class="col-md-5">
                             <input type="number" name="quantity[]" class="form-control">
                         </div>
                     </div>
-                </div>
                 <div class="form-group col-md-12">
                     <label  class="col-md-4 control-label">RATE</label>
                     <div class="col-md-5">
@@ -98,7 +93,6 @@
         </div>
         <br><br>
 
-    </div>
 </div>
     <div class="panel-footer text-right">
         <input name="submit" class="btn btn-primary btn-rounded" type="submit" value="Submit">
