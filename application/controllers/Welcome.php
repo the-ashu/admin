@@ -1812,7 +1812,7 @@ public function supplierstatus($id1,$id2)
       $this->db->where('invoice_no',$invoice);
       $data['h']=$this->db->get('full_bills')->row();
       $data['client_name']=$data['h']->name;
-        $data['email']=$data['h']->name;
+        $data['email']=$data['h']->email;
         $data['invoice_date']=$data['h']->date;
         $data['contact']=$data['h']->contact;
         $data['address']=$data['h']->address;

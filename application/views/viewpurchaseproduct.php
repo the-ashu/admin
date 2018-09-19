@@ -36,7 +36,7 @@
         <tbody>
         <?php $i=1;$subtotal=0;$totaltaxableamount=0;$total=0; foreach($h->result() as $row){?>
             <tr>
-                <td><?php echo $row->purchase_date?></td>
+                <td><?php echo $row->created?></td>
                 <td> <?php echo $row->name;?></td>
                 <td><?php echo $row->gst_no;?></td>
                 <td><?php echo $row->weight;?></td>
