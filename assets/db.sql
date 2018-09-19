@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 17, 2018 at 11:30 AM
+-- Generation Time: Sep 19, 2018 at 12:06 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.1.12
 
@@ -238,8 +238,15 @@ CREATE TABLE `bill` (
 INSERT INTO `bill` (`bill_id`, `client_id`, `invoice_no`, `contact`, `email`, `address`, `state`, `city`, `pincode`, `gst_no`, `bill_date`, `sub_total`, `total_taxable_amount`, `total`, `full_total`, `invoice_date`, `tpt_co`, `gr_no`, `way_bill_ref`, `place_of_order`, `status`, `created`) VALUES
 (160, 6, '420', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-16', '12600.000', '2268.000', '14868.000', '70812.000', '2018-09-16', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '2018-09-16 16:25:40'),
 (162, 6, '420', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-16', '12600.000', '2268.000', '14868.000', '70812.000', '2018-09-16', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '2018-09-16 16:25:40'),
-(165, 6, '134', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-16', '12600.000', '7056.000', '19656.000', '20442.240', '2018-09-16', 'zz', 'zxzx', 'xzxz', 'sdsds', NULL, '2018-09-16 16:41:44'),
-(166, 6, '134', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-16', '588.000', '105.840', '693.840', '20442.240', '2018-09-16', 'zz', 'zxzx', 'xzxz', 'sdsds', NULL, '2018-09-16 16:41:44');
+(167, 6, '456', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-19', '12600.000', '2268.000', '14868.000', '69810.720', '2018-09-19', 'zz', 'zzx', 'cxc', 'sdsds', NULL, '2018-09-19 11:21:10'),
+(168, 6, '456', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-19', '12600.000', '7056.000', '19656.000', '69810.720', '2018-09-19', 'zz', 'zzx', 'cxc', 'sdsds', NULL, '2018-09-19 11:21:11'),
+(169, 6, '456', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-19', '16800.000', '3024.000', '19824.000', '69810.720', '2018-09-19', 'zz', 'zzx', 'cxc', 'sdsds', NULL, '2018-09-19 11:21:11'),
+(170, 7, '123', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-19', '12600.000', '2268.000', '14868.000', '16057.920', '2018-09-19', 'zz', 'zzx', 'cxc', 'sdsds', NULL, '2018-09-19 11:30:23'),
+(171, 7, '123', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-19', '672.000', '376.320', '1048.320', '16057.920', '2018-09-19', 'zz', 'zzx', 'cxc', 'sdsds', NULL, '2018-09-19 11:30:23'),
+(172, 7, '123', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-19', '120.000', '21.600', '141.600', '16057.920', '2018-09-19', 'zz', 'zzx', 'cxc', 'sdsds', NULL, '2018-09-19 11:30:23'),
+(175, 6, '121', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-19', '12600.000', '7056.000', '19656.000', '21043.680', '2018-09-19', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '2018-09-19 12:03:11'),
+(176, 6, '121', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-19', '672.000', '120.960', '792.960', '21043.680', '2018-09-19', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '2018-09-19 12:03:13'),
+(177, 6, '121', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-19', '504.000', '90.720', '594.720', '21043.680', '2018-09-19', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '2018-09-19 12:03:13');
 
 -- --------------------------------------------------------
 
@@ -278,8 +285,15 @@ CREATE TABLE `bill_details` (
 INSERT INTO `bill_details` (`bill_detail_id`, `bill_id`, `invoice_no`, `product_id`, `product_code`, `rate`, `weight`, `quantity`, `basic_amount`, `gst_type`, `cgst`, `cgst_amount`, `sgst`, `sgst_amount`, `igst`, `igst_amount`, `taxable_amount`, `total`, `full_total`, `paid_amount`, `pending_amount`) VALUES
 (154, 160, 420, 9108, '9090', '2100.000', NULL, '6.000', '12600.000', 'CGST', '9.000', '1134.000', '9.000', '1134.000', '0.000', '0.000', '2268.000', '14868.000', '70812.000', '30000.000', '-264.000'),
 (156, 162, 420, 9108, '9090', '2100.000', NULL, '6.000', '12600.000', 'CGST', '9.000', '1134.000', '9.000', '1134.000', '0.000', '0.000', '2268.000', '14868.000', '70812.000', '30000.000', '-264.000'),
-(159, 165, 134, 9109, '9090', '2100.000', NULL, '6.000', '12600.000', 'IGST', '0.000', '0.000', '56.000', '7056.000', '0.000', '0.000', '7056.000', '19656.000', '20442.240', '20042.000', '400.240'),
-(160, 166, 134, 9108, '9090', '84.000', 'jk', '7.000', '588.000', 'CGST', '9.000', '52.920', '9.000', '52.920', '0.000', '0.000', '105.840', '693.840', '20442.240', '20042.000', '400.240');
+(161, 167, 456, 9108, '9090', '2100.000', NULL, '6.000', '12600.000', 'CGST', '9.000', '1134.000', '9.000', '1134.000', '0.000', '0.000', '2268.000', '14868.000', '69810.720', '50003.000', '4345.000'),
+(162, 168, 456, 9109, '9090', '2100.000', NULL, '6.000', '12600.000', 'IGST', '0.000', '0.000', '56.000', '7056.000', '0.000', '0.000', '7056.000', '19656.000', '69810.720', '50003.000', '4345.000'),
+(163, 169, 456, 9108, '9090', '2100.000', NULL, '8.000', '16800.000', 'CGST', '9.000', '1512.000', '9.000', '1512.000', '0.000', '0.000', '3024.000', '19824.000', '69810.720', '50003.000', '4345.000'),
+(164, 170, 123, 9108, '9090', '2100.000', NULL, '6.000', '12600.000', 'CGST', '9.000', '1134.000', '9.000', '1134.000', '0.000', '0.000', '2268.000', '14868.000', '16057.920', '16000.000', '57.920'),
+(165, 171, 123, 9109, '9090', '84.000', NULL, '8.000', '672.000', 'IGST', '0.000', '0.000', '56.000', '376.320', '0.000', '0.000', '376.320', '1048.320', '16057.920', '16000.000', '57.920'),
+(166, 172, 123, 9108, '9090', '20.000', NULL, '6.000', '120.000', 'CGST', '9.000', '10.800', '9.000', '10.800', '0.000', '0.000', '21.600', '141.600', '16057.920', '16000.000', '57.920'),
+(169, 175, 121, 9109, '9090', '2100.000', 'uy', '6.000', '12600.000', 'IGST', '0.000', '0.000', '56.000', '7056.000', '0.000', '0.000', '7056.000', '19656.000', '21043.680', '25.000', '21018.680'),
+(170, 176, 121, 9108, '9090', '84.000', 'jk', '8.000', '672.000', 'CGST', '9.000', '60.480', '9.000', '60.480', '0.000', '0.000', '120.960', '792.960', '21043.680', '25.000', '21018.680'),
+(171, 177, 121, 9108, '9090', '84.000', 'jk', '6.000', '504.000', 'CGST', '9.000', '45.360', '9.000', '45.360', '0.000', '0.000', '90.720', '594.720', '21043.680', '25.000', '21018.680');
 
 -- --------------------------------------------------------
 
@@ -492,8 +506,9 @@ CREATE TABLE `full_bills` (
 
 INSERT INTO `full_bills` (`id`, `bill_id`, `bill_detail_id`, `invoice_no`, `name`, `email`, `date`, `contact`, `address`, `city`, `state`, `pincode`, `total`, `paid_amount`, `pending_amount`, `gst_no`, `tpt_co`, `gr_no`, `way_bill_ref`, `place_of_order`, `sub_total`, `taxable_amount`) VALUES
 (22, 162, 156, 420, 'madhu fertilizer ', 'madhufertilizer@gmail.com', '2018-09-16', '8583019463', ' chunar', 'kolkata', 'kolkata', 700011, '29736.000', '30000.000', '-264.000', 0, 'zz', 'zxzx', 'cxc', 'sdsds', '25200.000', 0.000),
-(23, 166, 160, 134, 'madhu fertilizer ', 'madhu fertilizer', '2018-09-16', '8583019463', '   Kolkata', 'kolkata', 'kolkata', 700011, '20165.040', '20042.000', '400.240', 0, 'zz', 'zxzx', 'xzxz', 'ghghgh', '13356.000', 6985.440),
-(24, 168, 162, 123, 'madhu fertilizer ', 'ajaysweet01@gmail.com', '2018-09-17', '8583019463', '  chunar', 'kolkata', 'kolkata', 700011, '0.000', '1465.000', '-1465.000', 0, 'zz', 'zzx', 'cxc', 'sdsds', '0.000', -2268.000);
+(25, 169, 163, 456, 'madhu fertilizer ', 'ajaysweet01@gmail.com', '2018-09-19', '8583019463', '  Kolkata', 'kolkata', 'kolkata', 700011, '54348.000', '50003.000', '4345.000', 0, 'zz', 'zzx', 'cxc', 'sdsds', '42000.000', 0.000),
+(26, 172, 166, 123, 'anil', 'ajaysweet01@gmail.com', '2018-09-19', '8583019463', ' Kolkata', 'kolkata', 'kolkata', 700011, '16057.920', '16000.000', '57.920', 0, 'zz', 'zzx', 'cxc', 'sdsds', '13392.000', 2665.920),
+(27, 177, 171, 121, 'madhu fertilizer ', 'ajaysweet01@gmail.com', '2018-09-19', '8583019463', ' Kolkata', 'kolkata', 'kolkata', 700011, '21043.680', '25.000', '21018.680', 0, 'zz', 'zxzx', 'cxc', 'sdsds', '13776.000', 7267.680);
 
 -- --------------------------------------------------------
 
@@ -849,13 +864,13 @@ ALTER TABLE `admin_login`
 -- AUTO_INCREMENT for table `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `bill_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170;
+  MODIFY `bill_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=178;
 
 --
 -- AUTO_INCREMENT for table `bill_details`
 --
 ALTER TABLE `bill_details`
-  MODIFY `bill_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=164;
+  MODIFY `bill_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=172;
 
 --
 -- AUTO_INCREMENT for table `branch`
@@ -903,7 +918,7 @@ ALTER TABLE `client_product_rate_description`
 -- AUTO_INCREMENT for table `full_bills`
 --
 ALTER TABLE `full_bills`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `full_purchase`
@@ -927,7 +942,7 @@ ALTER TABLE `purchase`
 -- AUTO_INCREMENT for table `purchase_product`
 --
 ALTER TABLE `purchase_product`
-  MODIFY `purchase_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+  MODIFY `purchase_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 
 --
 -- AUTO_INCREMENT for table `sales`

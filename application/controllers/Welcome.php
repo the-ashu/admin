@@ -1165,7 +1165,7 @@ public function printreportbilldetails1()
             $data3['product_id'] = $data['product']->product_id;
             $data3['product_code'] = $data['hsn_code'];
             $data3['rate'] = $data['rate'];
-            $data['weight'] = $data['unit'];
+            $data3['weight'] = $data['unit'];
             $data3['quantity'] = $data['quantity'];
             $data3['basic_amount'] = $data['sub_total'];
             $data3['gst_type'] = $data['gst_type'];
