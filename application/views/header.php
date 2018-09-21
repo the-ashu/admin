@@ -75,6 +75,7 @@
     </style>
 </head>
 <body><!-- Navigation Bar-->
+    <?php $name=$this->db->get('admin')->row(0)->company_name;?>
 <header id="topnav">
     <div class="topbar-main">
         <div class="container">
@@ -82,7 +83,7 @@
             <!-- Logo container-->
             <div class="logo">
                 <a href="dashboard" class="logo m-b-5 m-t-0">
-                    <img src="<?php echo base_url();?>assets/images/users/5b5c40ddf26e5.png"  class="img-circle" height="50px"> Patel And Sons Krishi Sewa Kendra</a>
+                    <img src="<?php echo base_url();?>assets/images/users/5b5c40ddf26e5.png"  class="img-circle" height="50px"> <?php echo $name;?></a>
             </div>
             <!-- End Logo container-->
 

@@ -561,6 +561,47 @@ public function delete_supplier($id)
 
 public function update_profile()
 {
+    /*if(!empty($_FILES['picture']['name'])){
+        $config['upload_path'] = 'http://localhost/admin/assets/images/';
+        $config['allowed_types'] = 'jpg|jpeg|png|gif';
+        $config['file_name'] = $_FILES['picture']['name'];
+        $config['max_size'] = "2048000";
+        $this->load->library('upload', $config);
+        $name=$config['file_name'];
+        if($this->upload->do_upload($name))
+        {
+            $data = array('upload_data' => $this->upload->data());
+          //  $this->load->view('upload_success',$data);
+            echo 0 ;
+            die;
+        }
+        else
+        {
+            $error = array('error' => $this->upload->display_errors());
+            print_r($error);
+          //  $this->load->view('custom_view', $error);
+            echo 1 ;
+            die;
+        }
+
+        //Load upload library and initialize configuration
+       /* $this->load->library('upload',$config);
+        $this->upload->initialize($config);
+       echo $this->upload->do_upload('picture');
+       die;
+        $uploadData = $this->upload->data();
+        $picture = $uploadData['file_name'];
+      /*  if($this->upload->do_upload('picture')){
+            $uploadData = $this->upload->data();
+            $picture = $uploadData['file_name'];
+
+        }
+        echo $picture;
+        die;else{
+            $picture = '';
+        }
+    }*/
+  //  $data['logo']=$picture;
     $data['company_name']=$this->input->post('company_name');
     $data['email']=$this->input->post('email');
     $data['phone_no']=$this->input->post('phone_no');
@@ -1076,6 +1117,7 @@ public function printreportbilldetails1()
         $data['l']=$this->db->get('full_bills')->row();
         $data['paid_amount']=$data['l']->paid_amount;
         $data['pending_amount']=$data['l']->pending_amount;
+        $data['admin']=$this->db->get('admin')->row(0);
         $data['pm']=$this->User_model->bill_details($invoice);
         $this->load->view('header');
      $this->load->view('print_bill',$data);

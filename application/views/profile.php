@@ -8,7 +8,7 @@
 
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <h3><span class="fa fa-user"></span> Patel And Sons Krishi Sewa Kendra</h3>
+                        <h3><span class="fa fa-user"></span> <?php echo $h['company_name'];?></h3>
                         <p></p>
                         <div class="text-center" id="user_image">
                             <img src="<?php echo base_url();?>assets/images/users/5b5c40ddf26e5.png" class="img-thumbnail">

@@ -88,11 +88,11 @@
                                 </div>
                                 <div class="clearfix">
                                     <div class="m-b-5 m-l-10 pull-left">
-                                        <b style="font-size: 20px;"> <img src="<?php echo base_url();?>assets/images/users/5b5c40ddf26e5.png"  class="img-circle" height="70px" width="50"> Patel And Sons Krishi Sewa Kendra</b><br>
-                                        <b>GSTIN: </b> 23AZNPP3888M1ZH</b><br>
-                                        <b>Reg Off.</b> ward no. 3 near galla mandi ,NH 12 main road mandideep<br>
-                                        <b>Corresponding Address: </b> ward no. 3 near galla mandi ,NH 12 main road mandideep<br>
-                                        <b>Email: </b> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9feffeebfaf3b1e9f6edfaf1fbedfeb1effeebfaf3dff8f2fef6f3b1fcf0f2">[email&#160;protected]</a> <br><b>Mobile: </b> 9589236338<br>
+                                        <b style="font-size: 20px;"> <img src="<?php echo base_url();?>assets/images/users/5b5c40ddf26e5.png"  class="img-circle" height="70px" width="50"><?php echo $admin->company_name;?></b><br>
+                                        <b>GSTIN: </b> <?php echo $admin->gst_no;?></b><br>
+                                        <b>Reg Off.</b> <?php echo $admin->reg_office;?><br>
+                                        <b>Corresponding Address: </b> <?php echo $admin->street_address;?><br>
+                                        <b>Email: </b> <?php echo $admin->email;?> <br><b>Mobile: </b> 9589236338<br>
                                     </div>
                                     <div class="pull-right text-right">
                                         <div class="col-md-12">
