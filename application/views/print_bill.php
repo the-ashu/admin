@@ -88,7 +88,7 @@
                                 </div>
                                 <div class="clearfix">
                                     <div class="m-b-5 m-l-10 pull-left">
-                                        <b style="font-size: 20px;"> <img src="<?php echo base_url();?>assets/images/users/5b5c40ddf26e5.png"  class="img-circle" height="70px" width="50"><?php echo $admin->company_name;?></b><br>
+                                        <b><h3><?php echo $admin->company_name;?></h3></b><br>
                                         <b>GSTIN: </b> <?php echo $admin->gst_no;?></b><br>
                                         <b>Reg Off.</b> <?php echo $admin->reg_office;?><br>
                                         <b>Corresponding Address: </b> <?php echo $admin->street_address;?><br>
