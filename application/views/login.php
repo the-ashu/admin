@@ -135,7 +135,7 @@
             <!-- <div class="pw-view"><i class="fa fa-eye"></i></div> -->
         </div>
         <div class="form-item">
-            <p class="pull-left">Powered by Retronix Technology Pvt. Ltd.</p>
+            <p class="pull-left">Powered by Ritronix Technology Pvt. Ltd.</p>
             <?php if($valid==false)
                 echo "Invalid username or password"?>
             <input type="submit" class="login pull-right" value="Log In">

@@ -204,7 +204,7 @@ public function product()
 
     public function update_profile($data)
     {
-        $this->db->where('phone_no',$data['phone_no']);
+        $this->db->where('adminid',1);
         return $this->db->update('admin',$data);
     }
 

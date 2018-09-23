@@ -247,6 +247,7 @@ public function changepassword()
 {if($this->session->userdata('logged_in')){
     $this->load->view('header');
     $data['valid']=true;
+    $data['h']=$this->db->get('admin')->row(0);
     $this->load->view('change_password',$data);
     $this->load->view('footer');
 }

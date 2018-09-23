@@ -88,11 +88,11 @@
                                 </div>
                                 <div class="clearfix">
                                     <div class="m-b-5 m-l-10 pull-left">
-                                        <b><h3><?php echo $admin->company_name;?></h3></b><br>
+                                        <b><h3><b><?php echo $admin->company_name;?></b></h3></b><br>
                                         <b>GSTIN: </b> <?php echo $admin->gst_no;?></b><br>
                                         <b>Reg Off.</b> <?php echo $admin->reg_office;?><br>
                                         <b>Corresponding Address: </b> <?php echo $admin->street_address;?><br>
-                                        <b>Email: </b> <?php echo $admin->email;?> <br><b>Mobile: </b> 9589236338<br>
+                                        <b>Email: </b> <?php echo $admin->email;?> <br><b>Mobile: </b> <?php echo $admin->phone_no;?><br>
                                     </div>
                                     <div class="pull-right text-right">
                                         <div class="col-md-12">
@@ -261,7 +261,7 @@
                                 </div>
 
                                 <div class="col-md-5 col-sm-5 col-xs-5 text-center">
-                                    <h5>For, PATEL AND SONS KRISHI SEWA KENDRA</h5>
+                                    <h4>For,<b> <?php echo $admin->company_name;?></b></h4>
                                     <br><br><br><br><br>
                                     Authorised Signatory<br><br>
                                     <center><b>E. & O. E. </b></center>

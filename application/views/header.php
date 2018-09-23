@@ -94,10 +94,6 @@
                     <li class="dropdown navbar-c-items">
                         <a href="#" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true">
                             <img src="<?php echo base_url();?>assets/images/users/5b5c40ddf26e5.png" alt="user-img" class="img-circle"> </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="profile.php"><i class="ti-user text-custom m-r-10"></i> Profile</a></li>
-                            <li><a href="functions/login.php?do=logout"><i class="ti-power-off text-danger m-r-10"></i> Logout</a></li>
-                        </ul>
                     </li>
                 </ul>
                 <div class="menu-item">
