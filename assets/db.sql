@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 19, 2018 at 12:06 PM
+-- Generation Time: Sep 24, 2018 at 08:25 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.1.12
 
@@ -52,7 +52,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`adminid`, `username`, `password`, `company_name`, `phone_no`, `email`, `logo`, `street_address`, `reg_office`, `state`, `city`, `pincode`, `gst_no`, `rolecode`, `status`, `created`) VALUES
-(1, 'admin', '81dc9bdb52d04dc20036dbd8313ed055', 'Patel And Sons Krishi Sewa Kendra', '9589236338', 'patel.virendra.patel@gmail.com', '5b5c40ddf26e5.png', 'ward no. 5 near galla mandi ,NH 12 main road mandideep', 'ward no. 5 near galli mandi ,NH 12 main road mandideep', 0, 'Thane', '400614', '23AZNPP3888M1ZH', 'admin', 1, '2017-07-27 01:06:01');
+(1, 'admin', '202cb962ac59075b964b07152d234b70', 'Patel And Sons Krishi Sewa  ', '9919345589', 'ashu@gmail.com', '', 'chunar', 'ward no. 5 near galli mandi ,NH 12 main road mandideep', 0, 'Thane', '400614', '23AZNPP3888M1ZH', 'admin', 1, '2017-07-27 01:06:01');
 
 -- --------------------------------------------------------
 
@@ -236,17 +236,8 @@ CREATE TABLE `bill` (
 --
 
 INSERT INTO `bill` (`bill_id`, `client_id`, `invoice_no`, `contact`, `email`, `address`, `state`, `city`, `pincode`, `gst_no`, `bill_date`, `sub_total`, `total_taxable_amount`, `total`, `full_total`, `invoice_date`, `tpt_co`, `gr_no`, `way_bill_ref`, `place_of_order`, `status`, `created`) VALUES
-(160, 6, '420', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-16', '12600.000', '2268.000', '14868.000', '70812.000', '2018-09-16', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '2018-09-16 16:25:40'),
-(162, 6, '420', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-16', '12600.000', '2268.000', '14868.000', '70812.000', '2018-09-16', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '2018-09-16 16:25:40'),
-(167, 6, '456', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-19', '12600.000', '2268.000', '14868.000', '69810.720', '2018-09-19', 'zz', 'zzx', 'cxc', 'sdsds', NULL, '2018-09-19 11:21:10'),
-(168, 6, '456', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-19', '12600.000', '7056.000', '19656.000', '69810.720', '2018-09-19', 'zz', 'zzx', 'cxc', 'sdsds', NULL, '2018-09-19 11:21:11'),
-(169, 6, '456', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-19', '16800.000', '3024.000', '19824.000', '69810.720', '2018-09-19', 'zz', 'zzx', 'cxc', 'sdsds', NULL, '2018-09-19 11:21:11'),
-(170, 7, '123', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-19', '12600.000', '2268.000', '14868.000', '16057.920', '2018-09-19', 'zz', 'zzx', 'cxc', 'sdsds', NULL, '2018-09-19 11:30:23'),
-(171, 7, '123', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-19', '672.000', '376.320', '1048.320', '16057.920', '2018-09-19', 'zz', 'zzx', 'cxc', 'sdsds', NULL, '2018-09-19 11:30:23'),
-(172, 7, '123', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-19', '120.000', '21.600', '141.600', '16057.920', '2018-09-19', 'zz', 'zzx', 'cxc', 'sdsds', NULL, '2018-09-19 11:30:23'),
-(175, 6, '121', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-19', '12600.000', '7056.000', '19656.000', '21043.680', '2018-09-19', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '2018-09-19 12:03:11'),
-(176, 6, '121', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-19', '672.000', '120.960', '792.960', '21043.680', '2018-09-19', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '2018-09-19 12:03:13'),
-(177, 6, '121', '8583019463', 'ajaysweet01@gmail.com', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-09-19', '504.000', '90.720', '594.720', '21043.680', '2018-09-19', 'zz', 'zxzx', 'cxc', 'sdsds', NULL, '2018-09-19 12:03:13');
+(189, 9, '61', '890809809809', 'ashuspoj@gmail.com', 'xnjkcnjkcnkjcn', 'jsksjdkj', 'kjkjksdsk', 231304, '93449038490482039', '2018-09-24', '2856.000', '514.080', '3370.080', '23026.080', '2018-09-24', 'xxz', 'zxzx', 'xzxz', 'zxzx', NULL, '2018-09-24 20:21:39'),
+(190, 9, '61', '890809809809', 'ashuspoj@gmail.com', 'xnjkcnjkcnkjcn', 'jsksjdkj', 'kjkjksdsk', 231304, '93449038490482039', '2018-09-24', '12600.000', '7056.000', '19656.000', '23026.080', '2018-09-24', 'xxz', 'zxzx', 'xzxz', 'zxzx', NULL, '2018-09-24 20:21:39');
 
 -- --------------------------------------------------------
 
@@ -283,17 +274,8 @@ CREATE TABLE `bill_details` (
 --
 
 INSERT INTO `bill_details` (`bill_detail_id`, `bill_id`, `invoice_no`, `product_id`, `product_code`, `rate`, `weight`, `quantity`, `basic_amount`, `gst_type`, `cgst`, `cgst_amount`, `sgst`, `sgst_amount`, `igst`, `igst_amount`, `taxable_amount`, `total`, `full_total`, `paid_amount`, `pending_amount`) VALUES
-(154, 160, 420, 9108, '9090', '2100.000', NULL, '6.000', '12600.000', 'CGST', '9.000', '1134.000', '9.000', '1134.000', '0.000', '0.000', '2268.000', '14868.000', '70812.000', '30000.000', '-264.000'),
-(156, 162, 420, 9108, '9090', '2100.000', NULL, '6.000', '12600.000', 'CGST', '9.000', '1134.000', '9.000', '1134.000', '0.000', '0.000', '2268.000', '14868.000', '70812.000', '30000.000', '-264.000'),
-(161, 167, 456, 9108, '9090', '2100.000', NULL, '6.000', '12600.000', 'CGST', '9.000', '1134.000', '9.000', '1134.000', '0.000', '0.000', '2268.000', '14868.000', '69810.720', '50003.000', '4345.000'),
-(162, 168, 456, 9109, '9090', '2100.000', NULL, '6.000', '12600.000', 'IGST', '0.000', '0.000', '56.000', '7056.000', '0.000', '0.000', '7056.000', '19656.000', '69810.720', '50003.000', '4345.000'),
-(163, 169, 456, 9108, '9090', '2100.000', NULL, '8.000', '16800.000', 'CGST', '9.000', '1512.000', '9.000', '1512.000', '0.000', '0.000', '3024.000', '19824.000', '69810.720', '50003.000', '4345.000'),
-(164, 170, 123, 9108, '9090', '2100.000', NULL, '6.000', '12600.000', 'CGST', '9.000', '1134.000', '9.000', '1134.000', '0.000', '0.000', '2268.000', '14868.000', '16057.920', '16000.000', '57.920'),
-(165, 171, 123, 9109, '9090', '84.000', NULL, '8.000', '672.000', 'IGST', '0.000', '0.000', '56.000', '376.320', '0.000', '0.000', '376.320', '1048.320', '16057.920', '16000.000', '57.920'),
-(166, 172, 123, 9108, '9090', '20.000', NULL, '6.000', '120.000', 'CGST', '9.000', '10.800', '9.000', '10.800', '0.000', '0.000', '21.600', '141.600', '16057.920', '16000.000', '57.920'),
-(169, 175, 121, 9109, '9090', '2100.000', 'uy', '6.000', '12600.000', 'IGST', '0.000', '0.000', '56.000', '7056.000', '0.000', '0.000', '7056.000', '19656.000', '21043.680', '25.000', '21018.680'),
-(170, 176, 121, 9108, '9090', '84.000', 'jk', '8.000', '672.000', 'CGST', '9.000', '60.480', '9.000', '60.480', '0.000', '0.000', '120.960', '792.960', '21043.680', '25.000', '21018.680'),
-(171, 177, 121, 9108, '9090', '84.000', 'jk', '6.000', '504.000', 'CGST', '9.000', '45.360', '9.000', '45.360', '0.000', '0.000', '90.720', '594.720', '21043.680', '25.000', '21018.680');
+(183, 189, 61, 9108, '9090', '84.000', 'jk', '34.000', '2856.000', 'CGST', '9.000', '257.040', '9.000', '257.040', '0.000', '0.000', '514.080', '3370.080', '23026.080', '15000.000', '8026.080'),
+(184, 190, 61, 9109, '9090', '2100.000', 'uy', '6.000', '12600.000', 'IGST', '0.000', '0.000', '56.000', '7056.000', '0.000', '0.000', '7056.000', '19656.000', '23026.080', '15000.000', '8026.080');
 
 -- --------------------------------------------------------
 
@@ -364,9 +346,8 @@ CREATE TABLE `client` (
 --
 
 INSERT INTO `client` (`client_id`, `name`, `email`, `contact`, `address`, `city`, `state`, `pincode`, `gst_no`, `date`, `status`, `created`) VALUES
-(6, 'madhu fertilizer ', 'ajaysweet01@gmail.com', '8583019463', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-07-27', 1, '2018-08-15 05:07:34'),
-(7, 'anil', 'ajaysweet01@gmail.com', '8583019463', 'Kolkata', 'kolkata', 'kolkata', 700011, '', '2018-07-27', 0, '2018-08-14 18:45:13'),
-(8, 'Ramesh jha', 'ritronixtechnology17@gmail.com', '8510895089', '122, sector \"C\" near R.K. Hospital Bhopal', 'Bhopal', 'M.P.', 462046, '', '2018-07-28', 0, '2018-08-14 18:45:15');
+(7, 'anil', 'ajaysweet01@gmail.com', '8583019463', 'Kolkata', 'kolkata', 'kolkata', 700011, '343435455', '2018-07-27', 0, '2018-09-24 18:23:56'),
+(9, 'yuyu', 'ashuspoj@gmail.com', '890809809809', 'xnjkcnjkcnkjcn', 'kjkjksdsk', 'jsksjdkj', 231304, '93449038490482039', '2018-09-19', 0, '2018-09-19 12:12:01');
 
 -- --------------------------------------------------------
 
@@ -387,9 +368,14 @@ CREATE TABLE `client_order` (
 --
 
 INSERT INTO `client_order` (`client_order_id`, `client_id`, `date`, `status`, `created`) VALUES
-(1, 7, '0000-00-00', 1, '0000-00-00 00:00:00'),
-(2, 8, '0000-00-00', 1, '0000-00-00 00:00:00'),
-(3, 7, '2018-08-14', 0, '2018-08-14 08:31:26');
+(1, 7, '0000-00-00', 0, '0000-00-00 00:00:00'),
+(2, 8, '0000-00-00', 0, '0000-00-00 00:00:00'),
+(3, 7, '2018-08-14', 0, '2018-08-14 08:31:26'),
+(4, 6, '2018-09-19', 0, '2018-09-19 14:09:35'),
+(5, 6, '2018-09-19', 1, '2018-09-19 14:10:11'),
+(6, 6, '2018-09-19', 1, '2018-09-19 14:10:29'),
+(7, 6, '2018-09-19', 1, '2018-09-19 14:10:59'),
+(8, 7, '2018-09-19', 1, '2018-09-19 14:30:37');
 
 -- --------------------------------------------------------
 
@@ -412,7 +398,12 @@ CREATE TABLE `client_order_details` (
 INSERT INTO `client_order_details` (`client_order_detail_id`, `client_order_id`, `product_id`, `weight`, `quantity`) VALUES
 (1, 1, 13, 'CFT', '6.000'),
 (2, 2, 13, 'CFT', '8.000'),
-(3, 3, 13, 'CFT', '8.000');
+(3, 3, 13, 'CFT', '8.000'),
+(4, 4, 9109, 'TON', '8.000'),
+(5, 5, 9109, 'CFT', '8.000'),
+(6, 6, 9108, 'CFT', '8.000'),
+(7, 7, 9109, 'CFT', '8.000'),
+(8, 8, 9109, 'TON', '8.000');
 
 -- --------------------------------------------------------
 
@@ -433,11 +424,11 @@ CREATE TABLE `client_product_rate` (
 --
 
 INSERT INTO `client_product_rate` (`client_product_rate_id`, `client_id`, `date`, `status`, `created`) VALUES
-(2, 6, '2018-08-18', 1, '2018-08-18 20:58:16'),
 (3, 6, '2018-08-22', 1, '2018-08-22 06:52:13'),
 (4, 6, '2018-08-22', 1, '2018-08-22 06:54:50'),
 (5, 6, '2018-08-22', 1, '2018-08-22 06:55:46'),
-(6, 6, '2018-08-22', 1, '2018-08-22 06:56:05');
+(6, 6, '2018-08-22', 1, '2018-08-22 06:56:05'),
+(7, 7, '2018-09-19', 1, '2018-09-19 15:46:04');
 
 -- --------------------------------------------------------
 
@@ -463,11 +454,11 @@ CREATE TABLE `client_product_rate_description` (
 --
 
 INSERT INTO `client_product_rate_description` (`client_product_rate_description_id`, `client_product_rate_id`, `product_id`, `weight`, `rate`, `gst_type`, `cgst`, `sgst`, `igst`, `added`) VALUES
-(2, 2, 11, 'TON', '2100.000', 'CGST', '0.000', '0.000', '9.000', '2018-08-18 20:58:16'),
-(3, 3, 11, 'TON', '2100.000', 'CGST', '0.000', '0.000', '9.000', '2018-08-22 06:52:13'),
+(3, 3, 9108, 'TON', '2100.000', 'CGST', '0.000', '0.000', '9.000', '2018-09-19 14:09:13'),
 (4, 4, 11, 'TON', '2100.000', 'CGST', '0.000', '0.000', '9.000', '2018-08-22 06:54:50'),
 (5, 5, 11, 'TON', '2100.000', 'CGST', '0.000', '0.000', '9.000', '2018-08-22 06:55:46'),
-(6, 6, 11, 'TON', '2100.000', 'CGST', '0.000', '0.000', '9.000', '2018-08-22 06:56:05');
+(6, 6, 11, 'TON', '2100.000', 'CGST', '0.000', '0.000', '9.000', '2018-08-22 06:56:05'),
+(7, 7, 9108, 'jk', '45.000', 'CGST', '9.000', '9.000', '0.000', '2018-09-19 15:46:04');
 
 -- --------------------------------------------------------
 
@@ -491,7 +482,7 @@ CREATE TABLE `full_bills` (
   `total` decimal(12,3) NOT NULL,
   `paid_amount` decimal(12,3) NOT NULL,
   `pending_amount` decimal(12,3) NOT NULL,
-  `gst_no` int(255) NOT NULL,
+  `gst_no` varchar(255) NOT NULL,
   `tpt_co` varchar(255) NOT NULL,
   `gr_no` varchar(255) NOT NULL,
   `way_bill_ref` varchar(255) NOT NULL,
@@ -505,10 +496,7 @@ CREATE TABLE `full_bills` (
 --
 
 INSERT INTO `full_bills` (`id`, `bill_id`, `bill_detail_id`, `invoice_no`, `name`, `email`, `date`, `contact`, `address`, `city`, `state`, `pincode`, `total`, `paid_amount`, `pending_amount`, `gst_no`, `tpt_co`, `gr_no`, `way_bill_ref`, `place_of_order`, `sub_total`, `taxable_amount`) VALUES
-(22, 162, 156, 420, 'madhu fertilizer ', 'madhufertilizer@gmail.com', '2018-09-16', '8583019463', ' chunar', 'kolkata', 'kolkata', 700011, '29736.000', '30000.000', '-264.000', 0, 'zz', 'zxzx', 'cxc', 'sdsds', '25200.000', 0.000),
-(25, 169, 163, 456, 'madhu fertilizer ', 'ajaysweet01@gmail.com', '2018-09-19', '8583019463', '  Kolkata', 'kolkata', 'kolkata', 700011, '54348.000', '50003.000', '4345.000', 0, 'zz', 'zzx', 'cxc', 'sdsds', '42000.000', 0.000),
-(26, 172, 166, 123, 'anil', 'ajaysweet01@gmail.com', '2018-09-19', '8583019463', ' Kolkata', 'kolkata', 'kolkata', 700011, '16057.920', '16000.000', '57.920', 0, 'zz', 'zzx', 'cxc', 'sdsds', '13392.000', 2665.920),
-(27, 177, 171, 121, 'madhu fertilizer ', 'ajaysweet01@gmail.com', '2018-09-19', '8583019463', ' Kolkata', 'kolkata', 'kolkata', 700011, '21043.680', '25.000', '21018.680', 0, 'zz', 'zxzx', 'cxc', 'sdsds', '13776.000', 7267.680);
+(32, 190, 184, 61, 'yuyu', 'ashuspoj@gmail.com', '2018-09-24', '890809809809', ' xnjkcnjkcnkjcn', 'kjkjksdsk', 'jsksjdkj', 231304, '23026.080', '15000.000', '8026.080', '93449038490482039', 'xxz', 'zxzx', 'xzxz', 'zxzx', '15456.000', 7570.080);
 
 -- --------------------------------------------------------
 
@@ -864,13 +852,13 @@ ALTER TABLE `admin_login`
 -- AUTO_INCREMENT for table `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `bill_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=178;
+  MODIFY `bill_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=191;
 
 --
 -- AUTO_INCREMENT for table `bill_details`
 --
 ALTER TABLE `bill_details`
-  MODIFY `bill_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=172;
+  MODIFY `bill_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=185;
 
 --
 -- AUTO_INCREMENT for table `branch`
@@ -888,37 +876,37 @@ ALTER TABLE `ci_users`
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `client_order`
 --
 ALTER TABLE `client_order`
-  MODIFY `client_order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `client_order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `client_order_details`
 --
 ALTER TABLE `client_order_details`
-  MODIFY `client_order_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `client_order_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `client_product_rate`
 --
 ALTER TABLE `client_product_rate`
-  MODIFY `client_product_rate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `client_product_rate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `client_product_rate_description`
 --
 ALTER TABLE `client_product_rate_description`
-  MODIFY `client_product_rate_description_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `client_product_rate_description_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `full_bills`
 --
 ALTER TABLE `full_bills`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `full_purchase`
