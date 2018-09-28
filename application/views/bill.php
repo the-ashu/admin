@@ -19,7 +19,8 @@
 <div class="container">
     <div class="row">
         <br><br><br><br><br><br><br>
-        <a href="newbill" class="pull-right btn btn-primary btn-sm waves-effect waves-light"><i class="fa fa-plus"></i> Add New</a>
+            <a href="newbill" class="pull-right btn btn-primary btn-sm waves-effect waves-light"><i class="fa fa-plus"></i> Add New</a>
+            <a href="newbill1" class="pull-right btn btn-primary btn-sm waves-effect waves-light"><i class="fa fa-plus"></i> Add New Walk-in Invoice</a>
         <br><br>
         <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>

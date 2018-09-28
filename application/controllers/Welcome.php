@@ -1181,8 +1181,8 @@ public function printreportbilldetails1()
             $data['total'] = $data['total_taxable_amount'] + $data['sub_total'];
             $data2['client_id'] = $data['client_id'];
             $data2['contact'] = $data['contact'];
-            $data2['email'] = $data['email'];
-            $data2['address'] = $data['address'];
+          //  $data2['email'] = $data['email'];
+          //  $data2['address'] = $data['address'];
             $data2['state'] = $data['state'];
             $data2['city'] = $data['city'];
             $data2['pincode'] = $data['pincode'];
@@ -1278,7 +1278,7 @@ public function newprebill2($invoice)
     $data2['pending_amount']=$data['pending_amount'];
     $data2['name']=$this->input->post('client_name');
     $data2['contact']=$this->input->post('contact');
-   // $data2['email']=$this->input->post('email');
+    $data2['email']=$this->input->post('email');
     $data2['address']=$this->input->post('address');
     $data2['state']=$this->input->post('state');
     $data2['city']=$this->input->post('city');
@@ -1763,7 +1763,7 @@ public function supplierstatus($id1,$id2)
         $this->load->view('footer');
     }
 
-    public function editbill1($invoice)
+    public function editbill1($invoice=false)
     {
       /*  $data['full_total']=$this->input->post('full_total');
         $data['client_name']=$this->input->post('client_name');
@@ -2340,6 +2340,122 @@ public function editpurchaseproduct1()
     $this->db->where('purchase_product_id',$purchase_product_id);
     $this->db->update('purchase_product',$data4);
     redirect(base_url().'welcome/editpurchase1/'.$invoice);
+}
+
+public function newbill1()
+{
+    $data['h']=$this->db->get('client');
+    $data['k']=$this->db->get('product');
+    $this->load->view('header');
+    $this->load->view('new_pre_bill2',$data);
+    $this->load->view('footer');
+}
+
+public function newprebill5()
+{
+    $total=0;
+    $p=count($this->input->post('quantity'));
+    for($i=0;$i<$p;$i++) {
+        $qty = $this->input->post('quantity')[$i];
+        $name = $this->input->post('name')[$i];
+        $rate = $this->input->post('rate')[$i];
+        $data['client_name'] = $this->input->post('client_name');
+        $data['date'] = $this->input->post('date');
+        $data['invoice_date'] = date('Y-m-d H:i:s');
+        $data['gr_no'] = $this->input->post('gr_no');
+        $data['way_bill_ref'] = $this->input->post('way_bill_ref');
+        $data['place_of_order'] = $this->input->post('place_of_order');
+        $data['bill_date'] = date('Y-m-d H:i:s');
+        $data['product_name'] = $name;
+        $data['rate'] = $rate;
+        $data['quantity'] = $qty;
+        $data['invoice_no'] = $this->input->post('invoice_no');
+        $data['tpt_co'] = $this->input->post('tpt_co');
+        //  echo $data['product_name'];
+        $data['product'] = $this->User_model->newprebill($name);
+        //print_r($data);
+        //   echo $data['product']->product_id;
+      //  $data['client'] = $this->User_model->newprepbill1($data['client_name']);
+        // echo $data['client']->client_id;
+        $data['contact'] = $this->input->post('contact');
+        $data['email'] = $this->input->post('email');
+        $data['address'] =$this->input->post('address');
+        $data['state'] = $this->input->post('state');
+        $data['city'] = $this->input->post('city');
+        $data['pincode'] = $this->input->post('pincode');
+        $data['gst_no'] = $this->input->post('gst_no');
+        $data['client_id'] = $this->input->post('0');
+        $data['hsn_code'] = $data['product']->product_code;
+        $data['unit'] = $data['product']->weight;
+        $data['gst_type'] = $data['product']->gst_type;
+        $data['cgst'] = $data['product']->cgst;
+        $data['sgst'] = $data['product']->sgst;
+        $data['igst'] = $data['product']->igst;
+        $data['product_id'] = $data['product']->product_id;
+        $data['sub_total'] = ($data['rate'] * $data['quantity']);
+        $data['cgst_amount'] = ($data['sub_total'] * $data['cgst'] * 0.01);
+        $data['sgst_amount'] = ($data['sub_total'] * $data['sgst'] * 0.01);
+        $data['igst_amount'] = ($data['sub_total'] * $data['igst'] * 0.01);
+        $data['total_taxable_amount'] = $data['cgst_amount'] + $data['sgst_amount'] + $data['igst_amount'];
+        $data['paid_amount'] = 0;
+        $data['total'] = $data['total_taxable_amount'] + $data['sub_total'];
+        $data2['client_id'] = $data['client_id'];
+        $data2['contact'] = $data['contact'];
+        //  $data2['email'] = $data['email'];
+        //  $data2['address'] = $data['address'];
+        $data2['state'] = $data['state'];
+        $data2['city'] = $data['city'];
+        $data2['pincode'] = $data['pincode'];
+        $data2['gst_no'] = $data['gst_no'];
+        $data2['bill_date'] = $data['bill_date'];
+        $data2['total'] = $data['total'];
+        $data2['sub_total'] = $data['sub_total'];
+        $data2['total_taxable_amount'] = $data['total_taxable_amount'];
+        $data2['invoice_date'] = $data['invoice_date'];
+        $data2['tpt_co'] = $data['tpt_co'];
+        $data2['gr_no'] = $data['gr_no'];
+        $data2['invoice_no'] = $data['invoice_no'];
+        $invoice=$data['invoice_no'];
+        $data2['created'] = date('Y-m-d H:i:s');
+        $data2['way_bill_ref'] = $data['way_bill_ref'];
+        $data2['place_of_order'] = $data['place_of_order'];
+        $this->db->insert('bill', $data2);
+        $query = "select * from  bill order by bill_id DESC limit 1";
+        $res = $this->db->query($query)->row()->bill_id;
+        $data3['bill_id'] = $res;
+        $data['bill_id'] = $data3['bill_id'];
+        $data3['product_id'] = $data['product']->product_id;
+        $data3['product_code'] = $data['hsn_code'];
+        $data3['rate'] = $data['rate'];
+        $data3['weight'] = $data['unit'];
+        $data3['quantity'] = $data['quantity'];
+        $data3['basic_amount'] = $data['sub_total'];
+        $data3['gst_type'] = $data['gst_type'];
+        $data3['cgst'] = $data['cgst'];
+        $data3['sgst'] = $data['sgst'];
+        $data3['igst'] = $data['igst'];
+        $data3['invoice_no'] = $data2['invoice_no'];
+        $data3['cgst_amount'] = $data['cgst_amount'];
+        $data3['sgst_amount'] = $data['sgst_amount'];
+        $data3['igst_amount'] = $data['igst_amount'];
+        $data3['taxable_amount'] = $data['total_taxable_amount'];
+        $data3['total'] = $data['total'];
+        $this->db->insert('bill_details', $data3);
+        $query = "select * from  bill_details order by bill_id DESC limit 1";
+        $res = $this->db->query($query)->row()->bill_detail_id;
+        $data['bill_detail_id'] = $res;
+        $total=$total+$data['total'];
+    }
+    $data4['full_total']=$total;
+    $data['full_total']=$total;
+    $this->db->where('invoice_no',$invoice);
+    $this->db->update('bill_details',$data4);
+    $this->db->where('invoice_no',$invoice);
+    $this->db->update('bill',$data4);
+    $data['pm']=$this->User_model->bill_details($data['invoice_no']);
+    $this->load->view('header');
+    $this->load->view('new-bill',$data);
+    $this->load->view('footer');
 }
 
 }

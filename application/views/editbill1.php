@@ -27,9 +27,7 @@
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">CLIENT NAME</label>
                                     <div class="col-md-5">
-                                        <select name="client_name" id="client" class="form-control" >
-                                            <option value="<?php echo $client_name;?>"><?php echo $client_name;?></option>
-                                        </select>
+                                        <input name="client_name"  class="form-control" required type="text" value="<?php echo $client_name;?>" >
                                     </div>
                                 </div>
 
@@ -46,7 +44,7 @@
                                 <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">EMAIL</label>
                                     <div class="col-md-5">
-                                        <input name="email" id="email" class="form-control" type="email"  value="<?php echo $email;?>" readonly >
+                                        <input name="email" id="email" class="form-control" type="email"  value="<?php echo $email;?>"  >
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +79,7 @@
                             <div class="form-group col-md-12">
                                 <label class="col-md-4 control-label">GST NO</label>
                                 <div class="col-md-5">
-                                    <input name="gst_no" id="gst_no" readonly class="form-control" type="text"  value="<?php echo $gst_no;?>" >
+                                    <input name="gst_no" id="gst_no" class="form-control" type="text"  value="<?php echo $gst_no;?>" >
                                 </div>
                             </div>
                             <div class="form-group col-md-12">
