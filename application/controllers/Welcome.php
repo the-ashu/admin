@@ -728,11 +728,9 @@ public function printreportbilldetails1()
         $this->load->dbutil();
         $this->load->helper('file');
         $this->load->helper('download');
-        $this->db->select("bill.*,client.name");
-        $this->db->where('bill.created >=', $date1);
-        $this->db->where('bill.created <=', $date2);
-        $this->db->from('bill');
-        $this->db->join('client', 'client.client_id = bill.client_id');
+        $this->db->where('date >=', $date1);
+        $this->db->where('date <=', $date2);
+        $this->db->from('full_bills');
         $data['h'] = $this->db->get();
         $this->load->view('header');
         $this->load->view('viewbillissue',$data);

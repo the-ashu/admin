@@ -228,10 +228,7 @@
                             </div>
                             <div class="row" style="border-radius: 0px;">
                                 <div class="col-md-7 col-sm-7 col-xs-7">
-                                    <div class=""><b>Bank Details: </b> State Bank of India</div>
-                                    <div class=""><b>Account No: </b> 37096157026</div>
-                                    <div class=""><b>Bank Branch IFSC Code: </b> SBIN0001402</div>
-                                    <br><br>
+
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4">
                                     <div class="sub_total">
@@ -244,8 +241,6 @@
                                     </div>
                                     <hr>
                                     <h4 class="col-md-10 col-sm-10 col-xs-10"><b>Bill Amount:</b></h4> <h4 class="col-md-2 col-sm-2 col-xs-2"><b><?php echo $total;?></b></h4>
-                                    <h4 class="col-md-10 col-sm-10 col-xs-10"><b>Paid Amount:</b></h4> <h4 class="col-md-2 col-sm-2 col-xs-2"><b><?php echo $paid_amount;?></b></h4>
-                                    <h4 class="col-md-10 col-sm-10 col-xs-10"><b>Pending Amount:</b></h4> <h4 class="col-md-2 col-sm-2 col-xs-2"><b><?php echo $pending_amount;?></b></h4>
                                 </div>
                             </div>
                             <div class="row" style="border-radius: 0px;">

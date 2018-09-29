@@ -43,7 +43,7 @@
         <?php $i=1;$subtotal=0;$tax=0;$total=0; foreach($h->result() as $row){?>
             <tr>
                 <td><?php echo $row->invoice_no;?></td>
-                <td><?php echo $row->created;?></td>
+                <td><?php echo $row->date;?></td>
                 <td><?php echo $row->name;?></td>
                 <td> <?php echo $row->email;?></td>
                 <td><?php echo $row->contact;?></td>
@@ -53,10 +53,10 @@
                 <td><?php echo $row->pincode;?></td>
                 <td><?php echo $row->gst_no;?></td>
                 <td><?php echo $row->sub_total;?></td>
-                <td><?php echo $row->total_taxable_amount;?></td>
+                <td><?php echo $row->taxable_amount;?></td>
                 <td><?php echo $row->total;?></td>
             </tr>
-            <?php $i++;$subtotal+=$row->sub_total;$tax+=$row->total_taxable_amount;$total+=$row->total; }?>
+            <?php $i++;$subtotal+=$row->sub_total;$tax+=$row->taxable_amount;$total+=$row->total; }?>
         <tr>
             <th>Total</th>
             <td></td>
