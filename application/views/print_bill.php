@@ -251,7 +251,7 @@
                                     <div class="text-center"><b>Terms and Conditions</b></div>
                                     Goods once sold will not be taken back.<br>
                                    Once goods sold from our kendra , There will be no any type of responsibility for goods.<br>
-                                   Since we are just distributor so we are not responsible for quality of fertilizer and crop medicine in case of damage.<br>
+                                   Since we are just distributor so we are not responsible for quality of goods in case of damage.<br>
                                 </div>
 
                                 <div class="col-md-5 col-sm-5 col-xs-5 text-center">
