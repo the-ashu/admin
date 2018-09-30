@@ -748,9 +748,8 @@ public function printreportbilldetails1()
         $this->load->dbutil();
         $this->load->helper('file');
         $this->load->helper('download');
-        $this->db->select("bill.*,client.name");
-        $this->db->from('bill');
-        $this->db->join('client', 'client.client_id = bill.client_id');
+        $this->db->from('full_bills');
+      //  $this->db->join('client', 'client.client_id = bill.client_id');
         $result = $this->db->get();
         $delimiter = ",";
         $newline = "\r\n";
