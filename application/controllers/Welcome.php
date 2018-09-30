@@ -50,6 +50,27 @@ class Welcome extends CI_Controller {
                 );
 
                 $this->session->set_userdata($user_data);
+                $date1=date('Y-m-d',strtotime('-24'));
+                $date2=date('Y-m-d',strtotime('+24'));
+                /* echo $date2;
+                 die;*/
+                $to=0;$to1=0;
+                $this->db->where('date<=',$date1);
+                $this->db->where('date>=',$date2);
+                $hal= $this->db->get('full_bills')->result();
+                foreach($hal as $p)
+                {
+                    $to=$to+$p->total;
+                }
+                $this->db->where('date<=',$date1);
+                $this->db->where('date>=',$date2);
+                $hal= $this->db->get('full_purchase')->result();
+                foreach($hal as $p)
+                {
+                    $to1=$to1+$p->total;
+                }
+                $data['to']=$to;
+                $data['to1']=$to1;
                 $data['pro']=$this->db->get('product')->num_rows();
                 $data['pur']=$this->db->get('full_purchase')->num_rows();
                 $data['client']=$this->db->get('client_order')->num_rows();
@@ -89,6 +110,27 @@ class Welcome extends CI_Controller {
     { if($this->session->userdata('logged_in')){
         $this->load->view('header');
         $data['pro']=$this->db->get('product')->num_rows();
+        $date1=date('Y-m-d',strtotime('-24'));
+        $date2=date('Y-m-d',strtotime('+24'));
+       /* echo $date2;
+        die;*/
+        $to=0;$to1=0;
+        $this->db->where('date<=',$date1);
+        $this->db->where('date>=',$date2);
+      $hal= $this->db->get('full_bills')->result();
+         foreach($hal as $p)
+         {
+             $to=$to+$p->total;
+         }
+        $this->db->where('date<=',$date1);
+        $this->db->where('date>=',$date2);
+        $hal= $this->db->get('full_purchase')->result();
+        foreach($hal as $p)
+        {
+            $to1=$to1+$p->total;
+        }
+         $data['to']=$to;
+        $data['to1']=$to1;
         $data['pur']=$this->db->get('full_purchase')->num_rows();
         $data['client']=$this->db->get('client_order')->num_rows();
         $data['bill']=$this->db->get('full_bills')->num_rows();

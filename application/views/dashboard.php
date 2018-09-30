@@ -124,7 +124,7 @@
                                 <div class="iconbox bg-warning"> <i class="fa fa-rupee"></i> </div>
                             </div>
                             <div class="table-detail">
-                                <h4 class="m-t-0 m-b-5"><b>0.00</b></h4>
+                                <h4 class="m-t-0 m-b-5"><b><?php echo $to1;?></b></h4>
                                 <p class="text-muted m-b-0 m-t-0">Today Purchase</p>
                             </div>
                             <div class="table-detail text-right"> <span data-plugin="peity-donut" data-colors="#ffbd4a,#ebeff2" data-width="50" data-height="45">/51448.000</span> </div>
@@ -156,7 +156,7 @@
                                 <div class="iconbox bg-success"> <i class="fa fa-rupee"></i> </div>
                             </div>
                             <div class="table-detail">
-                                <h4 class="m-t-0 m-b-5"><b>0.00</b></h4>
+                                <h4 class="m-t-0 m-b-5"><b><?php echo $to;?></b></h4>
                                 <p class="text-muted m-b-0 m-t-0">Today Bill</p>
                             </div>
                             <div class="table-detail text-right"> <span data-plugin="peity-donut" data-colors="#81c868,#ebeff2" data-width="50" data-height="45">/47900.000</span> </div>
