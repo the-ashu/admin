@@ -249,10 +249,9 @@
                                     <br><br>
                                     <hr>
                                     <div class="text-center"><b>Terms and Conditions</b></div>
-                                    Interest @ 24% per annum will be charged.<br>
                                     Goods once sold will not be taken back.<br>
-                                    All the dispute will be settled In Kolkata <b>JURISDICTION</b> only.<br>
-
+                                   Once goods sold from our kendra , There will be no any type of responsibility for goods.<br>
+                                   Since we are just distributor so we are not responsible for quality of fertilizer and crop medicine in case of damage.<br>
                                 </div>
 
                                 <div class="col-md-5 col-sm-5 col-xs-5 text-center">
