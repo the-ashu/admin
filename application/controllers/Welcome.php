@@ -423,6 +423,9 @@ public function new_product1()
     $data['gst_type']=$this->input->post('gst');
      $data['status']=$this->input->post('status');
     $data['name']=$this->input->post('name');
+    $data['batch']=$this->input->post('batch');
+    $data['manufacture']=$this->input->post('manufacture');
+    $data['expire']=$this->input->post('expire');
     $data['rate']=$this->input->post('rate');
     $data['created']=date('Y-m-d H:i:s');
     $this->User_model->add_product($data);
@@ -1244,6 +1247,9 @@ public function printreportbilldetails1()
             $data3['bill_id'] = $res;
             $data['bill_id'] = $data3['bill_id'];
             $data3['product_id'] = $data['product']->product_id;
+            $data3['batch'] = $data['product']->batch;
+            $data3['manufacture'] = $data['product']->manufacture;
+            $data3['expire'] = $data['product']->expire;
             $data3['product_code'] = $data['hsn_code'];
             $data3['rate'] = $data['rate'];
             $data3['weight'] = $data['unit'];
@@ -2464,6 +2470,9 @@ public function newprebill5()
         $data3['bill_id'] = $res;
         $data['bill_id'] = $data3['bill_id'];
         $data3['product_id'] = $data['product']->product_id;
+        $data3['batch'] = $data['product']->batch;
+        $data3['manufacture'] = $data['product']->manufacture;
+        $data3['expire'] = $data['product']->expire;
         $data3['product_code'] = $data['hsn_code'];
         $data3['rate'] = $data['rate'];
         $data3['weight'] = $data['unit'];

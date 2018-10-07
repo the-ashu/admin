@@ -41,6 +41,30 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-12">
+                                    <label class="col-md-4 control-label">BATCH NO.</label>
+                                    <div class="col-md-5">
+                                        <input name="batch"  class="form-control" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label class="col-md-4 control-label">MANUFACTRE DATE</label>
+                                    <div class="col-md-5">
+                                        <input name="manufacture"  class="form-control" type="text" placeholder="yyyy-mm-dd">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label class="col-md-4 control-label">EXPIRY DATE</label>
+                                    <div class="col-md-5">
+                                        <input name="expire"  class="form-control" type="text"  placeholder="yyyy-mm-dd">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
                                     <label class="col-md-4 control-label">UNIT</label>
                                     <div class="col-md-5">
                                         <input name="unit"  class="form-control" type="text">
