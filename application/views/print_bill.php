@@ -167,12 +167,10 @@
                                                 <th></th>
                                             </tr>
                                             <tr>
-                                                <th>SL No.</th>
                                                 <th>Name</th>
                                                 <th>Batch No.</th>
-                                                <th>Expiry</th>
+                                                <th>Exp/Man.</th>
                                                 <th>HSN Code</th>
-                                                <th>Packing</th>
                                                 <th>Unit</th>
                                                 <th>Rate</th>
                                                 <th>Qty</th>
@@ -189,12 +187,10 @@
                                             <tbody>
                                             <?php $i=1;$total=0;$tax=0;$basic=0; foreach($pm->result() as $row){?>
                                             <tr>
-                                                <td><?php echo $i;?></td>
                                                 <td><?php echo $row->name;?> </td>
                                                 <td><?php echo $row->batch;?> </td>
-                                                <td><?php echo $row->expire;?> </td>
+                                                <td><?php echo $row->expire;?>/<?php echo $row->manufacture;?> </td>
                                                 <td><?php echo $row->product_code;?></td>
-                                                <td><?php echo $row->manufacture;?> </td>
                                                 <td><?php echo $row->weight;?></td>
                                                 <td><?php echo $row->rate;?></td>
                                                 <td><?php echo $row->quantity;?></td>
