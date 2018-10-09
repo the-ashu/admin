@@ -181,6 +181,10 @@
                                     <label style="color: #000;">Enter Amount</label>
                                     <input type="text" name="paid_amount"   >
                                 </div>
+                                <div class="col-md-2">
+                                    <label style="color: #000;">Enter Discount</label>
+                                    <input type="text" name="discount"   >
+                                </div>
                             </div>
                             <br><br>
                         </div>

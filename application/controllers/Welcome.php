@@ -1285,8 +1285,11 @@ public function printreportbilldetails1()
 
     public function newprebill1($invoice)
     {
+        $data2['discount']=$this->input->post('discount');
+        $data2['total']=$this->input->post('total');
+        $data2['total']=$data2['total']-$data2['discount'];
         $data['paid_amount']=($this->input->post('paid_amount'))+($this->input->post('paid_amount1'));
-        $data['pending_amount']=$this->input->post('total')-$data['paid_amount'];
+        $data['pending_amount']=$data2['total']-$data['paid_amount'];
         $this->db->where('invoice_no',$invoice);
         $this->db->update('bill_details',$data);
         $da['name']=$this->input->post('client_name');
@@ -1300,7 +1303,7 @@ public function printreportbilldetails1()
         $da['pincode']=$this->input->post('pincode');
         $da['sub_total']=$this->input->post('sub_total');
         $da['taxable_amount']=$this->input->post('total_taxable_amount');
-        $da['total']=$this->input->post('total');
+        $da['total']=$data2['total'];
         $da['paid_amount']=$data['paid_amount'];
         $da['pending_amount']=$data['pending_amount'];
         $da['bill_id']=$this->input->post('bill_id');
@@ -1569,8 +1572,10 @@ public function newprepurchase()
 
 public function submitpurchase($invoice)
 {
+    $data2['discount']=$this->input->post('discount');
+    $data2['total']=$this->input->post('total')-$data2['discount'];
     $data['paid_amount']=($this->input->post('paid_amount'))+($this->input->post('paid_amount1'));
-    $data['pending_amount']=($this->input->post('total'))-$data['paid_amount'];
+    $data['pending_amount']=$data2['total']-$data['paid_amount'];
     $this->db->where('invoice_no',$invoice);
     $this->db->update('purchase_product',$data);
     $da['name']=$this->input->post('supplier_name');
@@ -1585,7 +1590,7 @@ public function submitpurchase($invoice)
     $da['gst_no']=$this->input->post('gst_no');
     $da['basic_amount']=$this->input->post('sub_total');
     $da['total_taxable_amount']=$this->input->post('total_taxable_amount');
-    $da['total']=$this->input->post('total');
+    $da['total']=$data2['total'];
     $da['paid_amount']=$data['paid_amount'];
     $da['pending_amount']=$data['pending_amount'];
     $da['purchase_id']=$this->input->post('purchase_id');

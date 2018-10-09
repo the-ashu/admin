@@ -161,15 +161,14 @@
                                                 <th></th>
                                                 <th></th>
                                                 <th></th>
-                                                <th colspan="2" class="text-center col-md-2">SGST</th>
-                                                <th colspan="2" class="text-center col-md-2">CGST</th>
-                                                <th colspan="2" class="text-center col-md-2">IGST</th>
+                                                <th colspan="4" class="text-center col-md-2">SGST</th>
+                                                <th colspan="1" class="text-center col-md-2">CGST</th>
                                                 <th></th>
                                             </tr>
                                             <tr>
                                                 <th>Name</th>
                                                 <th>Batch No.</th>
-                                                <th>Exp/Man.</th>
+                                                <th>Man./Exp.</th>
                                                 <th>HSN Code</th>
                                                 <th>Unit</th>
                                                 <th>Rate</th>
@@ -179,8 +178,6 @@
                                                 <th class="col-md-1">Amt.</th>
                                                 <th class="col-md-1">Rate</td>
                                                 <th class="col-md-1">Amt.</th>
-                                                <th class="col-md-1">Rate</th>
-                                                <th class="col-md-1">Amt.</th>
                                                 <th>Total</th>
                                             </tr>
                                             </thead>
@@ -189,7 +186,7 @@
                                             <tr>
                                                 <td><?php echo $row->name;?> </td>
                                                 <td><?php echo $row->batch;?> </td>
-                                                <td><?php echo $row->expire;?>/<?php echo $row->manufacture;?> </td>
+                                                <td><?php echo $row->manufacture;?>/<?php echo $row->expire;?> </td>
                                                 <td><?php echo $row->product_code;?></td>
                                                 <td><?php echo $row->weight;?></td>
                                                 <td><?php echo $row->rate;?></td>
@@ -199,8 +196,6 @@
                                                 <td><?php echo $row->sgst_amount;?></td>
                                                 <td><?php echo $row->cgst;?></td>
                                                 <td><?php echo $row->cgst_amount;?></td>
-                                                <td><?php echo $row->igst;?></td>
-                                                <td><?php echo $row->igst_amount;?></td>
                                                 <td><?php echo $row->total;?></td>
                                             </tr>
                                             </tbody>
