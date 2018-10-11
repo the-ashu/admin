@@ -237,7 +237,9 @@
 
                                     </div>
                                     <hr>
-                                    <h4 class="col-md-10 col-sm-10 col-xs-10"><b>Bill Amount:</b></h4> <h4 class="col-md-2 col-sm-2 col-xs-2"><b><?php echo $total;?></b></h4>
+                                    <h4 class="col-md-10 col-sm-10 col-xs-10"><b>Total Bill Amount:</b></h4> <h4 class="col-md-2 col-sm-2 col-xs-2"><b><?php echo $total1+$discount;?></b></h4>
+                                    <h4 class="col-md-10 col-sm-10 col-xs-10"><b>Discount Amount:</b></h4> <h4 class="col-md-2 col-sm-2 col-xs-2"><b><?php echo $discount;?></b></h4>
+                                    <h4 class="col-md-10 col-sm-10 col-xs-10"><b>Total Invoice Amount:</b></h4> <h4 class="col-md-2 col-sm-2 col-xs-2"><b><?php echo $total1;?></b></h4>
                                 </div>
                             </div>
                             <div class="row" style="border-radius: 0px;">

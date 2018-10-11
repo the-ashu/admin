@@ -1160,6 +1160,8 @@ public function printreportbilldetails1()
         $data['l']=$this->db->get('full_bills')->row();
         $data['paid_amount']=$data['l']->paid_amount;
         $data['pending_amount']=$data['l']->pending_amount;
+        $data['total1']=$data['l']->total;
+        $data['discount']=$data['l']->discount;
         $data['admin']=$this->db->get('admin')->row(0);
         $data['pm']=$this->User_model->bill_details($invoice);
         $this->load->view('header');
@@ -1313,6 +1315,7 @@ public function printreportbilldetails1()
         $da['place_of_order']=$this->input->post('place_of_order');
         $da['tpt_co']=$this->input->post('tpt_co');
         $da['gr_no']=$this->input->post('gr_no');
+        $da['discount']=$data2['discount'];
         $this->db->insert('full_bills',$da);
     redirect('welcome/bill');
     }
@@ -1594,6 +1597,7 @@ public function submitpurchase($invoice)
     $da['paid_amount']=$data['paid_amount'];
     $da['pending_amount']=$data['pending_amount'];
     $da['purchase_id']=$this->input->post('purchase_id');
+    $da['discount']=$data2['discount'];
     $da['purchase_product_id']=$this->input->post('purchase_product_id');
     $this->db->insert('full_purchase',$da);
     redirect('welcome/purchaseproduct');

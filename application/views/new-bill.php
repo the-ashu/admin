@@ -205,12 +205,12 @@
                                     <input type="text" name="paid_amount1"  value="<?php echo $paid_amount;?>" readonly>
                                 </div>
                                 <div class="col-md-2">
-                                    <label style="color: #000;">Enter Amount</label>
-                                    <input type="text" name="paid_amount"   >
-                                </div>
-                                <div class="col-md-2">
                                     <label style="color: #000;">Enter Discount</label>
                                     <input type="text" name="discount"   >
+                                </div>
+                                <div class="col-md-2">
+                                    <label style="color: #000;">Enter Amount</label>
+                                    <input type="text" name="paid_amount"   >
                                 </div>
                             </div>
                             <br><br>
