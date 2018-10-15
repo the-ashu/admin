@@ -161,8 +161,9 @@
                                                 <th></th>
                                                 <th></th>
                                                 <th></th>
-                                                <th colspan="4" class="text-center col-md-2">SGST</th>
-                                                <th colspan="1" class="text-center col-md-2">CGST</th>
+                                                <th></th>
+                                                <th colspan="2" class="text-center col-md-2">SGST</th>
+                                                <th colspan="2" class="text-center col-md-2">CGST</th>
                                                 <th></th>
                                             </tr>
                                             <tr>
