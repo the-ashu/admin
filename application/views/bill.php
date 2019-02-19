@@ -19,8 +19,6 @@
 <div class="container">
     <div class="row">
         <br><br><br><br><br><br><br>
-            <a href="newbill" class="pull-right btn btn-primary btn-sm waves-effect waves-light"><i class="fa fa-plus"></i> Add New</a>
-            <a href="newbill1" class="pull-right btn btn-primary btn-sm waves-effect waves-light"><i class="fa fa-plus"></i> Add New Walk-in Invoice</a>
         <br><br>
         <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
@@ -30,40 +28,16 @@
                 <th>Client</th>
                 <th>Email</th>
                 <th>Contact</th>
-                <th>Address</th>
-                <th>City</th>
-                <th>State</th>
-                <th>Pincode</th>
-                <th>Total</th>
-                <th>Paid</th>
-                <th>Pending</th>
-                <th></th>
             </tr>
             </thead>
             <tbody>
             <?php foreach($h->result() as $row){?>
                 <tr>
-                    <td><?php echo $row->invoice_no;?></td>
-                    <td><?php echo $row->date;?></td>
+                    <td><?php echo $row->anubhuti_id;?></td>
                     <td><?php echo $row->name;?></td>
+                    <td><?php echo $row->roll_no;?></td>
                     <td><?php echo $row->email;?></td>
-                    <td><?php echo $row->contact;?></td>
-                    <td><?php echo $row->address;?></td>
-                    <td><?php echo $row->city;?></td>
-                    <td><?php echo $row->state;?></td>
-                    <td><?php echo $row->pincode;?></td>
-                    <td><?php echo $row->total;?></td>
-                    <td><?php echo $row->paid_amount;?></td>
-                    <td><?php echo $row->pending_amount;?></td>
-                    <td><div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Action
-                                <span class="caret"></span></button>
-                            <ul class="dropdown-menu">
-                                <li><a href="editbill1/<?php echo $row->invoice_no;?>">Edit</a></li>
-                                <li><a href="cancelbill/<?php echo $row->invoice_no;?>" >Delete</a></li>
-                                <li><a href="printbill/<?php echo $row->invoice_no?>">Print</a></li>
-                            </ul>
-                        </div></td>
+                    <td><?php echo $row->phone;?></td>
                 </tr>
             <?php }?>
             </tbody>
@@ -77,7 +51,7 @@
 
 
 <!-- jQuery  -->
-/*<script src="<?php echo base_url();?>assets/js/jquery.min.js"></script>
+/*<!-- <script src="<?php echo base_url();?>assets/js/jquery.min.js"></script>
 <script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
 <script src="<?php echo base_url();?>assets/js/detect.js"></script>
 <script src="<?php echo base_url();?>assets/js/fastclick.js"></script>
@@ -96,50 +70,50 @@
 
 
 <!--Summernote js-->
-<script src="<?php echo base_url();?>assets/plugins/summernote/summernote.min.js"></script>
+<!-- <script src="<?php echo base_url();?>assets/plugins/summernote/summernote.min.js"></script>
 <!-- Modal-Effect -->
-<script src="<?php echo base_url();?>assets/plugins/custombox/js/custombox.min.js"></script>
-<script src="<?php echo base_url();?>assets/plugins/custombox/js/legacy.min.js"></script>
-<!-- Peity chart js -->
-<script src="<?php echo base_url();?>assets/plugins/peity/jquery.peity.min.js"></script>
-<!-- Sparkline chart -->
-<script src="<?php echo base_url();?>assets/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
-<script src="<?php echo base_url();?>assets/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url();?>assets/plugins/fileinput/js/fileinput.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url();?>assets/plugins/multiselect/js/bootstrap-multiselect.js" type="text/javascript"></script>
+<!--<script src="--><?php //echo base_url();?><!--assets/plugins/custombox/js/custombox.min.js"></script>-->
+<!--<script src="--><?php //echo base_url();?><!--assets/plugins/custombox/js/legacy.min.js"></script>-->
+<!--<!-- Peity chart js -->-->
+<!--<script src="--><?php //echo base_url();?><!--assets/plugins/peity/jquery.peity.min.js"></script>-->
+<!--<!-- Sparkline chart -->-->
+<!--<script src="--><?php //echo base_url();?><!--assets/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>-->
+<!--<script src="--><?php //echo base_url();?><!--assets/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js" type="text/javascript"></script>-->
+<!--<script src="--><?php //echo base_url();?><!--assets/plugins/fileinput/js/fileinput.min.js" type="text/javascript"></script>-->
+<!--<script src="--><?php //echo base_url();?><!--assets/plugins/multiselect/js/bootstrap-multiselect.js" type="text/javascript"></script>-->
 
-<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.tokeninput.js"></script>
-
-<script src="<?php echo base_url();?>assets/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url();?>assets/plugins/datatables/dataTables.bootstrap.js"></script>
-<script src="<?php echo base_url();?>assets/plugins/datatables/dataTables.buttons.min.js"></script>
-<script src="<?php echo base_url();?>assets/plugins/datatables/buttons.bootstrap.min.js"></script>
-<script src="<?php echo base_url();?>assets/plugins/datatables/dataTables.responsive.min.js"></script>
-<script src="<?php echo base_url();?>assets/plugins/datatables/responsive.bootstrap.min.js"></script>
-<script src="<?php echo base_url();?>assets/plugins/bootstrap-select2/js/select2.min.js" type="text/javascript"></script>
-
-
-<script src="<?php echo base_url();?>assets/plugins/moment/moment.js"></script>
-<script src="<?php echo base_url();?>assets/plugins/timepicker/bootstrap-timepicker.js"></script>
-<script src="<?php echo base_url();?>assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
-<script src="<?php echo base_url();?>assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-<script src="<?php echo base_url();?>assets/plugins/clockpicker/js/bootstrap-clockpicker.min.js"></script>
-<script src="<?php echo base_url();?>assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
-<script src="<?php echo base_url();?>assets/pages/datatables.init.js"></script>
-
-
-<script src="<?php echo base_url();?>assets/plugins/raphael/raphael-min.js"></script>
-
-<script src="<?php echo base_url();?>assets/js/jquery.blockUI.js"></script>
-
-<!-- Dashboard 3 js -->
-<script src="<?php echo base_url();?>assets/pages/jquery.dashboard_3.js"></script>
-<script src="<?php echo base_url();?>assets/plugins/peity/jquery.peity.min.js"></script>
-
-<!-- App core js -->
-<script src="<?php echo base_url();?>assets/js/jquery.core.js"></script>
-<script src="<?php echo base_url();?>assets/js/jquery.app.js"></script>
-<script src="<?php echo base_url();?>assets/pages/jquery.form-pickers.init.js"></script>
+<!--<script type="text/javascript" src="--><?php //echo base_url();?><!--assets/js/jquery.tokeninput.js"></script>-->
+<!---->
+<!--<script src="--><?php //echo base_url();?><!--assets/plugins/datatables/jquery.dataTables.min.js"></script>-->
+<!--<script src="--><?php //echo base_url();?><!--assets/plugins/datatables/dataTables.bootstrap.js"></script>-->
+<!--<script src="--><?php //echo base_url();?><!--assets/plugins/datatables/dataTables.buttons.min.js"></script>-->
+<!--<script src="--><?php //echo base_url();?><!--assets/plugins/datatables/buttons.bootstrap.min.js"></script>-->
+<!--<script src="--><?php //echo base_url();?><!--assets/plugins/datatables/dataTables.responsive.min.js"></script>-->
+<!--<script src="--><?php //echo base_url();?><!--assets/plugins/datatables/responsive.bootstrap.min.js"></script>-->
+<!--<script src="--><?php //echo base_url();?><!--assets/plugins/bootstrap-select2/js/select2.min.js" type="text/javascript"></script>-->
+<!---->
+<!---->
+<!--<script src="--><?php //echo base_url();?><!--assets/plugins/moment/moment.js"></script>-->
+<!--<script src="--><?php //echo base_url();?><!--assets/plugins/timepicker/bootstrap-timepicker.js"></script>-->
+<!--<script src="--><?php //echo base_url();?><!--assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>-->
+<!--<script src="--><?php //echo base_url();?><!--assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>-->
+<!--<script src="--><?php //echo base_url();?><!--assets/plugins/clockpicker/js/bootstrap-clockpicker.min.js"></script>-->
+<!--<script src="--><?php //echo base_url();?><!--assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>-->
+<!--<script src="--><?php //echo base_url();?><!--assets/pages/datatables.init.js"></script>-->
+<!---->
+<!---->
+<!--<script src="--><?php //echo base_url();?><!--assets/plugins/raphael/raphael-min.js"></script>-->
+<!---->
+<!--<script src="--><?php //echo base_url();?><!--assets/js/jquery.blockUI.js"></script>-->
+<!---->
+<!--<!-- Dashboard 3 js -->-->
+<!--<script src="--><?php //echo base_url();?><!--assets/pages/jquery.dashboard_3.js"></script>-->
+<!--<script src="--><?php //echo base_url();?><!--assets/plugins/peity/jquery.peity.min.js"></script>-->
+<!---->
+<!--<!-- App core js -->-->
+<!--<script src="--><?php //echo base_url();?><!--assets/js/jquery.core.js"></script>-->
+<!--<script src="--><?php //echo base_url();?><!--assets/js/jquery.app.js"></script>-->
+<!--<script src="--><?php //echo base_url();?><!--assets/pages/jquery.form-pickers.init.js"></script>   -->
 
 <script>
     $('body .dropdown-toggle').dropdown();
