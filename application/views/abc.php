@@ -31,11 +31,11 @@ else{
     }
     else
     {
-      //  echo "Database Selected";
+      //  echo "Database Sdfmkdmfldkfs;ffk";
     }
 }
 if(isset($_POST['Title'])){
-    $title = $_POST['Title'];
+    $title = $_POST['Title23'];
 
 }
 if(isset($_POST['Name'])){
