@@ -27,7 +27,7 @@ else{
     $db = mysqli_select_db($conn,$dbname);
     if(!db)
     {
-        die("Database can't be selected: " . mysqli_connect_error());
+        die("Database could not be selected: " . mysqli_connect_error());
     }
     else
     {
